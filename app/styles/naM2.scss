@@ -1,0 +1,97 @@
+/* page references */
+
+.naM2 {
+	margin-right: -7em;
+	text-align:right;
+	text-indent:0;
+	width: 4.75em;
+}
+
+.naM2 span {
+	color: #414141;
+	font-size: 0.8em;
+	background-color: #f6f6f6;
+	display: block;
+	padding: 0 14px 0 5px;
+	line-height: 1.5;
+	margin-top: 3px;
+	cursor: pointer;
+}
+
+/* page numbering nael */
+
+.naelFullA,
+.naelFullB,
+.naelFullC,
+.naelFullD,
+.naelFullE,
+.naelFullF {
+	border-right: 4px solid #3aa2fe; /* blue for full */
+}
+
+.naelMAuth {
+	border-right: 4px solid #3a852d; /* green for shorter */
+}
+
+.naelMAuth1 {
+	padding: 0 !important;
+	border-right: 4px solid #3a852d; /* green and orange for combined */
+}
+
+.naelMAuth1:after {
+	content:"";
+	padding: 0.1em 5px; /* 0.1em extra padding added to compensate for line height of 1.5em */
+	border-right: 4px solid #ffad0c; /* orange */
+}
+
+.naelMAuth2 {
+	border-right: 4px solid #ffad0c; /* orange for shorter split */
+}
+
+/* page numbering nawol */
+
+.nawolFullA,
+.nawolFullB,
+.nawolFullC,
+.nawolFullD,
+.nawolFullE,
+.nawolFullF {
+	border-right: 4px solid #3aa2fe; /* blue for full */
+}
+
+.nawolShorter1 {
+	border-right: 4px solid #3a852d; /* green for shorter */
+}
+
+.nawolShorter2 {
+	border-right: 4px solid #3a852d; /* green for shorter */
+}
+
+/* page numbering naal */
+
+.naalFullA,
+.naalFullB,
+.naalFullC,
+.naalFullD,
+.naalFullE {
+	border-right: 4px solid #3aa2fe; /* blue for full */
+}
+
+.naalShorter {
+	border-right: 4px solid #3a852d; /* green for shorter */
+}
+
+.naalShorter1 {
+	padding: 0 !important;
+	border-right: 4px solid #3a852d; /* green and orange for combined */
+}
+
+.naalShorter1:after {
+	content:"";
+	padding: 0.1em 5px; /* 0.1em extra padding added to compensate for line height of 1.5em */
+	border-right: 4px solid #ffad0c;
+}
+
+.naalShorter2 {
+	border-right: 4px solid #ffad0c; /* orange */
+}

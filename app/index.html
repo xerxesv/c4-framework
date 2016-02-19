@@ -24,14 +24,613 @@
   <!-- endbuild -->
 </head>
 
-<body>
+  <!--
+* This is a swatch of all interactive features in the Norton Ebook Development Kit.
+* All sections marked with  BEGIN  and  END  flags can be copied as
+* self-contained widgets and will work on any page as long as ALL DEPENDENCIES are
+* also carried over. For dependency details, see their individual HTML files.
+* Dependencies are marked with a  DEPENDENCY  flag. For this swatch, every
+* include is a dependency.
+-->
+
+<!-- For Norton Anthologies, printing is forbidden on all pages. -->
+<body class="hidden-print">
   <!--[if lt IE 10]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-  <![endif]-->
+    <![endif]-->
 
-  <main>
+    <!-- Start jQuery Mobile page zone -->
 
-  </main>
+    <div data-role="page">
+
+
+      <!-- BEGIN naRH running head module, see naRH.html for dependencies. -->
+      <header class="naRH">
+        <div class="row">
+          <h1 class="naRH-Title col-xs-12 col-sm-6">
+            <div class="naRH-TitleContainer"><span class="naRH-naTitle">NEDKit</span> • <span class="naRH-subTitle">Examples</span></div>
+          </h1>
+          <nav class="naRH-Buttons hidden-xs col-md-6">
+            <div class="naRH-ButtonsContainer">
+              <!-- <input alt="Page Numbers" id="pnToggle" src="img/naRH/menuIconPN.svg" type="image" data-role="none" />
+              <input alt="Annotations" id="anToggle" src="img/naRH/menuIconAnnot.svg" type="image" data-role="none" />
+              <input alt="StudySpace" id="ssToggle" src="img/naRH/studyspace_logo.svg" type="image" data-role="none" /> -->
+
+              <button class='btn btn-icon' id="pageNumbers">
+                <div class="icon icon-left">
+                  <img class="icon-img svg" src="images/menuIconPN.svg" alt="">
+                  <span class="icon-text">Page numbers</span>
+                </div>
+              </button>
+
+              <button class='btn btn-icon' id="annotations">
+                <div class="icon icon-left">
+                  <img class="icon-img svg" src="images/menuIconAnnot.svg" alt="">
+                  <span class="icon-text">Annotations</span>
+                </div>
+              </button>
+
+              <a href="http://books.wwnorton.com/studyspace/" target="_blank" class='btn btn-icon'>
+                <div class="icon icon-left">
+                  <img class="icon-img svg" src="images/studyspace_logo.svg" alt="">
+                  <span class="icon-text">StudySpace</span>
+                </div>
+              </a>
+            </div>
+          </nav>
+        </div>      
+      </header>
+      <hr class="naRH-Spacer" /> <!-- /header -->
+      <!-- END naRH running head module -->
+
+      <main role="main" class="container ui-content">
+        <div class="row"> 
+          <!-- To make text boxes rescale when toggling naM2 elements, add "naToggle" class to their containers. -->
+          <div class="naToggle col-xs-12 col-sm-9 col-sm-offset-1 col-md-7 col-md-offset-2"> <!-- If a section contains naM2 marginal page reference elements, decrease col-sm and col-md by 1 to account for extra space needed on the right. -->
+
+            <!-- BEGIN naIE image expand module, see naIE.html for dependencies. -->
+          <!-- <div class="headerWrap">
+            <div id="headerImage">
+              <span class="headerExp" style="background-image:url('img/naIE/example.jpg'); background-position:0px 0px; background-size: cover;">
+                <span class="expandHeader"><img src="img/naIE/expandImage.png" /></span>
+              </span>
+              <div class="containerImage">
+                <div class="collapseHeader">
+                  <img src="img/naIE/collapseImage.png" />
+                </div>
+                <img class="accordionImage" src="img/naIE/example.jpg" />
+              </div>
+            </div>
+          
+            <div class="headerCaption">
+              <b>Lorem Ipsum</b> dolor sit amet.
+            </div>
+          </div> -->
+          <!-- END naIE image expand module -->
+          
+          <figure class="expander expander-collapsed">
+            <div class="expander-click" tabindex="0">
+              <img src="http://placekitten.com/500/550" alt="">
+              <span class="glyphicon glyphicon-menu-down"></span>
+            </div>
+            <figcaption><b>Lorem Ipsum</b> dolor sit amet.</figcaption>
+          </figure>
+
+          <!-- BEGIN naM2 marginal page reference module, see naM2.html for dependencies. This is the BLOCK element variant. -->
+          <!-- <div class="naM2 hidden-xs pull-right"><span class="naelFullD">p. 432</span></div> -->
+          <!-- END naM2 marginal page reference module -->
+
+          <p class="prose-NoIndent">
+
+            <div class="pagebreak" >           
+              <a tabindex="0" class="naelFullD" epub:type="pagebreak" id="page432" role="button" data-toggle="popover" data-trigger="focus" data-placement="left" title="" data-content="Full Edition Volume 2 &amp; Full Edition Volume D">p. 432</a>
+            </div>
+
+            <dfn tabindex="0" class="tipped" data-toggle="tooltip" data-placement="top" title="Lorem ipsum tooltip 1.">Lorem</dfn> ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare odio arcu, non tincidunt nisl feugiat vel. Quisque cursus sit amet tortor et fringilla. Aenean sed magna et ex fermentum hendrerit in sed elit. Nam cursus eros vel purus rutrum, et dictum erat lacinia. Nunc quis sem a nibh porttitor sollicitudin id id velit. Aenean fermentum nec turpis vitae tempor. Quisque sem purus, fringilla et tempor sit amet, vulputate sed sem. Integer sed nibh vehicula nibh convallis imperdiet a vel sem. Vestibulum feugiat varius lectus. Vivamus feugiat dapibus turpis vel vulputate. Aliquam non nibh euismod, tristique ligula eu, rhoncus libero. Curabitur in nunc eget nisi fermentum volutpat a non nisi.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare odio arcu, non tincidunt nisl feugiat vel. Quisque cursus sit amet tortor et fringilla. Aenean sed magna et ex fermentum hendrerit in sed elit. Nam cursus eros vel purus rutrum, et dictum erat lacinia. Nunc quis sem a nibh porttitor sollicitudin id id velit. Aenean fermentum nec turpis vitae tempor. Quisque sem purus, fringilla et tempor sit amet, vulputate sed sem. Integer sed nibh vehicula nibh convallis imperdiet a vel sem. Vestibulum feugiat varius lectus. Vivamus feugiat dapibus turpis vel vulputate. Aliquam non nibh euismod, tristique ligula eu, rhoncus libero. Curabitur in nunc eget nisi fermentum volutpat a non nisi.
+          </p>
+          <!-- <div class="naM2 hidden-xs pull-right"><span class="naelFullA">p. 546</span><span class="naelMAuth1">p. 257</span></div> -->
+
+          <div class="pagebreak">
+            <a tabindex="0" class="naelFullA" epub:type="pagebreak" id="page546" role="button" data-toggle="popover" data-trigger="focus" data-placement="left" title="" data-content="Full Edition Volume 1 &amp; Full Edition Volume A">p. 546</a>
+            <a tabindex="0" class="naelMAuth1" epub:type="pagebreak" id="page257" role="button" data-toggle="popover" data-trigger="focus" data-placement="left" title="" data-content="Major Authors Edition &amp; Major Authors Edition Volume 1">p. 257</a>
+          </div>
+
+          <div class="spA spB"> <!-- spA and spB are spacers above + below, and for example only! -->
+            <!-- BEGIN naTL timeline module, see naTL.html for dependencies. -->
+            <!-- <div class="naTL-HeaderWrapper">
+            
+              <table class="naTL-Header">
+                <tr>
+                  <td><b>TEXTS</b></td>
+                  <td><b>CONTEXTS</b></td>
+                </tr>
+              </table>
+            </div>
+            <div class="naTL vst-draggable">
+            
+              <table class="naTL-Table">
+                <tr>
+                  <td></td>
+                  <td><b>1485</b> Accession of Henry VII inaugurates Tudor dynasty</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td><b>ca. 1504</b> Leonardo da Vinci paints the Mona Lisa</td>
+                </tr>
+                <tr>
+                  <td><b>ca. 1505-07</b> Amerigo Vespucci, <i>New World</i> and <i>Four Voyages</i></td>
+                  <td><b>1508-12</b> Michaelangelo paints Sistine Chapel ceiling</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td><b>1509</b> Death of Henry VII; accession of Henry VIII</td>
+                </tr>
+                <tr>
+                  <td><b>1511</b> Desiderius Erasmus, <i>Praise of Folly</i></td>
+                  <td><b>1513</b> James IV of Scotland killed at Battle of Flodden; succeeded by James V</td>
+                </tr>
+                <tr>
+                  <td><b>1516</b> Thomas More, <i>Utopia</i>. Ludovico Ariosto, <i>Orlando Furioso</i></td>
+                  <td><b>1517</b> Martin Luther's Ninety-Five Theses; beginning of the Reformation in Germany</td>
+                </tr>
+                <tr>
+                  <td><b>ca. 1517</b> John Skelton, "The Tunning of Elinour Rumming"</td>
+                  <td><b>1519</b> Cortés invades Mexico. Magellan begins his voyage around the world</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td><b>1521</b> Pope Leo X names Henry VIII "Defender of the Faith"</td>
+                </tr>
+                <tr>
+                  <td><b>1520s-30s</b> Thomas Wyatt's poems circulating in manuscript</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><b>1525</b> William Tyndale's English translation of the <i>New Testament</i></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><b>1528</b> Baldassare Castiglione, <i>The Courtier</i></td>
+                  <td><b>1529-32</b> More is Lord Chancellor</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td><b>1532-34</b> Henry VIII divorces Catherine of Aragon to marry Anne Boleyn; Elizabeth I born; Henry declares himself head of the Church of England</td>
+                </tr>
+                <tr>
+                  <td><b>1532</b> Niccol&#242; Machiavelli, <i>The Prince</i> (written 1513)</td>
+                  <td><b>1535</b> More beheaded</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td><b>1537</b> Establishment of Calvin's theocracy at Geneva</td>
+                </tr>
+                <tr>
+                  <td><b>1537</b> John Calvin, <i>The Institution of Christian Religion</i></td>
+                  <td><b>1542</b> Roman Inquisition. James V of Scotland dies; succeeded by infant daughter, Mary</td>
+                </tr>
+                <tr>
+                  <td><b>1543</b> Copernicus, <i>On the Revolution of the Spheres</i></td>
+                  <td><b>1547</b> Death of Henry VIII; accession of Protestant Edward VI</td>
+                </tr>
+                <tr>
+                  <td><b>1547</b> <i>Book of Homilies</i></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><b>1549</b> <i>Book of Common Prayer</i></td>
+                  <td><b>1553</b> Death of Edward VI; failed attempt to put Protestant Lady Jane Grey on throne; accession of Catholic Queen Mary, daughter of Catherine of Aragon</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td><b>1555-56</b> Archbishop Cranmer and former bishops Latimer and Ridley burned at the stake</td>
+                </tr>
+                <tr>
+                  <td><b>1557</b> Tottel's <i>Songs and Sonnets</i> (printing poems by Wyatt, Surrey, and others)</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td><b>1558</b> Mary dies; succeeded by Protestant Elizabeth I</td>
+                </tr>
+                <tr>
+                  <td><b>1563</b> John Foxe, <i>Acts and Monuments</i></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><b>1565</b> Thomas Norton and Thomas Sackville, <i>Gorboduc</i>, first English blank-verse tragedy (acted in 1561)</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><b>1567</b> Arthur Golding, translation of Ovid's <i>Metamorphoses</i></td>
+                  <td><b>1567-68</b> Mary, Queen of Scots, forced to abdicate; succeeded by her son James VI; Mary imprisoned in England</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td><b>1570</b> Elizabeth I excommunicated by Pope Pius V</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td><b>1572</b> St. Bartholomew's Day Massacre of French Protestants</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td><b>1576</b> James Burbage's play house, The Theater, built in London</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td><b>1577-80</b> Drake's circumnavigation of the globe</td>
+                </tr>
+                <tr>
+                  <td><b>1578</b> John Lyly, <i>Euphues</i></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><b>1579</b> Edmund Spenser, <i>The Shepheardes Calender</i></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><b>1580</b> Montaigne, <i>Essais</i></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td><b>1583</b> Irish rebellion crushed</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td><b>1584-87</b> Sir Walter Raleigh's earliest attempts to colonize Virginia</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td><b>1586-87</b> Mary, Queen of Scots, tried for treason and executed</td>
+                </tr>
+                <tr>
+                  <td><b>ca. 1587-90</b> Marlowe's <i>Tamburlaine</i> acted. Shakespeare begins career as actor and playwright</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><b>1588</b> Thomas Hariot, <i>A Brief and True Report of . . . Virginia</i></td>
+                  <td><b>1588</b> Failed invasion of the Spanish Armada</td>
+                </tr>
+                <tr>
+                  <td><b>1589</b> Richard Hakluyt, <i>The Principal Navigations . . . of the English Nation</i></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><b>1590</b> Sir Philip Sidney, <i>Arcadia</i> (posthumously published); Spenser, <i>The Faerie Queene</i>, Books 1-3</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><b>1591</b> Sidney, <i>Astrophil and Stella</i> published</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><b>ca. 1592</b> John Donne's earliest poems circulating in manuscript</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><b>1595</b> Sidney, <i>The Defense of Poesy</i> published</td>
+                  <td><b>1595</b> Ralegh's voyage to Guiana</td>
+                </tr>
+                <tr>
+                  <td><b>1596</b> Spenser, <i>The Faerie Queene</i>, Books 4-6 (with Books 1-3)</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><b>1598</b> Ben Jonson, <i>Every Man in His Humor</i></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td><b>1599</b> Globe Theater opens</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td><b>1603</b> Elizabeth I dies; succeeded by James VI of Scotland (as James I), inaugurating the Stuart dynasty</td>
+                </tr>
+              </table>
+            </div> -->
+            <!-- END naTL timeline module -->
+          </div>
+
+          <table class="table table-bordered table-scroll">
+            <thead>
+              <tr>
+                <th>Texts</th>
+                <th>Content</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td></td>
+                <td><b>1485</b> Accession of Henry VII inaugurates Tudor dynasty</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><b>ca. 1504</b> Leonardo da Vinci paints the Mona Lisa</td>
+              </tr>
+              <tr>
+                <td><b>ca. 1505-07</b> Amerigo Vespucci, <i>New World</i> and <i>Four Voyages</i></td>
+                <td><b>1508-12</b> Michaelangelo paints Sistine Chapel ceiling</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><b>1509</b> Death of Henry VII; accession of Henry VIII</td>
+              </tr>
+              <tr>
+                <td><b>1511</b> Desiderius Erasmus, <i>Praise of Folly</i></td>
+                <td><b>1513</b> James IV of Scotland killed at Battle of Flodden; succeeded by James V</td>
+              </tr>
+              <tr>
+                <td><b>1516</b> Thomas More, <i>Utopia</i>. Ludovico Ariosto, <i>Orlando Furioso</i></td>
+                <td><b>1517</b> Martin Luther's Ninety-Five Theses; beginning of the Reformation in Germany</td>
+              </tr>
+              <tr>
+                <td><b>ca. 1517</b> John Skelton, "The Tunning of Elinour Rumming"</td>
+                <td><b>1519</b> Cortés invades Mexico. Magellan begins his voyage around the world</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><b>1521</b> Pope Leo X names Henry VIII "Defender of the Faith"</td>
+              </tr>
+              <tr>
+                <td><b>1520s-30s</b> Thomas Wyatt's poems circulating in manuscript</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><b>1525</b> William Tyndale's English translation of the <i>New Testament</i></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><b>1528</b> Baldassare Castiglione, <i>The Courtier</i></td>
+                <td><b>1529-32</b> More is Lord Chancellor</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><b>1532-34</b> Henry VIII divorces Catherine of Aragon to marry Anne Boleyn; Elizabeth I born; Henry declares himself head of the Church of England</td>
+              </tr>
+              <tr>
+                <td><b>1532</b> Niccol&#242; Machiavelli, <i>The Prince</i> (written 1513)</td>
+                <td><b>1535</b> More beheaded</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><b>1537</b> Establishment of Calvin's theocracy at Geneva</td>
+              </tr>
+              <tr>
+                <td><b>1537</b> John Calvin, <i>The Institution of Christian Religion</i></td>
+                <td><b>1542</b> Roman Inquisition. James V of Scotland dies; succeeded by infant daughter, Mary</td>
+              </tr>
+              <tr>
+                <td><b>1543</b> Copernicus, <i>On the Revolution of the Spheres</i></td>
+                <td><b>1547</b> Death of Henry VIII; accession of Protestant Edward VI</td>
+              </tr>
+              <tr>
+                <td><b>1547</b> <i>Book of Homilies</i></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><b>1549</b> <i>Book of Common Prayer</i></td>
+                <td><b>1553</b> Death of Edward VI; failed attempt to put Protestant Lady Jane Grey on throne; accession of Catholic Queen Mary, daughter of Catherine of Aragon</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><b>1555-56</b> Archbishop Cranmer and former bishops Latimer and Ridley burned at the stake</td>
+              </tr>
+              <tr>
+                <td><b>1557</b> Tottel's <i>Songs and Sonnets</i> (printing poems by Wyatt, Surrey, and others)</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><b>1558</b> Mary dies; succeeded by Protestant Elizabeth I</td>
+              </tr>
+              <tr>
+                <td><b>1563</b> John Foxe, <i>Acts and Monuments</i></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><b>1565</b> Thomas Norton and Thomas Sackville, <i>Gorboduc</i>, first English blank-verse tragedy (acted in 1561)</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><b>1567</b> Arthur Golding, translation of Ovid's <i>Metamorphoses</i></td>
+                <td><b>1567-68</b> Mary, Queen of Scots, forced to abdicate; succeeded by her son James VI; Mary imprisoned in England</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><b>1570</b> Elizabeth I excommunicated by Pope Pius V</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><b>1572</b> St. Bartholomew's Day Massacre of French Protestants</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><b>1576</b> James Burbage's play house, The Theater, built in London</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><b>1577-80</b> Drake's circumnavigation of the globe</td>
+              </tr>
+              <tr>
+                <td><b>1578</b> John Lyly, <i>Euphues</i></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><b>1579</b> Edmund Spenser, <i>The Shepheardes Calender</i></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><b>1580</b> Montaigne, <i>Essais</i></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><b>1583</b> Irish rebellion crushed</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><b>1584-87</b> Sir Walter Raleigh's earliest attempts to colonize Virginia</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><b>1586-87</b> Mary, Queen of Scots, tried for treason and executed</td>
+              </tr>
+              <tr>
+                <td><b>ca. 1587-90</b> Marlowe's <i>Tamburlaine</i> acted. Shakespeare begins career as actor and playwright</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><b>1588</b> Thomas Hariot, <i>A Brief and True Report of . . . Virginia</i></td>
+                <td><b>1588</b> Failed invasion of the Spanish Armada</td>
+              </tr>
+              <tr>
+                <td><b>1589</b> Richard Hakluyt, <i>The Principal Navigations . . . of the English Nation</i></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><b>1590</b> Sir Philip Sidney, <i>Arcadia</i> (posthumously published); Spenser, <i>The Faerie Queene</i>, Books 1-3</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><b>1591</b> Sidney, <i>Astrophil and Stella</i> published</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><b>ca. 1592</b> John Donne's earliest poems circulating in manuscript</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><b>1595</b> Sidney, <i>The Defense of Poesy</i> published</td>
+                <td><b>1595</b> Ralegh's voyage to Guiana</td>
+              </tr>
+              <tr>
+                <td><b>1596</b> Spenser, <i>The Faerie Queene</i>, Books 4-6 (with Books 1-3)</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><b>1598</b> Ben Jonson, <i>Every Man in His Humor</i></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><b>1599</b> Globe Theater opens</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><b>1603</b> Elizabeth I dies; succeeded by James VI of Scotland (as James I), inaugurating the Stuart dynasty</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p class="prose">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. <a id="naT1-2" class="naT1">Vivamus ornare odio arcu</a>, non tincidunt nisl feugiat vel. Quisque cursus sit amet tortor et fringilla. Aenean sed magna et ex fermentum hendrerit in sed elit. Nam cursus eros vel purus rutrum, et dictum erat lacinia. Nunc quis sem a nibh porttitor sollicitudin id id velit. Aenean fermentum nec turpis vitae tempor. Quisque sem purus, fringilla et tempor sit amet, vulputate sed sem. Integer sed nibh vehicula nibh convallis imperdiet a vel sem. Vestibulum feugiat varius lectus. Vivamus feugiat dapibus turpis vel vulputate. Aliquam non nibh euismod, tristique ligula eu, rhoncus libero. Curabitur in nunc eget nisi fermentum volutpat a non nisi.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare odio arcu, non tincidunt nisl feugiat vel. Quisque cursus sit amet tortor et fringilla. Aenean sed magna et ex fermentum hendrerit in sed elit. Nam cursus eros vel purus rutrum, et dictum erat lacinia. Nunc quis sem a nibh porttitor sollicitudin id id velit. Aenean fermentum nec turpis vitae tempor. Quisque sem purus, fringilla et tempor sit amet, vulputate sed sem. Integer sed nibh vehicula nibh convallis imperdiet a vel sem. Vestibulum feugiat varius lectus. Vivamus feugiat dapibus turpis vel vulputate. Aliquam non nibh euismod, tristique ligula eu, rhoncus libero. Curabitur in nunc eget nisi fermentum volutpat a non nisi.
+          </p>
+
+          <!-- BEGIN naOL overlay modules for IMAGE OVERLAY functionality, see naOL.html for dependencies -->     
+          <div class="col-xs-12 center">
+            <a class="imgOverlay" href="http://placekitten.com/900/830"><img src="http://placekitten.com/900/830" class="thumbnail" width="460" /></a>
+          </div>
+          <div class="col-xs-12 center">
+            <a class="imgOverlay" href="img/naOL/example.jpg" title="This is a caption for this image. You can even &lt;em&gt;style&lt;/em&gt; text."><img src="img/naOL/imgOverlayWCapThumb.jpg" class="thumb" /></a>
+          </div>
+          <!-- END naOL overlay modules -->
+
+          <p class="prose">
+            <!-- BEGIN naM2 marginal page reference module, see naM2.html for dependencies. This is the INLINE element variant. --> <span class="naM2 hidden-xs pull-right"><span class="naelFullD">p. 785</span></span> <!-- END naM2 marginal page reference module -->Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare odio arcu, non tincidunt nisl feugiat vel. Quisque cursus sit amet tortor et fringilla. Aenean sed magna et ex fermentum hendrerit in sed elit. Nam cursus eros vel purus rutrum, et dictum erat lacinia. Nunc quis sem a nibh porttitor sollicitudin id id velit. Aenean fermentum nec turpis vitae tempor. Quisque sem purus, fringilla et tempor sit amet, vulputate sed sem. Integer sed nibh vehicula nibh convallis imperdiet a vel sem. Vestibulum feugiat varius lectus. Vivamus feugiat dapibus turpis vel vulputate. Aliquam non nibh euismod, tristique ligula eu, rhoncus libero. Curabitur in nunc eget nisi fermentum volutpat a non nisi.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare odio arcu, non tincidunt nisl feugiat vel. Quisque cursus sit amet tortor et fringilla. Aenean sed magna et ex fermentum hendrerit in sed elit. <a id="naT1-3" class="naT1">Nam cursus eros</a> vel purus rutrum, et dictum erat lacinia. Nunc quis sem a nibh porttitor sollicitudin id id velit. Aenean fermentum nec turpis vitae tempor. Quisque sem purus, fringilla et tempor sit amet, vulputate sed sem. Integer sed nibh vehicula nibh convallis imperdiet a vel sem. Vestibulum feugiat varius lectus. Vivamus feugiat dapibus turpis vel vulputate. Aliquam non nibh euismod, tristique ligula eu, rhoncus libero. Curabitur in nunc eget nisi fermentum volutpat a non nisi.
+          </p>
+
+          <div class="spA spB center"> <!-- Again, these classes applied just for example! -->
+            <!-- BEGIN naTv overflow textbox module for VERSE passages, see naTv.html for dependencies -->      
+            <div class="naTv vst-draggable">
+              <p class="linVerse">
+                <span class="linNum">5</span><span class="linVerseChar">rosalind</span> So was I when your highness banished him.<br/>
+                Treason is not inherited, my lord;<br/>
+                Or if we did derive it from our friends,<br/>
+                What's that to me? My father was no traitor.<br/>
+                Then, good my liege, mistake me not so much<br />
+                <span class="linNum">10</span>To think my poverty is treacherous.
+              </p>
+              <p class="linVerse">
+                <span class="linVerseChar">duke frederick</span> So was I when your highness banished him.<br/>
+                Treason is not inherited, my lord;<br/>
+                Or if we did derive it from our friends,<br/>
+                What's that to me? My father was no traitor.<br/>
+                <span class="linNum">15</span>Then, good my liege, mistake me not so much<br/>
+                To think my poverty is treacherous.
+              </p>
+              <p class="linVerse">
+                <span class="linVerseChar">celia</span> So was I when your highness banished him.<br/>
+                Treason is not inherited, my lord;<br/>
+                Or if we did derive it from our friends,<br/>
+                <span class="linNum">20</span>What's that to me? My father was no traitor.<br/>
+                Then, good my liege, mistake me not so much<br />
+                To think my poverty is treacherous.
+              </p>
+            </div>
+            <!-- END naTv overflow textbox module -->     
+          </div>
+
+          <div class="naM2 hidden-xs pull-right"><span class="naalShorter">p. 32</span><span class="naelMAuth1">p. 324</span></div>
+          <p class="prose">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare odio arcu, non tincidunt nisl feugiat vel. Quisque cursus sit amet tortor et fringilla. Aenean sed magna et ex fermentum hendrerit in sed elit. Nam cursus eros vel purus rutrum, et dictum erat lacinia. Nunc quis sem a nibh porttitor sollicitudin id id velit. Aenean fermentum nec turpis vitae tempor. Quisque sem purus, fringilla et tempor sit amet, vulputate sed sem. Integer sed nibh vehicula nibh convallis imperdiet a vel sem. Vestibulum feugiat varius lectus. Vivamus feugiat dapibus turpis vel vulputate. Aliquam non nibh euismod, tristique ligula eu, rhoncus libero. Curabitur in nunc eget nisi fermentum volutpat a non nisi.
+          </p>
+
+          <!-- BEGIN naOL overlay modules for TEXT and ZOOM OVERLAY functionality, see naOL.html for dependencies -->           
+          <div class="col-xs-12 center">
+            <a class="txtOverlay" href="#fancyDiv"><img src="img/naOL/txtOverlayThumb.jpg" class="thumb" /></a>
+          </div>
+
+          <div class="col-xs-12 center">
+            <a class="zoomOverlay" href="#zoomBox"><img src="img/naOL/imgOverlayWZoomThumb.jpg" class="thumb" /></a>
+          </div>
+          <!-- END naOL overlay modules -->
+
+          <div class="naM2 hidden-xs pull-right"><span class="nawolFullC">p. 1242</span></div>
+          <p class="prose">
+            Lorem ipsum dolor sit amet, <a id="naT1-4" class="naT1">consectetur adipiscing</a> elit. Vivamus ornare odio arcu, non tincidunt nisl feugiat vel. Quisque cursus sit amet tortor et fringilla. Aenean sed magna et ex fermentum hendrerit in sed elit. Nam cursus eros vel purus rutrum, et dictum erat lacinia. Nunc quis sem a nibh porttitor sollicitudin id id velit. Aenean fermentum nec turpis vitae tempor. Quisque sem purus, fringilla et tempor sit amet, vulputate sed sem. Integer sed nibh vehicula nibh convallis imperdiet a vel sem. Vestibulum feugiat varius lectus. Vivamus feugiat dapibus turpis vel vulputate. Aliquam non nibh euismod, tristique ligula eu, rhoncus libero. Curabitur in nunc eget nisi fermentum volutpat a non nisi.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare odio arcu, non tincidunt nisl feugiat vel. Quisque cursus sit amet tortor et fringilla. Aenean sed magna et ex fermentum hendrerit in sed elit. Nam cursus eros vel purus rutrum, et dictum erat lacinia. Nunc quis sem a nibh porttitor sollicitudin id id velit. Aenean fermentum nec turpis vitae tempor. Quisque sem purus, fringilla et tempor sit amet, vulputate sed sem. Integer sed nibh vehicula nibh convallis imperdiet a vel sem. Vestibulum feugiat varius lectus. Vivamus feugiat dapibus turpis vel vulputate. Aliquam non nibh euismod, tristique ligula eu, rhoncus libero. Curabitur in nunc eget nisi fermentum volutpat a non nisi.
+            <span class="naM2 hidden-xs pull-right"><span class="naelFullA">p. 44</span><span class="naelMAuth1">p. 765</span></span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare odio arcu, non <a id="naT1-5" class="naT1">tincidunt</a> nisl feugiat vel. Quisque cursus sit amet tortor et fringilla. Aenean sed magna et ex fermentum hendrerit in sed elit. Nam cursus eros vel purus rutrum, et dictum erat lacinia. Nunc quis sem a nibh porttitor sollicitudin id id velit. Aenean fermentum nec turpis vitae tempor. Quisque sem purus, fringilla et tempor sit amet, vulputate sed sem. Integer sed nibh vehicula nibh convallis imperdiet a vel sem. Vestibulum feugiat varius lectus. Vivamus feugiat dapibus turpis vel vulputate. Aliquam non nibh euismod, tristique ligula eu, rhoncus libero. Curabitur in nunc eget nisi fermentum volutpat a non nisi.
+          </p>
+
+        </div>
+      </div>
+    </main> <!-- /content -->
+
+    <!-- BEGIN naOL TEXT OVERLAY content -->
+    <div id="fancyDiv" class="naOL-hide">
+
+      <p class="prose-NoIndent">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare odio arcu, non tincidunt nisl feugiat vel. Quisque cursus sit amet tortor et fringilla. Aenean sed magna et ex fermentum hendrerit in sed elit. Nam cursus eros vel purus rutrum, et dictum erat lacinia. Nunc quis sem a nibh porttitor sollicitudin id id velit. Aenean fermentum nec turpis vitae tempor. Quisque sem purus, fringilla et tempor sit amet, vulputate sed sem. Integer sed nibh vehicula nibh convallis imperdiet a vel sem. Vestibulum feugiat varius lectus. Vivamus feugiat dapibus turpis vel vulputate. Aliquam non nibh euismod, tristique ligula eu, rhoncus libero. Curabitur in nunc eget nisi fermentum volutpat a non nisi.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare odio arcu, non tincidunt nisl feugiat vel. Quisque cursus sit amet tortor et fringilla. Aenean sed magna et ex fermentum hendrerit in sed elit. Nam cursus eros vel purus rutrum, et dictum erat lacinia. Nunc quis sem a nibh porttitor sollicitudin id id velit. Aenean fermentum nec turpis vitae tempor. Quisque sem purus, fringilla et tempor sit amet, vulputate sed sem. Integer sed nibh vehicula nibh convallis imperdiet a vel sem. Vestibulum feugiat varius lectus. Vivamus feugiat dapibus turpis vel vulputate. Aliquam non nibh euismod, tristique ligula eu, rhoncus libero. Curabitur in nunc eget nisi fermentum volutpat a non nisi.
+      </p>
+
+    </div>
+    <!-- END naOL TEXT OVERLAY content -->
+
+    <!-- BEGIN naOL ZOOM OVERLAY content -->
+    <section id="zoomBox" class="naOL-hide vst-draggable">
+      <div class="panzoom-parent">
+        <img class="panzoom" src="img/naOL/example.jpg" />
+      </div>
+      <div class="zoomButtons">
+        <button class="zoom-in" data-role="none"></button>
+        <button class="zoom-out" data-role="none"></button>
+        <button class="zoom-reset" data-role="none"></button>
+      </div>
+    </section>
+    <!-- END naOL ZOOM OVERLAY content -->
+
+    <!-- / HIDDEN CONTENT -->
+
+
+  </div> <!-- /page -->
+
 
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
   <script>
