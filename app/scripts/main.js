@@ -1,3 +1,5 @@
+'use strict';
+
 /******************
 * BS FUNCTIONS
 ******************/
@@ -9,31 +11,36 @@ $(function () {
 /******************
 * IMAGE EXPANDER
 ******************/
-$('.expander-click').on('click', function() {
+$('.expander-click').click(function() {
 	var $expander = $(this).parent('.expander');
 	var $icon = $(this).find('.glyphicon');
 
 	$expander.swapClass('expander-collapsed', 'expander-expanded');
 	$icon.swapClass('glyphicon-menu-down', 'glyphicon-menu-up');
-})
+});
 
 $.fn.swapClass = function (oldClass, newClass) {
 	$(this).toggleClass(oldClass).toggleClass(newClass);
-}
+};
 
 /******************
 * TOGGLE BUTTONS
 ******************/
-$('#pageNumbers').on('click', function() {
+$('#pageNumbers').click(function() {
 	$('.pagebreak').toggle();
 	$('.naToggle').swapClass('col-sm-9 col-md-7', 'col-sm-10 col-md-8');
 	$(this).toggleClass('inactive');
-})
+});
 
-$('#annotations').on('click', function() {
-	// $('[data-toggle="tooltip"]').tooltip('disable').toggleClass('tipped');
+$('#annotations').click(function() {
 	$(this).toggleClass('inactive');
-})
+	$('[data-toggle="tooltip"]').toggleClass('tipped');
+	if ($(this).hasClass('inactive')) {
+		$('[data-toggle="tooltip"]').tooltip('disable').removeAttr('tabindex');
+	} else {
+		$('[data-toggle="tooltip"]').tooltip('enable').attr('tabindex', 0);
+	}
+});
 
 
 /******************
@@ -52,11 +59,11 @@ jQuery('img.svg').each(function(){
 
         // Add replaced image's ID to the new SVG
         if(typeof imgID !== 'undefined') {
-        	$svg = $svg.attr('id', imgID);
+			$svg = $svg.attr('id', imgID);
         }
         // Add replaced image's classes to the new SVG
         if(typeof imgClass !== 'undefined') {
-        	$svg = $svg.attr('class', imgClass+' replaced-svg');
+			$svg = $svg.attr('class', imgClass + ' replaced-svg');
         }
 
         // Remove any invalid XML tags as per http://validator.w3.org
@@ -64,7 +71,7 @@ jQuery('img.svg').each(function(){
 
         // Check if the viewport is set, if the viewport is not set the SVG wont't scale.
         if(!$svg.attr('viewBox') && $svg.attr('height') && $svg.attr('width')) {
-        	$svg.attr('viewBox', '0 0 ' + $svg.attr('height') + ' ' + $svg.attr('width'))
+			$svg.attr('viewBox', '0 0 ' + $svg.attr('height') + ' ' + $svg.attr('width'));
         }
 
         // Replace image with new SVG
