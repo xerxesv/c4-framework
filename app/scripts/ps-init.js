@@ -1,5 +1,7 @@
 /******************
 * PHOTOSWIPE INITIALIZER
+* modified by ESY from
+* http://webdesign.tutsplus.com/tutorials/the-perfect-lightbox-using-photoswipe-with-jquery--cms-23587
 ******************/
 (function($) {
     'use strict';
