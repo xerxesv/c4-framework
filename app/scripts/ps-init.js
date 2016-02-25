@@ -9,15 +9,15 @@
 
     $.fn.photoswipe = function(config) {
 
-        var _config = $.extend({
+        var settings = $.extend({
             bgOpacity: 0.7,
             showHideOpacity: true
         }, config) || {};
 
         $(this).each( function() {
             var $pic     = $(this),
+                items    = [],
                 getItems = function() {
-                    var items = [];
                     $pic.find('figure').each(function() {
                         var $a      = $(this).find('a'),
                             $thumb  = $(this).find('img'),
@@ -31,10 +31,10 @@
                         var item = {
                             src : $href,
                             w   : $width,
-                            h   : $height,
-                        }
+                            h   : $height
+                        };
 
-                        if ($cap.length>0) {
+                        if ($cap.length > 0) {
                             item.title = $cap.html();
                         }
 
@@ -42,31 +42,31 @@
                         items.push(item);
                     });
                     return items;
-                }
+                };
 
-            var items = getItems();
+            items = getItems();
 
             $.each(items, function(index, value) {
                 image[index]     = new Image();
-                image[index].src = value['src'];
+                image[index].src = value.src;
             });
 
             $pic.on('click', 'figure', function(event) {
                 event.preventDefault();
-                
+
                 var $index = $('figure').index(this);
                 var options = $.extend({
                     index: $index,
-                    getThumbBoundsFn: function($index) {
-                        var thumbnail   = items[$index].thumb,
+                    getThumbBoundsFn: function(index) {
+                        var thumbnail   = items[index].thumb,
                             rect        = thumbnail.offset();
                         return {x:rect.left, y:rect.top, w:thumbnail.width()};
                     }
-                }, _config);
+                }, settings);
 
                 var lightBox = new PhotoSwipe($pswp, PhotoSwipeUI_Default, items, options);
                 lightBox.init();
             });
         });
-    }
+    };
 })(jQuery);

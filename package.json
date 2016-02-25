@@ -38,7 +38,11 @@
       "quotes": [
         2,
         "single"
-      ]
+      ],
+      "no-multi-spaces": false,
+      "key-spacing": false,
+      "no-undef": false,
+      "camelcase": false
     }
   }
 }
