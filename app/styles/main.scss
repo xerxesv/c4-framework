@@ -1,10 +1,26 @@
 $icon-font-path: '../fonts/';
 
+
+@import url(https://fonts.googleapis.com/css?family=Caudex:400,400italic,700,700italic);
+
+@import url(https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700,700italic);
+@import url(https://fonts.googleapis.com/css?family=PT+Serif+Caption:400,400italic);
+
+@import url(https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic);
+@import url(https://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700);
+
+$font-family-sans-serif:  "PT Sans", Helvetica, Arial, sans-serif;
+$font-family-serif:       "PT Serif", "Times New Roman", Times, serif;
+$font-family-base:        $font-family-serif;
+$font-size-base:		  16px;
+$line-height-base:		  1.5;
+
 // bower:scss
 @import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 @import "naRH.scss";
 @import "naM2.scss";
 // endbower
+
 
 /******************
 * 
@@ -14,7 +30,6 @@ figure {
 	margin-bottom: 1em;
 	img {
 		width: 100%;
-		margin-bottom: 0.5em;
 	}
 	figcaption {
 		font-size: 0.8em;
@@ -22,6 +37,9 @@ figure {
 		border: 1px solid $table-border-color;
 		padding: 10px;
 		line-height: 1.2;
+	}
+	&.thumbnail {
+		max-width: 80%;
 	}
 }
 
@@ -52,13 +70,17 @@ h1.naRH-Title {
 		clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
 		.glyphicon {
 			transition: all 350ms ease-out;
-			top: calc(100% - 1em - 13px);
+			top: calc(100% - 1em - 7px);
 		}
 	}
 
 	.expander-click {
 		cursor: pointer;
-		position: relative;    
+		position: relative;
+		border: none;
+		background-color: transparent;
+		width: 100%;
+		margin-bottom: 0.5em;
 	}
 
 	.glyphicon {
@@ -87,6 +109,7 @@ h1.naRH-Title {
 	width: 4.75em;
 	a[epub\:type~="pagebreak"] {
 		display: block;
+		font-size: 0.8em;
 		text-decoration: none;
 		cursor: pointer;
 		padding: 0 14px 0 5px;
@@ -124,6 +147,7 @@ dfn.tipped {
  			display: inline-block;
  			border: none;
  			text-align: center;
+ 			text-transform: uppercase;
  			width: calc(50% - 10px);
  		}
  	}
@@ -205,4 +229,51 @@ dfn.tipped {
 	.icon-text {
 		font-size: 0.8em;
 	}
+}
+
+/******************
+* VERSE FORMATTING
+*******************/
+
+.verse {
+	position: relative;
+	font-family: $font-family-serif;
+	border: none;
+	margin: 1em 0 0;
+	padding-left: 3em;
+	overflow-x: scroll;
+	.scene-number {
+		text-align: center;
+	}
+	.stage-direction {
+
+	}
+	.verse-title {
+		
+	}
+	h3.verse-character,
+	h4.verse-character,
+	h5.verse-character {
+		margin: 0.5em 0 0;		
+	}
+	.verse-character {
+		text-transform: lowercase;
+		font-variant: small-caps;
+	}
+	.verse-line {
+		position: relative;
+		margin: 0 0 0 1em;
+		white-space: nowrap;
+		&:before {		
+			content: attr(data-lineNum);
+			position: absolute;
+			left: -5em;
+			top: 0.2em;
+			font-size: 0.8em;
+		}
+		&:after {
+		    content: '\A';
+		    white-space: pre;
+		}
+	}	
 }

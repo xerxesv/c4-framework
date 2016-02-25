@@ -1,11 +1,14 @@
 'use strict';
 
 /******************
-* BS FUNCTIONS
+* INITIALIZE!
 ******************/
 $(function () {
 	$('[data-toggle="tooltip"]').tooltip();
 	$('[data-toggle="popover"]').popover();
+	$('[data-toggle="photoswipe"').photoswipe({
+		bgOpacity: 0.7
+	});
 });
 
 /******************
@@ -41,7 +44,6 @@ $('#annotations').click(function() {
 		$('[data-toggle="tooltip"]').tooltip('enable').attr('tabindex', 0);
 	}
 });
-
 
 /******************
 * Replace all SVG images with inline SVG
