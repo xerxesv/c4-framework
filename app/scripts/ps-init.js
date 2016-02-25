@@ -1,6 +1,6 @@
 /******************
 * PHOTOSWIPE INITIALIZER
-* modified by ESY from
+* jQuery wrapper, modified by ESY from
 * http://webdesign.tutsplus.com/tutorials/the-perfect-lightbox-using-photoswipe-with-jquery--cms-23587
 ******************/
 (function($) {
@@ -10,13 +10,9 @@
     var image = [];
 
     $.fn.photoswipe = function(config) {
+        var gid = 0;
 
-        var settings = $.extend({
-            bgOpacity: 0.7,
-            showHideOpacity: true
-        }, config) || {};
-
-        $(this).each( function() {
+        $(this).each(function() {
             var $pic     = $(this),
                 items    = [],
                 getItems = function() {
@@ -31,9 +27,10 @@
                             $height = $size[1];
 
                         var item = {
-                            src : $href,
-                            w   : $width,
-                            h   : $height
+                            src     : $href,
+                            w       : $width,
+                            h       : $height,
+                            group   : gid
                         };
 
                         if ($cap.length > 0) {
@@ -46,6 +43,14 @@
                     return items;
                 };
 
+            var pid = 0;
+            $(this).find('figure').each(function() {
+                $(this).attr('data-index', pid);
+                pid += 1;
+            });
+            gid += 1;            
+            $(this).attr('data-group', gid);            
+
             items = getItems();
 
             $.each(items, function(index, value) {
@@ -53,18 +58,22 @@
                 image[index].src = value.src;
             });
 
-            $pic.on('click', 'figure', function(event) {
+            $pic.on('click', 'a', function(event) {
                 event.preventDefault();
 
-                var $index = $('figure').index(this);
+                var $fig    = $(this).closest('figure'),
+                    $index  = $fig.data('index');
                 var options = $.extend({
+                    bgOpacity: 0.7,
+                    showHideOpacity: true,
                     index: $index,
+                    galleryUID: items[$index].group,
                     getThumbBoundsFn: function(index) {
                         var thumbnail   = items[index].thumb,
                             rect        = thumbnail.offset();
                         return {x:rect.left, y:rect.top, w:thumbnail.width()};
                     }
-                }, settings);
+                }, config) || {};
 
                 var lightBox = new PhotoSwipe($pswp, PhotoSwipeUI_Default, items, options);
                 lightBox.init();

@@ -28,18 +28,12 @@ $line-height-base:		  1.5;
 
 figure {
 	margin-bottom: 1em;
-	img {
-		width: 100%;
-	}
 	figcaption {
 		font-size: 0.8em;
 		background-color: $gray-lighter;
 		border: 1px solid $table-border-color;
 		padding: 10px;
 		line-height: 1.2;
-	}
-	&.thumbnail {
-		max-width: 80%;
 	}
 }
 

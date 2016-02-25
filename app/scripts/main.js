@@ -6,7 +6,7 @@
 $(function () {
 	$('[data-toggle="tooltip"]').tooltip();
 	$('[data-toggle="popover"]').popover();
-	$('[data-toggle="photoswipe"').photoswipe({
+	$('[data-toggle="photoswipe"]').photoswipe({
 		bgOpacity: 0.7
 	});
 });
