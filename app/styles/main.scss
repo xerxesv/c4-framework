@@ -1,161 +1,158 @@
 $icon-font-path: '../fonts/';
-
-
 @import url(https://fonts.googleapis.com/css?family=Caudex:400,400italic,700,700italic);
-
 @import url(https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700,700italic);
 @import url(https://fonts.googleapis.com/css?family=PT+Serif+Caption:400,400italic);
-
 @import url(https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic);
 @import url(https://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700);
 
-$font-family-sans-serif:  "PT Sans", Helvetica, Arial, sans-serif;
-$font-family-serif:       "PT Serif", "Times New Roman", Times, serif;
-$font-family-base:        $font-family-serif;
-$font-size-base:		  16px;
-$line-height-base:		  1.5;
-
 // bower:scss
 @import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
-@import "naRH.scss";
-@import "naM2.scss";
 // endbower
-
 
 /******************
 * 
 *******************/
 
+@mixin sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
 figure {
-	margin-bottom: 1em;
-	figcaption {
-		font-size: 0.8em;
-		background-color: $gray-lighter;
-		border: 1px solid $table-border-color;
-		padding: 10px;
-		line-height: 1.2;
-	}
+  margin-bottom: 1em;
+  figcaption {
+    font-size: 0.8em;
+    background-color: $gray-lighter;
+    border: 1px solid $table-border-color;
+    padding: 10px;
+    line-height: 1.2;
+  }
 }
 
 h1.naRH-Title {
-	margin-top: 0;
-	margin-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
 }
+
 
 /******************
 * IMAGE EXPANDER
 *******************/
+
 .expander {
-	overflow: hidden;
-
-	&.expander-collapsed {
-		transition: all 350ms ease-out;
-		max-height: 165px;
-		clip-path: polygon(0% 0%, 100% 0%, 100% 165px, 0% 165px);
-		.glyphicon {
-			transition: all 350ms ease-out;
-			top: calc(165px - 1em - 5px);
-		}
-	}
-
-	&.expander-expanded {
-		transition: all 350ms ease-out;
-		max-height: 1080px;
-		clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-		.glyphicon {
-			transition: all 350ms ease-out;
-			top: calc(100% - 1em - 7px);
-		}
-	}
-
-	.expander-click {
-		cursor: pointer;
-		position: relative;
-		border: none;
-		background-color: transparent;
-		width: 100%;
-		margin-bottom: 0.5em;
-	}
-
-	.glyphicon {
-		position: absolute;
-		left: calc(50% - 0.5em);
-		font-size: 2em;
-		color: $body-bg;
-		background-color: $gray-dark;
-		padding: 5px 10px 0;
-		border: 1px solid $gray-lighter;
-		border-bottom: none;
-		border-top-right-radius: 10px;
-		border-top-left-radius: 10px;
-	}
+  overflow: hidden;
+  &.expander-collapsed {
+    transition: all 350ms ease-out;
+    max-height: 165px;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 165px, 0% 165px);
+    .glyphicon {
+      transition: all 350ms ease-out;
+      top: calc(165px - 1em - 5px);
+    }
+  }
+  &.expander-expanded {
+    transition: all 350ms ease-out;
+    max-height: 1080px;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    .glyphicon {
+      transition: all 350ms ease-out;
+      top: calc(100% - 1em - 7px);
+    }
+  }
+  .expander-click {
+    cursor: pointer;
+    position: relative;
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    margin-bottom: 0.5em;
+  }
+  .glyphicon {
+    position: absolute;
+    left: calc(50% - 0.5em);
+    font-size: 2em;
+    color: $body-bg;
+    background-color: $gray-dark;
+    padding: 5px 10px 0;
+    border: 1px solid $gray-lighter;
+    border-bottom: none;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+  }
 }
+
 
 /******************
 * PAGEBREAKS
 *******************/
 
 .pagebreak {
-	float: right;
-	margin-right: -7em;
-	text-align: right;
-	text-indent: 0;
-	width: 4.75em;
-	a[epub\:type~="pagebreak"] {
-		display: block;
-		font-size: 0.8em;
-		text-decoration: none;
-		cursor: pointer;
-		padding: 0 14px 0 5px;
-		margin-top: 3px;
-		color: $gray-dark;
-		background-color: $gray-lighter;
-	}
+  float: right;
+  margin-right: -7em;
+  text-align: right;
+  text-indent: 0;
+  width: 4.75em;
+  a {
+    display: block;
+    font-size: 0.8em;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 0 14px 0 5px;
+    margin-top: 3px;
+    color: $gray-dark;
+    background-color: $gray-lighter;
+  }
 }
 
 
 /******************
 * TOOLTIPS
 *******************/
+
 dfn.tipped {
-	cursor: pointer;
-	border-bottom: 1px dotted rgb(0, 0, 0);
+  cursor: pointer;
+  border-bottom: 1px dotted rgb(0, 0, 0);
 }
+
 
 /******************
  * TABLE SCROLL
  ******************/
 
- .table-scroll {
- 	table-layout: fixed;
- 	width: 100%;
- 	border-spacing: 0;
-
- 	tbody, thead, thead tr {
- 		display: block;
- 	}
-
- 	thead tr {
- 		background-color: $gray-lighter; 		
- 		th {
- 			display: inline-block;
- 			border: none;
- 			text-align: center;
- 			text-transform: uppercase;
- 			width: calc(50% - 10px);
- 		}
- 	}
-
- 	tr td {
- 		width: 50%;
- 	}
-
- 	tbody {
- 		height: 300px;
- 		overflow-y: scroll;
- 		overflow-x: hidden;
- 	}
- }
+.table-scroll {
+  table-layout: fixed;
+  width: 100%;
+  border-spacing: 0;
+  tbody,
+  thead,
+  thead tr {
+    display: block;
+  }
+  thead tr {
+    background-color: $gray-lighter;
+    th {
+      display: inline-block;
+      border: none;
+      text-align: center;
+      text-transform: uppercase;
+      width: calc(50% - 10px);
+    }
+  }
+  tr td {
+    width: 50%;
+  }
+  tbody {
+    height: 300px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+}
 
 
 /******************
@@ -163,111 +160,127 @@ dfn.tipped {
 *******************/
 
 .naRH-ButtonsContainer>* {
-	display: inline-block;
+  display: inline-block;
 }
 
-.btn-icon, .btn-icon:hover, .btn-icon:focus, .btn-icon:active {
-	border-color: transparent;
+.btn-icon,
+.btn-icon:hover,
+.btn-icon:focus,
+.btn-icon:active {
+  border-color: transparent;
 }
-.btn-icon, .btn-icon:active, .btn-icon.active, .btn-icon[disabled], fieldset[disabled] .btn-icon {
-	background-color: transparent;
-	box-shadow: none;
+
+.btn-icon,
+.btn-icon:active,
+.btn-icon.active,
+.btn-icon[disabled],
+fieldset[disabled] .btn-icon {
+  background-color: transparent;
+  box-shadow: none;
 }
 
 .btn-icon {
-	color: $gray-dark;
-	font-weight: normal;
-	border-radius: 0;
+  color: $gray-dark;
+  font-weight: normal;
+  border-radius: 0;
 }
 
 .btn-icon:focus path {
-	fill: $brand-primary;
+  fill: $brand-primary;
 }
 
 .inactive {
-	opacity: 0.5;
-	path {
-		stroke-opacity: 0.5;
-	}
+  opacity: 0.5;
+  path {
+    stroke-opacity: 0.5;
+  }
 }
+
 
 /******************
 * ICONS W/TEXT
 *******************/
 
 .icon {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
-	margin-right: 0.5em;
-	min-width: 75px;
-	&.icon-top {
-		flex-direction: column;
-	}
-	&.icon-left {
-		flex-direction: row;
-	}
-	&.icon-right {
-		flex-direction: row-reverse;
-	}
-	* {
-		margin-top: 0.2em;
-	}
-	*:first-child {
-		margin-top: -0.2em;
-	}
-	.icon-img {
-		font-size: 1em;
-	}
-	.icon-text {
-		font-size: 0.8em;
-	}
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0.5em;
+  min-width: 75px;
+  &.icon-top {
+    flex-direction: column;
+  }
+  &.icon-left {
+    flex-direction: row;
+  }
+  &.icon-right {
+    flex-direction: row-reverse;
+  }
+  * {
+    margin-top: 0.2em;
+  }
+  *:first-child {
+    margin-top: -0.2em;
+  }
+  .icon-img {
+    font-size: 1em;
+  }
+  .icon-text {
+    font-size: 0.8em;
+  }
 }
+
 
 /******************
 * VERSE FORMATTING
 *******************/
 
 .verse {
-	position: relative;
-	font-family: $font-family-serif;
-	border: none;
-	margin: 1em 0 0;
-	padding-left: 3em;
-	overflow-x: scroll;
-	.scene-number {
-		text-align: center;
-	}
-	.stage-direction {
+  position: relative;
+  font-family: $font-family-serif;
+  border: none;
+  margin: 1em 0 0;
+  padding-left: 3em;
+  overflow-x: scroll;
+  .scene-number {
+    text-align: center;
+  }
+  .stage-direction {}
+  .verse-title {}
+  h3.verse-character,
+  h4.verse-character,
+  h5.verse-character {
+    margin: 0.5em 0 0;
+  }
+  .verse-character {
+    text-transform: lowercase;
+    font-variant: small-caps;
+  }
+  .verse-line {
+    position: relative;
+    margin: 0 0 0 1em;
+    white-space: nowrap;
+    &:before {
+      content: attr(data-lineNum);
+      position: absolute;
+      left: -5em;
+      top: 0.2em;
+      font-size: 0.8em;
+    }
+    &:after {
+      content: '\A';
+      white-space: pre;
+    }
+  }
+}
 
-	}
-	.verse-title {
-		
-	}
-	h3.verse-character,
-	h4.verse-character,
-	h5.verse-character {
-		margin: 0.5em 0 0;		
-	}
-	.verse-character {
-		text-transform: lowercase;
-		font-variant: small-caps;
-	}
-	.verse-line {
-		position: relative;
-		margin: 0 0 0 1em;
-		white-space: nowrap;
-		&:before {		
-			content: attr(data-lineNum);
-			position: absolute;
-			left: -5em;
-			top: 0.2em;
-			font-size: 0.8em;
-		}
-		&:after {
-		    content: '\A';
-		    white-space: pre;
-		}
-	}	
+/******************
+* PHOTOSWIPE
+*******************/
+
+.psGallery {
+  figcaption {
+    @include sr-only;
+  }
 }

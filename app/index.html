@@ -20,13 +20,17 @@
   <!-- build:css styles/main.css -->
   <link rel="stylesheet" href="styles/main.css">
   <!-- endbuild -->
+  
+  <!--[if lt IE 9]>
+    <script src="bower_components/html5shiv/dist/html5shiv.js"></script>
+  <![endif]-->
 
   <!-- build:js scripts/vendor/modernizr.js -->
   <script src="/bower_components/modernizr/modernizr.js"></script>
   <!-- endbuild -->
 </head>
 
-  <!--
+<!--
 * This is a swatch of all interactive features in the Norton Ebook Development Kit.
 * All sections marked with  BEGIN  and  END  flags can be copied as
 * self-contained widgets and will work on any page as long as ALL DEPENDENCIES are
@@ -36,61 +40,63 @@
 -->
 
 <!-- For Norton Anthologies, printing is forbidden on all pages. -->
+
 <body class="hidden-print">
   <!--[if lt IE 10]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
+  <![endif]-->
 
-    <!-- Start jQuery Mobile page zone -->
+  <!-- Start jQuery Mobile page zone -->
 
-    <div data-role="page">
+  <div data-role="page">
 
-
-      <!-- BEGIN naRH running head module, see naRH.html for dependencies. -->
-      <header class="naRH">
-        <div class="row">
-          <h1 class="naRH-Title col-xs-12 col-sm-6">
+    <!-- BEGIN naRH running head module, see naRH.html for dependencies. -->
+    <header class="naRH">
+      <div class="row">
+        <h1 class="naRH-Title col-xs-12 col-sm-6">
             <div class="naRH-TitleContainer"><span class="naRH-naTitle">NEDKit</span> • <span class="naRH-subTitle">Examples</span></div>
           </h1>
-          <nav class="naRH-Buttons hidden-xs col-md-6">
-            <div class="naRH-ButtonsContainer">
-              <!-- <input alt="Page Numbers" id="pnToggle" src="img/naRH/menuIconPN.svg" type="image" data-role="none" />
+        <nav class="naRH-Buttons hidden-xs col-md-6">
+          <div class="naRH-ButtonsContainer">
+            <!-- <input alt="Page Numbers" id="pnToggle" src="img/naRH/menuIconPN.svg" type="image" data-role="none" />
               <input alt="Annotations" id="anToggle" src="img/naRH/menuIconAnnot.svg" type="image" data-role="none" />
               <input alt="StudySpace" id="ssToggle" src="img/naRH/studyspace_logo.svg" type="image" data-role="none" /> -->
 
-              <button class='btn btn-icon' id="pageNumbers">
-                <div class="icon icon-left">
-                  <img class="icon-img svg" src="images/menuIconPN.svg" alt="">
-                  <span class="icon-text">Page numbers</span>
-                </div>
-              </button>
+            <button class='btn btn-icon' id="pageNumbers">
+              <div class="icon icon-left">
+                <img class="icon-img svg" src="images/menuIconPN.svg" alt="">
+                <span class="icon-text">Page numbers</span>
+              </div>
+            </button>
 
-              <button class='btn btn-icon' id="annotations">
-                <div class="icon icon-left">
-                  <img class="icon-img svg" src="images/menuIconAnnot.svg" alt="">
-                  <span class="icon-text">Annotations</span>
-                </div>
-              </button>
+            <button class='btn btn-icon' id="annotations">
+              <div class="icon icon-left">
+                <img class="icon-img svg" src="images/menuIconAnnot.svg" alt="">
+                <span class="icon-text">Annotations</span>
+              </div>
+            </button>
 
-              <a href="http://books.wwnorton.com/studyspace/" target="_blank" class='btn btn-icon'>
-                <div class="icon icon-left">
-                  <img class="icon-img svg" src="images/studyspace_logo.svg" alt="">
-                  <span class="icon-text">StudySpace</span>
-                </div>
-              </a>
-            </div>
-          </nav>
-        </div>      
-      </header>
-      <hr class="naRH-Spacer" /> <!-- /header -->
-      <!-- END naRH running head module -->
+            <a href="http://books.wwnorton.com/studyspace/" target="_blank" class='btn btn-icon'>
+              <div class="icon icon-left">
+                <img class="icon-img svg" src="images/studyspace_logo.svg" alt="">
+                <span class="icon-text">StudySpace</span>
+              </div>
+            </a>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <hr class="naRH-Spacer" />
+    <!-- /header -->
+    <!-- END naRH running head module -->
 
-      <main role="main" class="container ui-content">
-        <div class="row"> 
-          <!-- To make text boxes rescale when toggling naM2 elements, add "naToggle" class to their containers. -->
-          <div class="naToggle col-xs-12 col-sm-9 col-sm-offset-1 col-md-7 col-md-offset-2"> <!-- If a section contains naM2 marginal page reference elements, decrease col-sm and col-md by 1 to account for extra space needed on the right. -->
+    <main role="main" class="container ui-content">
+      <div class="row">
+        <!-- To make text boxes rescale when toggling naM2 elements, add "naToggle" class to their containers. -->
+        <div class="naToggle col-xs-12 col-sm-9 col-sm-offset-1 col-md-7 col-md-offset-2">
+          <!-- If a section contains naM2 marginal page reference elements, decrease col-sm and col-md by 1 to account for extra space needed on the right. -->
 
-            <!-- BEGIN naIE image expand module, see naIE.html for dependencies. -->
+          <!-- BEGIN naIE image expand module, see naIE.html for dependencies. -->
           <!-- <div class="headerWrap">
             <div id="headerImage">
               <span class="headerExp" style="background-image:url('img/naIE/example.jpg'); background-position:0px 0px; background-size: cover;">
@@ -109,7 +115,7 @@
             </div>
           </div> -->
           <!-- END naIE image expand module -->
-          
+
           <!-- <figure class="expander expander-collapsed">
             <button class="expander-click">
               <img src="http://placekitten.com/500/550" alt="">
@@ -124,12 +130,11 @@
 
           <p class="prose-NoIndent">
 
-            <div class="pagebreak" >           
+            <div class="pagebreak">
               <a tabindex="0" class="naelFullD" epub:type="pagebreak" id="page432" role="button" data-toggle="popover" data-trigger="focus" data-placement="left" title="" data-content="Full Edition Volume 2 &amp; Full Edition Volume D">p. 432</a>
             </div>
 
-            <dfn tabindex="0" class="tipped" data-toggle="tooltip" data-placement="top" title="Lorem ipsum tooltip 1.">Lorem</dfn> ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare odio arcu, non tincidunt nisl feugiat vel. Quisque cursus sit amet tortor et fringilla. Aenean sed magna et ex fermentum hendrerit in sed elit. Nam cursus eros vel purus rutrum, et dictum erat lacinia. Nunc quis sem a nibh porttitor sollicitudin id id velit. Aenean fermentum nec turpis vitae tempor. Quisque sem purus, fringilla et tempor sit amet, vulputate sed sem. Integer sed nibh vehicula nibh convallis imperdiet a vel sem. Vestibulum feugiat varius lectus. Vivamus feugiat dapibus turpis vel vulputate. Aliquam non nibh euismod, tristique ligula eu, rhoncus libero. Curabitur in nunc eget nisi fermentum volutpat a non nisi.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare odio arcu, non tincidunt nisl feugiat vel. Quisque cursus sit amet tortor et fringilla. Aenean sed magna et ex fermentum hendrerit in sed elit. Nam cursus eros vel purus rutrum, et dictum erat lacinia. Nunc quis sem a nibh porttitor sollicitudin id id velit. Aenean fermentum nec turpis vitae tempor. Quisque sem purus, fringilla et tempor sit amet, vulputate sed sem. Integer sed nibh vehicula nibh convallis imperdiet a vel sem. Vestibulum feugiat varius lectus. Vivamus feugiat dapibus turpis vel vulputate. Aliquam non nibh euismod, tristique ligula eu, rhoncus libero. Curabitur in nunc eget nisi fermentum volutpat a non nisi.
+            <dfn tabindex="0" class="tipped" data-toggle="tooltip" data-placement="top" title="Lorem ipsum tooltip 1.">Lorem</dfn> ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare odio arcu, non tincidunt nisl feugiat vel. Quisque cursus sit amet tortor et fringilla. Aenean sed magna et ex fermentum hendrerit in sed elit. Nam cursus eros vel purus rutrum, et dictum erat lacinia. Nunc quis sem a nibh porttitor sollicitudin id id velit. Aenean fermentum nec turpis vitae tempor. Quisque sem purus, fringilla et tempor sit amet, vulputate sed sem. Integer sed nibh vehicula nibh convallis imperdiet a vel sem. Vestibulum feugiat varius lectus. Vivamus feugiat dapibus turpis vel vulputate. Aliquam non nibh euismod, tristique ligula eu, rhoncus libero. Curabitur in nunc eget nisi fermentum volutpat a non nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare odio arcu, non tincidunt nisl feugiat vel. Quisque cursus sit amet tortor et fringilla. Aenean sed magna et ex fermentum hendrerit in sed elit. Nam cursus eros vel purus rutrum, et dictum erat lacinia. Nunc quis sem a nibh porttitor sollicitudin id id velit. Aenean fermentum nec turpis vitae tempor. Quisque sem purus, fringilla et tempor sit amet, vulputate sed sem. Integer sed nibh vehicula nibh convallis imperdiet a vel sem. Vestibulum feugiat varius lectus. Vivamus feugiat dapibus turpis vel vulputate. Aliquam non nibh euismod, tristique ligula eu, rhoncus libero. Curabitur in nunc eget nisi fermentum volutpat a non nisi.
           </p>
           <!-- <div class="naM2 hidden-xs pull-right"><span class="naelFullA">p. 546</span><span class="naelMAuth1">p. 257</span></div> -->
 
@@ -138,7 +143,8 @@
             <a tabindex="0" class="naelMAuth1" epub:type="pagebreak" id="page257" role="button" data-toggle="popover" data-trigger="focus" data-placement="left" title="" data-content="Major Authors Edition &amp; Major Authors Edition Volume 1">p. 257</a>
           </div>
 
-          <div class="spA spB"> <!-- spA and spB are spacers above + below, and for example only! -->
+          <div class="spA spB">
+            <!-- spA and spB are spacers above + below, and for example only! -->
             <!-- BEGIN naTL timeline module, see naTL.html for dependencies. -->
             <!-- <div class="naTL-HeaderWrapper">
             
@@ -529,8 +535,7 @@
           </table>
 
           <p class="prose">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. <dfn tabindex="0" class="tipped" data-toggle="tooltip" data-placement="top" title="Lorem ipsum tooltip 2.">Vivamus ornare odio arcu</dfn>, non tincidunt nisl feugiat vel. Quisque cursus sit amet tortor et fringilla. Aenean sed magna et ex fermentum hendrerit in sed elit. Nam cursus eros vel purus rutrum, et dictum erat lacinia. Nunc quis sem a nibh porttitor sollicitudin id id velit. Aenean fermentum nec turpis vitae tempor. Quisque sem purus, fringilla et tempor sit amet, vulputate sed sem. Integer sed nibh vehicula nibh convallis imperdiet a vel sem. Vestibulum feugiat varius lectus. Vivamus feugiat dapibus turpis vel vulputate. Aliquam non nibh euismod, tristique ligula eu, rhoncus libero. Curabitur in nunc eget nisi fermentum volutpat a non nisi.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare odio arcu, non tincidunt nisl feugiat vel. Quisque cursus sit amet tortor et fringilla. Aenean sed magna et ex fermentum hendrerit in sed elit. Nam cursus eros vel purus rutrum, et dictum erat lacinia. Nunc quis sem a nibh porttitor sollicitudin id id velit. Aenean fermentum nec turpis vitae tempor. Quisque sem purus, fringilla et tempor sit amet, vulputate sed sem. Integer sed nibh vehicula nibh convallis imperdiet a vel sem. Vestibulum feugiat varius lectus. Vivamus feugiat dapibus turpis vel vulputate. Aliquam non nibh euismod, tristique ligula eu, rhoncus libero. Curabitur in nunc eget nisi fermentum volutpat a non nisi.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. <dfn tabindex="0" class="tipped" data-toggle="tooltip" data-placement="top" title="Lorem ipsum tooltip 2.">Vivamus ornare odio arcu</dfn>, non tincidunt nisl feugiat vel. Quisque cursus sit amet tortor et fringilla. Aenean sed magna et ex fermentum hendrerit in sed elit. Nam cursus eros vel purus rutrum, et dictum erat lacinia. Nunc quis sem a nibh porttitor sollicitudin id id velit. Aenean fermentum nec turpis vitae tempor. Quisque sem purus, fringilla et tempor sit amet, vulputate sed sem. Integer sed nibh vehicula nibh convallis imperdiet a vel sem. Vestibulum feugiat varius lectus. Vivamus feugiat dapibus turpis vel vulputate. Aliquam non nibh euismod, tristique ligula eu, rhoncus libero. Curabitur in nunc eget nisi fermentum volutpat a non nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare odio arcu, non tincidunt nisl feugiat vel. Quisque cursus sit amet tortor et fringilla. Aenean sed magna et ex fermentum hendrerit in sed elit. Nam cursus eros vel purus rutrum, et dictum erat lacinia. Nunc quis sem a nibh porttitor sollicitudin id id velit. Aenean fermentum nec turpis vitae tempor. Quisque sem purus, fringilla et tempor sit amet, vulputate sed sem. Integer sed nibh vehicula nibh convallis imperdiet a vel sem. Vestibulum feugiat varius lectus. Vivamus feugiat dapibus turpis vel vulputate. Aliquam non nibh euismod, tristique ligula eu, rhoncus libero. Curabitur in nunc eget nisi fermentum volutpat a non nisi.
           </p>
 
           <!-- BEGIN naOL overlay modules for IMAGE OVERLAY functionality, see naOL.html for dependencies -->
@@ -545,31 +550,32 @@
           <div data-toggle="photoswipe" itemscope itemtype="http://schema.org/ImageGallery">
             <figure class="center-block" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
               <a href="images/large-image.jpg" itemprop="contentUrl" data-size="900x827">
-                <img class="thumbnail" src="images/imgOverlayThumb.jpg" itemprop="thumbnail" alt="An image overlay" >
+                <img class="thumbnail" src="images/imgOverlayThumb.jpg" itemprop="thumbnail" alt="An image overlay">
               </a>
             </figure>
-            
+
             <div class="pagebreak">
               <a tabindex="0" class="naelFullA" epub:type="pagebreak" id="page785" role="button" data-toggle="popover" data-trigger="focus" data-placement="left" title="" data-content="Full Edition Volume 1 &amp; Full Edition Volume A">p. 785</a>
             </div>
-          
+
             <figure class="center-block" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                <a href="images/large-image.jpg" itemprop="contentUrl" data-size="900x827">
-                    <img class="thumbnail" src="images/imgOverlayWCapThumb.jpg" itemprop="thumbnail" alt="An image overlay with caption" />
-                </a>
-                <figcaption itemprop="caption description">This is a caption for this image. You can even <em>style</em> text.</figcaption>
+              <a href="images/large-image.jpg" itemprop="contentUrl" data-size="900x827">
+                <img class="thumbnail" src="images/imgOverlayWCapThumb.jpg" itemprop="thumbnail" alt="An image overlay with caption" />
+              </a>
+              <figcaption itemprop="caption description">This is a caption for this image. You can even <em>style</em> text.</figcaption>
             </figure>
           </div>
           <!-- END naOL overlay modules -->
 
           <p class="prose">
-            <!-- BEGIN naM2 marginal page reference module, see naM2.html for dependencies. This is the INLINE element variant. --> <!-- <span class="naM2 hidden-xs pull-right"><span class="naelFullD">p. 785</span></span> -->
-            <!-- END naM2 marginal page reference module -->Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare odio arcu, non tincidunt nisl feugiat vel. Quisque cursus sit amet tortor et fringilla. Aenean sed magna et ex fermentum hendrerit in sed elit. Nam cursus eros vel purus rutrum, et dictum erat lacinia. Nunc quis sem a nibh porttitor sollicitudin id id velit. Aenean fermentum nec turpis vitae tempor. Quisque sem purus, fringilla et tempor sit amet, vulputate sed sem. Integer sed nibh vehicula nibh convallis imperdiet a vel sem. Vestibulum feugiat varius lectus. Vivamus feugiat dapibus turpis vel vulputate. Aliquam non nibh euismod, tristique ligula eu, rhoncus libero. Curabitur in nunc eget nisi fermentum volutpat a non nisi.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare odio arcu, non tincidunt nisl feugiat vel. Quisque cursus sit amet tortor et fringilla. Aenean sed magna et ex fermentum hendrerit in sed elit. <a id="naT1-3" class="naT1">Nam cursus eros</a> vel purus rutrum, et dictum erat lacinia. Nunc quis sem a nibh porttitor sollicitudin id id velit. Aenean fermentum nec turpis vitae tempor. Quisque sem purus, fringilla et tempor sit amet, vulputate sed sem. Integer sed nibh vehicula nibh convallis imperdiet a vel sem. Vestibulum feugiat varius lectus. Vivamus feugiat dapibus turpis vel vulputate. Aliquam non nibh euismod, tristique ligula eu, rhoncus libero. Curabitur in nunc eget nisi fermentum volutpat a non nisi.
+            <!-- BEGIN naM2 marginal page reference module, see naM2.html for dependencies. This is the INLINE element variant. -->
+            <!-- <span class="naM2 hidden-xs pull-right"><span class="naelFullD">p. 785</span></span> -->
+            <!-- END naM2 marginal page reference module -->Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare odio arcu, non tincidunt nisl feugiat vel. Quisque cursus sit amet tortor et fringilla. Aenean sed magna et ex fermentum hendrerit in sed elit. Nam cursus eros vel purus rutrum, et dictum erat lacinia. Nunc quis sem a nibh porttitor sollicitudin id id velit. Aenean fermentum nec turpis vitae tempor. Quisque sem purus, fringilla et tempor sit amet, vulputate sed sem. Integer sed nibh vehicula nibh convallis imperdiet a vel sem. Vestibulum feugiat varius lectus. Vivamus feugiat dapibus turpis vel vulputate. Aliquam non nibh euismod, tristique ligula eu, rhoncus libero. Curabitur in nunc eget nisi fermentum volutpat a non nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare odio arcu, non tincidunt nisl feugiat vel. Quisque cursus sit amet tortor et fringilla. Aenean sed magna et ex fermentum hendrerit in sed elit. <a id="naT1-3" class="naT1">Nam cursus eros</a> vel purus rutrum, et dictum erat lacinia. Nunc quis sem a nibh porttitor sollicitudin id id velit. Aenean fermentum nec turpis vitae tempor. Quisque sem purus, fringilla et tempor sit amet, vulputate sed sem. Integer sed nibh vehicula nibh convallis imperdiet a vel sem. Vestibulum feugiat varius lectus. Vivamus feugiat dapibus turpis vel vulputate. Aliquam non nibh euismod, tristique ligula eu, rhoncus libero. Curabitur in nunc eget nisi fermentum volutpat a non nisi.
           </p>
 
-          <div class="spA spB center"> <!-- Again, these classes applied just for example! -->
-            <!-- BEGIN naTv overflow textbox module for VERSE passages, see naTv.html for dependencies -->      
+          <div class="spA spB center">
+            <!-- Again, these classes applied just for example! -->
+            <!-- BEGIN naTv overflow textbox module for VERSE passages, see naTv.html for dependencies -->
             <!-- <div class="naTv vst-draggable">
               <p class="linVerse">
                 <span class="linNum">5</span><span class="linVerseChar">rosalind</span> So was I when your highness banished him.<br/>
@@ -608,7 +614,7 @@
                   <span class="verse-line">word?</span>
                 </p>
               </section>
-              <section>                  
+              <section>
                 <h5 class="verse-character">Rosalind</h5>
                 <p class="verse-line">Not one to throw at a dog.</p>
               </section>
@@ -650,7 +656,7 @@
                 </p>
               </section>
             </article>
-            <!-- END naTv overflow textbox module -->     
+            <!-- END naTv overflow textbox module -->
           </div>
 
           <div class="naM2 hidden-xs pull-right"><span class="naalShorter">p. 32</span><span class="naelMAuth1">p. 324</span></div>
@@ -658,28 +664,52 @@
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare odio arcu, non tincidunt nisl feugiat vel. Quisque cursus sit amet tortor et fringilla. Aenean sed magna et ex fermentum hendrerit in sed elit. Nam cursus eros vel purus rutrum, et dictum erat lacinia. Nunc quis sem a nibh porttitor sollicitudin id id velit. Aenean fermentum nec turpis vitae tempor. Quisque sem purus, fringilla et tempor sit amet, vulputate sed sem. Integer sed nibh vehicula nibh convallis imperdiet a vel sem. Vestibulum feugiat varius lectus. Vivamus feugiat dapibus turpis vel vulputate. Aliquam non nibh euismod, tristique ligula eu, rhoncus libero. Curabitur in nunc eget nisi fermentum volutpat a non nisi.
           </p>
 
-          <div data-toggle="photoswipe" itemscope itemtype="http://schema.org/ImageGallery">
-            <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-              <a href="images/15008518202_c265dfa55f_h.jpg" itemprop="contentUrl" data-size="1600x1600">
-                <img class="thumbnail" src="images/15008518202_b016d7d289_m.jpg" itemprop="thumbnail" alt="A pine tree coastline." >
-              </a>
-            </figure>
+          <!-- Photoswipe gallery -->
+          <div class="psGallery row" data-toggle="photoswipe" itemscope itemtype="http://schema.org/ImageGallery">
+            <div class="col-xs-6">
+              <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                <a class="thumbnail" href="https://c2.staticflickr.com/4/3275/2703516207_b91af0da0e_o.jpg" itemprop="contentUrl" data-size="2591x2592">
+                  <img src="https://c2.staticflickr.com/4/3275/2703516207_59a71fc66e_n.jpg" itemprop="thumbnail" alt="A closeup shot of the edge of the Norton Anthology of English Literature">
+                </a>
+                <figcaption itemprop="caption">The Norton Anthology of English Literature provides an overview of poetry, drama, prose fiction, essays, and letters from <em>Beowulf</em> to the beginning of the 21st century.</figcaption>
+              </figure>
+            </div>
 
-            <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-              <a href="images/15008465772_d50c8f0531_h.jpg" itemprop="contentUrl" data-size="1600x1067">
-                <img class="thumbnail" src="images/15008465772_383e697089_m.jpg" itemprop="thumbnail" alt="A cuddly bear" >
-              </a>
-              <figcaption>A scary bear!!!</figcaption>
-            </figure>
+            <div class="col-xs-6 col-sm-3">
+              <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                <a class="thumbnail" href="https://c1.staticflickr.com/7/6214/6391863817_b88082af5a_o.jpg" itemprop="contentUrl" data-size="3264x2448">
+                  <img src="https://c1.staticflickr.com/7/6214/6391863817_a4f8031933_q.jpg" itemprop="thumbnail" alt="A flying seagull">
+                </a>
+              </figure>
+            </div>
 
-            <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-              <a href="images/14985871946_24f47d4b53_h.jpg" itemprop="contentUrl" data-size="1600x1067">
-                <img class="thumbnail" src="images/14985871946_86abb8c56f_m.jpg" itemprop="thumbnail" alt="A spooky valley" >
-              </a>
-            </figure>
+            <div class="col-xs-6 col-sm-3">
+              <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                <a class="thumbnail" href="https://c1.staticflickr.com/9/8063/8258545686_38dadf3430_k.jpg" itemprop="contentUrl" data-size="2038x1365">
+                  <img src="https://c1.staticflickr.com/9/8063/8258545686_b0f674279f_q.jpg" itemprop="thumbnail" alt="The view of 500 5th Ave from Bryant Park">
+                </a>
+                <figcaption itemprop="caption">500 5th: Where the dream of the ebook is becoming reality</figcaption>
+              </figure>
+            </div>
+
+            <div class="col-xs-6 col-sm-3">
+              <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                <a class="thumbnail" href="https://c1.staticflickr.com/9/8423/7704884744_a01898eee1_k.jpg" itemprop="contentUrl" data-size="1600x1067">
+                  <img src="https://c1.staticflickr.com/9/8423/7704884744_85f3c7f314_q.jpg" itemprop="thumbnail" alt="A bed of daisies">
+                </a>
+              </figure>
+            </div>
+
+            <div class="col-xs-6 col-sm-3">
+              <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                <a class="thumbnail" href="https://c2.staticflickr.com/8/7329/12484570105_0824ff126b_o.jpg" itemprop="contentUrl" data-size="3000x2000">
+                  <img src="https://c2.staticflickr.com/8/7329/12484570105_edc0f23381_q.jpg" itemprop="thumbnail" alt="A kingfisher perched on a branch">
+                </a>
+              </figure>
+            </div>
           </div>
 
-          <!-- BEGIN naOL overlay modules for TEXT and ZOOM OVERLAY functionality, see naOL.html for dependencies -->           
+          <!-- BEGIN naOL overlay modules for TEXT and ZOOM OVERLAY functionality, see naOL.html for dependencies -->
           <!-- <div class="col-xs-12 center">
             <a class="txtOverlay" href="#fancyDiv"><img src="img/naOL/txtOverlayThumb.jpg" class="thumb" /></a>
           </div>
@@ -691,21 +721,20 @@
 
           <div class="naM2 hidden-xs pull-right"><span class="nawolFullC">p. 1242</span></div>
           <p class="prose">
-            Lorem ipsum dolor sit amet, <a id="naT1-4" class="naT1">consectetur adipiscing</a> elit. Vivamus ornare odio arcu, non tincidunt nisl feugiat vel. Quisque cursus sit amet tortor et fringilla. Aenean sed magna et ex fermentum hendrerit in sed elit. Nam cursus eros vel purus rutrum, et dictum erat lacinia. Nunc quis sem a nibh porttitor sollicitudin id id velit. Aenean fermentum nec turpis vitae tempor. Quisque sem purus, fringilla et tempor sit amet, vulputate sed sem. Integer sed nibh vehicula nibh convallis imperdiet a vel sem. Vestibulum feugiat varius lectus. Vivamus feugiat dapibus turpis vel vulputate. Aliquam non nibh euismod, tristique ligula eu, rhoncus libero. Curabitur in nunc eget nisi fermentum volutpat a non nisi.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare odio arcu, non tincidunt nisl feugiat vel. Quisque cursus sit amet tortor et fringilla. Aenean sed magna et ex fermentum hendrerit in sed elit. Nam cursus eros vel purus rutrum, et dictum erat lacinia. Nunc quis sem a nibh porttitor sollicitudin id id velit. Aenean fermentum nec turpis vitae tempor. Quisque sem purus, fringilla et tempor sit amet, vulputate sed sem. Integer sed nibh vehicula nibh convallis imperdiet a vel sem. Vestibulum feugiat varius lectus. Vivamus feugiat dapibus turpis vel vulputate. Aliquam non nibh euismod, tristique ligula eu, rhoncus libero. Curabitur in nunc eget nisi fermentum volutpat a non nisi.
+            Lorem ipsum dolor sit amet, <a id="naT1-4" class="naT1">consectetur adipiscing</a> elit. Vivamus ornare odio arcu, non tincidunt nisl feugiat vel. Quisque cursus sit amet tortor et fringilla. Aenean sed magna et ex fermentum hendrerit in sed elit. Nam cursus eros vel purus rutrum, et dictum erat lacinia. Nunc quis sem a nibh porttitor sollicitudin id id velit. Aenean fermentum nec turpis vitae tempor. Quisque sem purus, fringilla et tempor sit amet, vulputate sed sem. Integer sed nibh vehicula nibh convallis imperdiet a vel sem. Vestibulum feugiat varius lectus. Vivamus feugiat dapibus turpis vel vulputate. Aliquam non nibh euismod, tristique ligula eu, rhoncus libero. Curabitur in nunc eget nisi fermentum volutpat a non nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare odio arcu, non tincidunt nisl feugiat vel. Quisque cursus sit amet tortor et fringilla. Aenean sed magna et ex fermentum hendrerit in sed elit. Nam cursus eros vel purus rutrum, et dictum erat lacinia. Nunc quis sem a nibh porttitor sollicitudin id id velit. Aenean fermentum nec turpis vitae tempor. Quisque sem purus, fringilla et tempor sit amet, vulputate sed sem. Integer sed nibh vehicula nibh convallis imperdiet a vel sem. Vestibulum feugiat varius lectus. Vivamus feugiat dapibus turpis vel vulputate. Aliquam non nibh euismod, tristique ligula eu, rhoncus libero. Curabitur in nunc eget nisi fermentum volutpat a non nisi.
             <span class="naM2 hidden-xs pull-right"><span class="naelFullA">p. 44</span><span class="naelMAuth1">p. 765</span></span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare odio arcu, non <a id="naT1-5" class="naT1">tincidunt</a> nisl feugiat vel. Quisque cursus sit amet tortor et fringilla. Aenean sed magna et ex fermentum hendrerit in sed elit. Nam cursus eros vel purus rutrum, et dictum erat lacinia. Nunc quis sem a nibh porttitor sollicitudin id id velit. Aenean fermentum nec turpis vitae tempor. Quisque sem purus, fringilla et tempor sit amet, vulputate sed sem. Integer sed nibh vehicula nibh convallis imperdiet a vel sem. Vestibulum feugiat varius lectus. Vivamus feugiat dapibus turpis vel vulputate. Aliquam non nibh euismod, tristique ligula eu, rhoncus libero. Curabitur in nunc eget nisi fermentum volutpat a non nisi.
           </p>
 
         </div>
       </div>
-    </main> <!-- /content -->
+    </main>
+    <!-- /content -->
 
     <!-- BEGIN naOL TEXT OVERLAY content -->
     <div id="fancyDiv" class="naOL-hide">
 
       <p class="prose-NoIndent">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare odio arcu, non tincidunt nisl feugiat vel. Quisque cursus sit amet tortor et fringilla. Aenean sed magna et ex fermentum hendrerit in sed elit. Nam cursus eros vel purus rutrum, et dictum erat lacinia. Nunc quis sem a nibh porttitor sollicitudin id id velit. Aenean fermentum nec turpis vitae tempor. Quisque sem purus, fringilla et tempor sit amet, vulputate sed sem. Integer sed nibh vehicula nibh convallis imperdiet a vel sem. Vestibulum feugiat varius lectus. Vivamus feugiat dapibus turpis vel vulputate. Aliquam non nibh euismod, tristique ligula eu, rhoncus libero. Curabitur in nunc eget nisi fermentum volutpat a non nisi.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare odio arcu, non tincidunt nisl feugiat vel. Quisque cursus sit amet tortor et fringilla. Aenean sed magna et ex fermentum hendrerit in sed elit. Nam cursus eros vel purus rutrum, et dictum erat lacinia. Nunc quis sem a nibh porttitor sollicitudin id id velit. Aenean fermentum nec turpis vitae tempor. Quisque sem purus, fringilla et tempor sit amet, vulputate sed sem. Integer sed nibh vehicula nibh convallis imperdiet a vel sem. Vestibulum feugiat varius lectus. Vivamus feugiat dapibus turpis vel vulputate. Aliquam non nibh euismod, tristique ligula eu, rhoncus libero. Curabitur in nunc eget nisi fermentum volutpat a non nisi.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare odio arcu, non tincidunt nisl feugiat vel. Quisque cursus sit amet tortor et fringilla. Aenean sed magna et ex fermentum hendrerit in sed elit. Nam cursus eros vel purus rutrum, et dictum erat lacinia. Nunc quis sem a nibh porttitor sollicitudin id id velit. Aenean fermentum nec turpis vitae tempor. Quisque sem purus, fringilla et tempor sit amet, vulputate sed sem. Integer sed nibh vehicula nibh convallis imperdiet a vel sem. Vestibulum feugiat varius lectus. Vivamus feugiat dapibus turpis vel vulputate. Aliquam non nibh euismod, tristique ligula eu, rhoncus libero. Curabitur in nunc eget nisi fermentum volutpat a non nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare odio arcu, non tincidunt nisl feugiat vel. Quisque cursus sit amet tortor et fringilla. Aenean sed magna et ex fermentum hendrerit in sed elit. Nam cursus eros vel purus rutrum, et dictum erat lacinia. Nunc quis sem a nibh porttitor sollicitudin id id velit. Aenean fermentum nec turpis vitae tempor. Quisque sem purus, fringilla et tempor sit amet, vulputate sed sem. Integer sed nibh vehicula nibh convallis imperdiet a vel sem. Vestibulum feugiat varius lectus. Vivamus feugiat dapibus turpis vel vulputate. Aliquam non nibh euismod, tristique ligula eu, rhoncus libero. Curabitur in nunc eget nisi fermentum volutpat a non nisi.
       </p>
 
     </div>
@@ -727,72 +756,73 @@
     <!-- / HIDDEN CONTENT -->
 
 
-  </div> <!-- /page -->
+  </div>
+  <!-- /page -->
 
   <!-- Root element of PhotoSwipe. Must have class pswp. -->
   <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
 
-      <!-- Background of PhotoSwipe. 
+    <!-- Background of PhotoSwipe. 
            It's a separate element as animating opacity is faster than rgba(). -->
-      <div class="pswp__bg"></div>
+    <div class="pswp__bg"></div>
 
-      <!-- Slides wrapper with overflow:hidden. -->
-      <div class="pswp__scroll-wrap">
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
 
-          <!-- Container that holds slides. 
+      <!-- Container that holds slides. 
               PhotoSwipe keeps only 3 of them in the DOM to save memory.
               Don't modify these 3 pswp__item elements, data is added later on. -->
-          <div class="pswp__container">
-              <div class="pswp__item"></div>
-              <div class="pswp__item"></div>
-              <div class="pswp__item"></div>
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+
+        <div class="pswp__top-bar">
+
+          <!--  Controls are self-explanatory. Order can be changed. -->
+
+          <div class="pswp__counter"></div>
+
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
           </div>
+        </div>
 
-          <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
-          <div class="pswp__ui pswp__ui--hidden">
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
 
-              <div class="pswp__top-bar">
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+        </button>
 
-                  <!--  Controls are self-explanatory. Order can be changed. -->
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+        </button>
 
-                  <div class="pswp__counter"></div>
-
-                  <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-
-                  <button class="pswp__button pswp__button--share" title="Share"></button>
-
-                  <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-
-                  <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-
-                  <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
-                  <!-- element will get class pswp__preloader--active when preloader is running -->
-                  <div class="pswp__preloader">
-                      <div class="pswp__preloader__icn">
-                        <div class="pswp__preloader__cut">
-                          <div class="pswp__preloader__donut"></div>
-                        </div>
-                      </div>
-                  </div>
-              </div>
-
-              <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                  <div class="pswp__share-tooltip"></div> 
-              </div>
-
-              <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-              </button>
-
-              <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-              </button>
-
-              <div class="pswp__caption">
-                  <div class="pswp__caption__center"></div>
-              </div>
-
-          </div>
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
 
       </div>
+
+    </div>
 
   </div>
 
@@ -835,7 +865,7 @@
   <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js"></script>
   <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
   <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
-  
+
   <!-- endbuild -->
 
   <!-- build:js scripts/main.js -->
