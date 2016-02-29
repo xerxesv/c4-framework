@@ -7,14 +7,13 @@
   'use strict';
 
   var $pswp = $('.pswp')[0];
-  var image = [];
 
   // photoswipe wrapper allows galleries can be initialized more easily
   // for example: $('div.psGallery').photoswipe({bgOpacity: 0.5});
   // takes any photoswipe options as config:
   // http://photoswipe.com/documentation/options.html
   $.fn.photoswipe = function (config) {
-    
+
     // group ID allows multiple galleries on one page
     var gid = 0;
 
@@ -22,7 +21,7 @@
       var $pic = $(this),
         items = [],
         getItems = function () {
-          
+
           // each image is contained in a figure element
           // photoswipe galleries must use semantic figure>(a>img)+figcaption structure
           $pic.find('figure').each(function () {
@@ -30,7 +29,7 @@
             var $a = $(this).find('a'),
               $thumb = $(this).find('img'),
               $cap = $(this).find('figcaption');
-            
+
             // get the link properties
             var $href = $a.attr('href'),
               $size = $a.data('size').split('x'),
@@ -52,7 +51,7 @@
 
             // save thumbnail so we can get its dimensions/position later
             item.thumb = $thumb;
-            
+
             // save item object to items array
             items.push(item);
           });
@@ -65,13 +64,13 @@
         $(this).attr('data-index', pid);
         pid += 1;
       });
-      
+
       // also set the group ID on the gallery container
       gid += 1;
       $(this).attr('data-group', gid);
 
       items = getItems();
-      
+
       // click even for the anchor (tuts+ used figure)
       $pic.on('click', 'a', function (event) {
         event.preventDefault();
@@ -79,7 +78,7 @@
         // get the index from the anchor's parent figure, where we previously stored it as a data-attribute
         var $fig = $(this).closest('figure'),
           $index = $fig.data('index');
-        
+
         // set options, including defaults
         var options = $.extend({
           // 70% opacity default (PS: 1)
@@ -92,7 +91,7 @@
           // get position and bounds of thumbnail to ensure accurate animation
           getThumbBoundsFn: function (index) {
             var thumbnail = items[index].thumb,
-              // jQuery .offset() accounts for 
+              // jQuery .offset() gets position and accounts for window.pageYOffset
               rect = thumbnail.offset();
             return {
               x: rect.left,
