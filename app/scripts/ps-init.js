@@ -104,6 +104,14 @@
         // initialize the photoswipe lightbox
         var lightBox = new PhotoSwipe($pswp, PhotoSwipeUI_Default, items, options);
         lightBox.init();
+
+        // retain focus on close
+        lightBox.listen('close', function () {
+          // get index of the current image
+          var currIndex = lightBox.getCurrentIndex();
+          // set focus on it when the lightbox closes
+          $pic.find('[data-index=' + currIndex + '] a').focus();
+        });
       });
     });
   };
