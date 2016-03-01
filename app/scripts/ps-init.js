@@ -6,7 +6,8 @@
 (function ($) {
   'use strict';
 
-  var $pswp = $('.pswp')[0];
+  var $page = $('[data-role="page"]');
+  var $pswp = $('.pswp');
 
   // photoswipe wrapper allows galleries can be initialized more easily
   // for example: $('div.psGallery').photoswipe({bgOpacity: 0.5});
@@ -102,11 +103,23 @@
         }, config) || {};
 
         // initialize the photoswipe lightbox
-        var lightBox = new PhotoSwipe($pswp, PhotoSwipeUI_Default, items, options);
+        var lightBox = new PhotoSwipe($pswp[0], PhotoSwipeUI_Default, items, options);
         lightBox.init();
 
-        // retain focus on close
+        // disable screen reader interaction on everything but the photoswipe lightbox
+        $pswp.siblings().not('script').attr('aria-hidden', true);
+
+        // trap focus inside the photoswipe lightbox
+        $pswp.keydown(function (event) {
+          // remove the idle class so the UI doesn't disappear
+          $('.pswp__ui').removeClass('pswp__ui--idle');
+          // trigger the tabTrap plugin
+          $(this).tabTrap(event);
+        });
+
+        // function to retain focus on close
         lightBox.listen('close', function () {
+          $pswp.siblings().not('script').attr('aria-hidden', false);
           // get index of the current image
           var currIndex = lightBox.getCurrentIndex();
           // set focus on it when the lightbox closes
