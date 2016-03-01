@@ -6,7 +6,6 @@
 (function ($) {
   'use strict';
 
-  var $page = $('[data-role="page"]');
   var $pswp = $('.pswp');
 
   // photoswipe wrapper allows galleries can be initialized more easily
@@ -110,11 +109,11 @@
         $pswp.siblings().not('script').attr('aria-hidden', true);
 
         // trap focus inside the photoswipe lightbox
-        $pswp.keydown(function (event) {
+        $pswp.keydown(function (evt) {
           // remove the idle class so the UI doesn't disappear
           $('.pswp__ui').removeClass('pswp__ui--idle');
           // trigger the tabTrap plugin
-          $(this).tabTrap(event);
+          $(this).tabTrap(evt);
         });
 
         // function to retain focus on close
