@@ -71,7 +71,7 @@
 
       items = getItems();
 
-      // click even for the anchor (tuts+ used figure)
+      // click event for the anchor (tuts+ used figure)
       $pic.on('click', 'a', function (event) {
         event.preventDefault();
 
