@@ -53,10 +53,10 @@
     <!-- BEGIN naRH running head module, see naRH.html for dependencies. -->
     <header class="naRH">
       <div class="row">
-        <h1 class="naRH-Title col-xs-12 col-sm-6">
+        <h1 class="naRH-Title col-xs-12 col-sm-5">
             <div class="naRH-TitleContainer"><span class="naRH-naTitle">NEDKit</span> • <span class="naRH-subTitle">Examples</span></div>
           </h1>
-        <nav class="naRH-Buttons hidden-xs col-md-6">
+        <nav class="naRH-Buttons hidden-xs col-sm-7">
           <div class="naRH-ButtonsContainer">
             <!-- <input alt="Page Numbers" id="pnToggle" src="img/naRH/menuIconPN.svg" type="image" data-role="none" />
               <input alt="Annotations" id="anToggle" src="img/naRH/menuIconAnnot.svg" type="image" data-role="none" />
@@ -94,253 +94,66 @@
       <div class="row">
         <!-- To make text boxes rescale when toggling naM2 elements, add "naToggle" class to their containers. -->
         <div class="naToggle col-xs-12 col-sm-9 col-sm-offset-1 col-md-7 col-md-offset-2">
-          <!-- If a section contains naM2 marginal page reference elements, decrease col-sm and col-md by 1 to account for extra space needed on the right. -->
 
-          <!-- BEGIN naIE image expand module, see naIE.html for dependencies. -->
-          <!-- <div class="headerWrap">
-            <div id="headerImage">
-              <span class="headerExp" style="background-image:url('img/naIE/example.jpg'); background-position:0px 0px; background-size: cover;">
-                <span class="expandHeader"><img src="img/naIE/expandImage.png" /></span>
-              </span>
-              <div class="containerImage">
-                <div class="collapseHeader">
-                  <img src="img/naIE/collapseImage.png" />
-                </div>
-                <img class="accordionImage" src="img/naIE/example.jpg" />
-              </div>
-            </div>
-          
-            <div class="headerCaption">
-              <b>Lorem Ipsum</b> dolor sit amet.
-            </div>
-          </div> -->
-          <!-- END naIE image expand module -->
-
-          <!-- <figure class="expander expander-collapsed">
-            <button class="expander-click">
-              <img src="http://placekitten.com/500/550" alt="">
-              <span class="glyphicon glyphicon-menu-down"></span>
-            </button>
-            <figcaption><b>Lorem Ipsum</b> dolor sit amet.</figcaption>
-          </figure> -->
-
-          <!-- BEGIN naM2 marginal page reference module, see naM2.html for dependencies. This is the BLOCK element variant. -->
-          <!-- <div class="naM2 hidden-xs pull-right"><span class="naelFullD">p. 432</span></div> -->
-          <!-- END naM2 marginal page reference module -->
-
+          <h2>Chapter Title</h2>
           <p class="prose-NoIndent">
 
             <div class="pagebreak">
-              <a tabindex="0" class="naelFullD" epub:type="pagebreak" id="page432" role="button" data-toggle="popover" data-trigger="focus" data-placement="left" title="" data-content="Full Edition Volume 2 &amp; Full Edition Volume D">p. 432</a>
+              <a tabindex="0" role="btn" class="naelFullD" epub:type="pagebreak" id="page432" data-toggle="popover" data-trigger="focus" data-placement="left" title="" data-content="Full Edition Volume 2 &amp; Full Edition Volume D">p. 432</a>
             </div>
 
-            <dfn tabindex="0" class="tipped" data-toggle="tooltip" data-placement="top" title="Lorem ipsum tooltip 1.">Lorem</dfn> ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare odio arcu, non tincidunt nisl feugiat vel. Quisque cursus sit amet tortor et fringilla. Aenean sed magna et ex fermentum hendrerit in sed elit. Nam cursus eros vel purus rutrum, et dictum erat lacinia. Nunc quis sem a nibh porttitor sollicitudin id id velit. Aenean fermentum nec turpis vitae tempor. Quisque sem purus, fringilla et tempor sit amet, vulputate sed sem. Integer sed nibh vehicula nibh convallis imperdiet a vel sem. Vestibulum feugiat varius lectus. Vivamus feugiat dapibus turpis vel vulputate. Aliquam non nibh euismod, tristique ligula eu, rhoncus libero. Curabitur in nunc eget nisi fermentum volutpat a non nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare odio arcu, non tincidunt nisl feugiat vel. Quisque cursus sit amet tortor et fringilla. Aenean sed magna et ex fermentum hendrerit in sed elit. Nam cursus eros vel purus rutrum, et dictum erat lacinia. Nunc quis sem a nibh porttitor sollicitudin id id velit. Aenean fermentum nec turpis vitae tempor. Quisque sem purus, fringilla et tempor sit amet, vulputate sed sem. Integer sed nibh vehicula nibh convallis imperdiet a vel sem. Vestibulum feugiat varius lectus. Vivamus feugiat dapibus turpis vel vulputate. Aliquam non nibh euismod, tristique ligula eu, rhoncus libero. Curabitur in nunc eget nisi fermentum volutpat a non nisi.
+            <!-- Key terms use the semantic dfn tag and Bootstrap's popover plugin -->
+            <dfn tabindex="0" role="btn" class="term term-context" data-toggle="popover" data-placement="bottom" data-trigger="focus" title="Lorem ipsum" data-content="In publishing and graphic design, lorem ipsum (derived from Latin dolorem ipsum, translated as &quot;pain itself&quot;) is a filler text commonly used to demonstrate the graphic elements of a document or visual presentation.">Lorem ipsum</dfn> dolor sit amet, consectetur adipiscing elit. Vivamus ornare odio arcu, non tincidunt nisl feugiat vel. Quisque cursus sit amet tortor et fringilla. Aenean sed magna et ex fermentum hendrerit in sed elit. Nam cursus eros vel purus rutrum, et dictum erat lacinia. Nunc quis sem a nibh porttitor sollicitudin id id velit. Aenean fermentum nec turpis vitae tempor. Quisque sem purus, fringilla et tempor sit amet, vulputate sed sem. Integer sed nibh vehicula nibh convallis imperdiet a vel sem. Vestibulum feugiat varius lectus. Vivamus feugiat dapibus turpis vel vulputate. Aliquam non nibh euismod, tristique ligula eu, rhoncus libero. Curabitur in nunc eget nisi fermentum volutpat a non nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare odio arcu, non tincidunt nisl feugiat vel. Quisque cursus sit amet tortor et fringilla. Aenean sed magna et ex fermentum hendrerit in sed elit. Nam cursus eros vel purus rutrum, et dictum erat lacinia. Nunc quis sem a nibh porttitor sollicitudin id id velit. Aenean fermentum nec turpis vitae tempor. Quisque sem purus, fringilla et tempor sit amet, vulputate sed sem. Integer sed nibh vehicula nibh convallis imperdiet a vel sem. Vestibulum feugiat varius lectus. Vivamus feugiat dapibus turpis vel vulputate. Aliquam non nibh euismod, tristique ligula eu, rhoncus libero. Curabitur in nunc eget nisi fermentum volutpat a non nisi.
           </p>
-          <!-- <div class="naM2 hidden-xs pull-right"><span class="naelFullA">p. 546</span><span class="naelMAuth1">p. 257</span></div> -->
+
+          <!-- Photoswipe gallery -->
+          <div class="psGallery row" data-toggle="photoswipe" itemscope itemtype="http://schema.org/ImageGallery">
+            <figure class="col-xs-6" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+              <a class="thumbnail" href="https://c2.staticflickr.com/4/3275/2703516207_b91af0da0e_o.jpg" itemprop="contentUrl" data-size="2591x2592">
+                <img src="https://c2.staticflickr.com/4/3275/2703516207_59a71fc66e_n.jpg" itemprop="thumbnail" alt="A closeup shot of the edge of the Norton Anthology of English Literature">
+              </a>
+              <figcaption itemprop="caption">The Norton Anthology of English Literature provides an overview of poetry, drama, prose fiction, essays, and letters from <em>Beowulf</em> to the beginning of the 21st century.</figcaption>
+            </figure>
+
+            <figure class="col-xs-6 col-sm-3" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+              <a class="thumbnail" href="https://c1.staticflickr.com/7/6214/6391863817_b88082af5a_o.jpg" itemprop="contentUrl" data-size="3264x2448">
+                <img src="https://c1.staticflickr.com/7/6214/6391863817_a4f8031933_q.jpg" itemprop="thumbnail" alt="A flying seagull">
+              </a>
+            </figure>
+
+            <figure class="col-xs-6 col-sm-3" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+              <a class="thumbnail" href="https://c1.staticflickr.com/9/8063/8258545686_38dadf3430_k.jpg" itemprop="contentUrl" data-size="2038x1365">
+                <img src="https://c1.staticflickr.com/9/8063/8258545686_b0f674279f_q.jpg" itemprop="thumbnail" alt="The view of 500 5th Ave from Bryant Park">
+              </a>
+              <figcaption itemprop="caption">The dream of the ebook lives at 500 5th Ave.</figcaption>
+            </figure>
+
+            <figure class="col-xs-6 col-sm-3" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+              <a class="thumbnail" href="https://c1.staticflickr.com/9/8423/7704884744_a01898eee1_k.jpg" itemprop="contentUrl" data-size="1600x1067">
+                <img src="https://c1.staticflickr.com/9/8423/7704884744_85f3c7f314_q.jpg" itemprop="thumbnail" alt="A bed of daisies">
+              </a>
+            </figure>
+
+            <figure class="col-xs-6 col-sm-3" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+              <a class="thumbnail" href="https://c2.staticflickr.com/8/7329/12484570105_0824ff126b_o.jpg" itemprop="contentUrl" data-size="3000x2000">
+                <img src="https://c2.staticflickr.com/8/7329/12484570105_edc0f23381_q.jpg" itemprop="thumbnail" alt="A kingfisher perched on a branch">
+              </a>
+            </figure>
+          </div>
+
+          <p class="prose">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare odio arcu, non tincidunt nisl feugiat vel. Quisque cursus sit amet tortor et fringilla. Aenean sed magna et ex fermentum hendrerit in sed elit.
+          </p>
+          <p>
+            Nam cursus eros vel purus rutrum, et dictum erat lacinia. Nunc quis sem a nibh porttitor sollicitudin id id velit. Aenean fermentum nec turpis vitae tempor. Quisque sem purus, fringilla et tempor sit amet, vulputate sed sem. Integer sed nibh vehicula nibh convallis imperdiet a vel sem. Vestibulum feugiat varius lectus. Vivamus feugiat dapibus turpis vel vulputate. Aliquam non nibh euismod, tristique ligula eu, rhoncus libero. Curabitur in nunc eget nisi fermentum volutpat a non nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+          <p>
+            Vivamus ornare odio arcu, non tincidunt nisl feugiat vel. Quisque cursus sit amet tortor et fringilla. Aenean sed magna et ex fermentum hendrerit in sed elit. <a id="naT1-3" class="naT1">Nam cursus eros</a> vel purus rutrum, et dictum erat lacinia. Nunc quis sem a nibh porttitor sollicitudin id id velit. Aenean fermentum nec turpis vitae tempor. Quisque sem purus, fringilla et tempor sit amet, vulputate sed sem. Integer sed nibh vehicula nibh convallis imperdiet a vel sem. Vestibulum feugiat varius lectus. Vivamus feugiat dapibus turpis vel vulputate. Aliquam non nibh euismod, tristique ligula eu, rhoncus libero. Curabitur in nunc eget nisi fermentum volutpat a non nisi.
+          </p>
 
           <div class="pagebreak">
             <a tabindex="0" class="naelFullA" epub:type="pagebreak" id="page546" role="button" data-toggle="popover" data-trigger="focus" data-placement="left" title="" data-content="Full Edition Volume 1 &amp; Full Edition Volume A">p. 546</a>
             <a tabindex="0" class="naelMAuth1" epub:type="pagebreak" id="page257" role="button" data-toggle="popover" data-trigger="focus" data-placement="left" title="" data-content="Major Authors Edition &amp; Major Authors Edition Volume 1">p. 257</a>
-          </div>
-
-          <div class="spA spB">
-            <!-- spA and spB are spacers above + below, and for example only! -->
-            <!-- BEGIN naTL timeline module, see naTL.html for dependencies. -->
-            <!-- <div class="naTL-HeaderWrapper">
-            
-              <table class="naTL-Header">
-                <tr>
-                  <td><b>TEXTS</b></td>
-                  <td><b>CONTEXTS</b></td>
-                </tr>
-              </table>
-            </div>
-            <div class="naTL vst-draggable">
-            
-              <table class="naTL-Table">
-                <tr>
-                  <td></td>
-                  <td><b>1485</b> Accession of Henry VII inaugurates Tudor dynasty</td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td><b>ca. 1504</b> Leonardo da Vinci paints the Mona Lisa</td>
-                </tr>
-                <tr>
-                  <td><b>ca. 1505-07</b> Amerigo Vespucci, <i>New World</i> and <i>Four Voyages</i></td>
-                  <td><b>1508-12</b> Michaelangelo paints Sistine Chapel ceiling</td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td><b>1509</b> Death of Henry VII; accession of Henry VIII</td>
-                </tr>
-                <tr>
-                  <td><b>1511</b> Desiderius Erasmus, <i>Praise of Folly</i></td>
-                  <td><b>1513</b> James IV of Scotland killed at Battle of Flodden; succeeded by James V</td>
-                </tr>
-                <tr>
-                  <td><b>1516</b> Thomas More, <i>Utopia</i>. Ludovico Ariosto, <i>Orlando Furioso</i></td>
-                  <td><b>1517</b> Martin Luther's Ninety-Five Theses; beginning of the Reformation in Germany</td>
-                </tr>
-                <tr>
-                  <td><b>ca. 1517</b> John Skelton, "The Tunning of Elinour Rumming"</td>
-                  <td><b>1519</b> Cortés invades Mexico. Magellan begins his voyage around the world</td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td><b>1521</b> Pope Leo X names Henry VIII "Defender of the Faith"</td>
-                </tr>
-                <tr>
-                  <td><b>1520s-30s</b> Thomas Wyatt's poems circulating in manuscript</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><b>1525</b> William Tyndale's English translation of the <i>New Testament</i></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><b>1528</b> Baldassare Castiglione, <i>The Courtier</i></td>
-                  <td><b>1529-32</b> More is Lord Chancellor</td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td><b>1532-34</b> Henry VIII divorces Catherine of Aragon to marry Anne Boleyn; Elizabeth I born; Henry declares himself head of the Church of England</td>
-                </tr>
-                <tr>
-                  <td><b>1532</b> Niccol&#242; Machiavelli, <i>The Prince</i> (written 1513)</td>
-                  <td><b>1535</b> More beheaded</td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td><b>1537</b> Establishment of Calvin's theocracy at Geneva</td>
-                </tr>
-                <tr>
-                  <td><b>1537</b> John Calvin, <i>The Institution of Christian Religion</i></td>
-                  <td><b>1542</b> Roman Inquisition. James V of Scotland dies; succeeded by infant daughter, Mary</td>
-                </tr>
-                <tr>
-                  <td><b>1543</b> Copernicus, <i>On the Revolution of the Spheres</i></td>
-                  <td><b>1547</b> Death of Henry VIII; accession of Protestant Edward VI</td>
-                </tr>
-                <tr>
-                  <td><b>1547</b> <i>Book of Homilies</i></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><b>1549</b> <i>Book of Common Prayer</i></td>
-                  <td><b>1553</b> Death of Edward VI; failed attempt to put Protestant Lady Jane Grey on throne; accession of Catholic Queen Mary, daughter of Catherine of Aragon</td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td><b>1555-56</b> Archbishop Cranmer and former bishops Latimer and Ridley burned at the stake</td>
-                </tr>
-                <tr>
-                  <td><b>1557</b> Tottel's <i>Songs and Sonnets</i> (printing poems by Wyatt, Surrey, and others)</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td><b>1558</b> Mary dies; succeeded by Protestant Elizabeth I</td>
-                </tr>
-                <tr>
-                  <td><b>1563</b> John Foxe, <i>Acts and Monuments</i></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><b>1565</b> Thomas Norton and Thomas Sackville, <i>Gorboduc</i>, first English blank-verse tragedy (acted in 1561)</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><b>1567</b> Arthur Golding, translation of Ovid's <i>Metamorphoses</i></td>
-                  <td><b>1567-68</b> Mary, Queen of Scots, forced to abdicate; succeeded by her son James VI; Mary imprisoned in England</td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td><b>1570</b> Elizabeth I excommunicated by Pope Pius V</td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td><b>1572</b> St. Bartholomew's Day Massacre of French Protestants</td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td><b>1576</b> James Burbage's play house, The Theater, built in London</td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td><b>1577-80</b> Drake's circumnavigation of the globe</td>
-                </tr>
-                <tr>
-                  <td><b>1578</b> John Lyly, <i>Euphues</i></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><b>1579</b> Edmund Spenser, <i>The Shepheardes Calender</i></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><b>1580</b> Montaigne, <i>Essais</i></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td><b>1583</b> Irish rebellion crushed</td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td><b>1584-87</b> Sir Walter Raleigh's earliest attempts to colonize Virginia</td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td><b>1586-87</b> Mary, Queen of Scots, tried for treason and executed</td>
-                </tr>
-                <tr>
-                  <td><b>ca. 1587-90</b> Marlowe's <i>Tamburlaine</i> acted. Shakespeare begins career as actor and playwright</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><b>1588</b> Thomas Hariot, <i>A Brief and True Report of . . . Virginia</i></td>
-                  <td><b>1588</b> Failed invasion of the Spanish Armada</td>
-                </tr>
-                <tr>
-                  <td><b>1589</b> Richard Hakluyt, <i>The Principal Navigations . . . of the English Nation</i></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><b>1590</b> Sir Philip Sidney, <i>Arcadia</i> (posthumously published); Spenser, <i>The Faerie Queene</i>, Books 1-3</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><b>1591</b> Sidney, <i>Astrophil and Stella</i> published</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><b>ca. 1592</b> John Donne's earliest poems circulating in manuscript</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><b>1595</b> Sidney, <i>The Defense of Poesy</i> published</td>
-                  <td><b>1595</b> Ralegh's voyage to Guiana</td>
-                </tr>
-                <tr>
-                  <td><b>1596</b> Spenser, <i>The Faerie Queene</i>, Books 4-6 (with Books 1-3)</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><b>1598</b> Ben Jonson, <i>Every Man in His Humor</i></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td><b>1599</b> Globe Theater opens</td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td><b>1603</b> Elizabeth I dies; succeeded by James VI of Scotland (as James I), inaugurating the Stuart dynasty</td>
-                </tr>
-              </table>
-            </div> -->
-            <!-- END naTL timeline module -->
           </div>
 
           <table class="table table-bordered table-scroll">
@@ -538,19 +351,10 @@
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. <dfn tabindex="0" class="tipped" data-toggle="tooltip" data-placement="top" title="Lorem ipsum tooltip 2.">Vivamus ornare odio arcu</dfn>, non tincidunt nisl feugiat vel. Quisque cursus sit amet tortor et fringilla. Aenean sed magna et ex fermentum hendrerit in sed elit. Nam cursus eros vel purus rutrum, et dictum erat lacinia. Nunc quis sem a nibh porttitor sollicitudin id id velit. Aenean fermentum nec turpis vitae tempor. Quisque sem purus, fringilla et tempor sit amet, vulputate sed sem. Integer sed nibh vehicula nibh convallis imperdiet a vel sem. Vestibulum feugiat varius lectus. Vivamus feugiat dapibus turpis vel vulputate. Aliquam non nibh euismod, tristique ligula eu, rhoncus libero. Curabitur in nunc eget nisi fermentum volutpat a non nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare odio arcu, non tincidunt nisl feugiat vel. Quisque cursus sit amet tortor et fringilla. Aenean sed magna et ex fermentum hendrerit in sed elit. Nam cursus eros vel purus rutrum, et dictum erat lacinia. Nunc quis sem a nibh porttitor sollicitudin id id velit. Aenean fermentum nec turpis vitae tempor. Quisque sem purus, fringilla et tempor sit amet, vulputate sed sem. Integer sed nibh vehicula nibh convallis imperdiet a vel sem. Vestibulum feugiat varius lectus. Vivamus feugiat dapibus turpis vel vulputate. Aliquam non nibh euismod, tristique ligula eu, rhoncus libero. Curabitur in nunc eget nisi fermentum volutpat a non nisi.
           </p>
 
-          <!-- BEGIN naOL overlay modules for IMAGE OVERLAY functionality, see naOL.html for dependencies -->
-          <!-- <div class="col-xs-12">
-            <a class="imgOverlay" href="http://placekitten.com/900/830">
-              <img src="http://placekitten.com/500/460" class="thumbnail center-block" alt="Such a pretty kitty!" />
-            </a>
-          </div>
-          <div class="col-xs-12 center">
-            <a class="imgOverlay" href="img/naOL/example.jpg" title="This is a caption for this image. You can even &lt;em&gt;style&lt;/em&gt; text."><img src="img/naOL/imgOverlayWCapThumb.jpg" class="thumb" /></a>
-          </div> -->
-          <div data-toggle="photoswipe" itemscope itemtype="http://schema.org/ImageGallery">
-            <figure class="center-block" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-              <a href="images/large-image.jpg" itemprop="contentUrl" data-size="900x827">
-                <img class="thumbnail" src="images/imgOverlayThumb.jpg" itemprop="thumbnail" alt="An image overlay">
+          <div class="row" data-toggle="photoswipe" itemscope itemtype="http://schema.org/ImageGallery">
+            <figure class="col-xs-8 col-xs-offset-2" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+              <a class="thumbnail" href="images/large-image.jpg" itemprop="contentUrl" data-size="900x827">
+                <img src="images/imgOverlayThumb.jpg" itemprop="thumbnail" alt="An image overlay">
               </a>
             </figure>
 
@@ -558,156 +362,72 @@
               <a tabindex="0" class="naelFullA" epub:type="pagebreak" id="page785" role="button" data-toggle="popover" data-trigger="focus" data-placement="left" title="" data-content="Full Edition Volume 1 &amp; Full Edition Volume A">p. 785</a>
             </div>
 
-            <figure class="center-block" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-              <a href="images/large-image.jpg" itemprop="contentUrl" data-size="900x827">
-                <img class="thumbnail" src="images/imgOverlayWCapThumb.jpg" itemprop="thumbnail" alt="An image overlay with caption" />
+            <figure class="col-xs-8 col-xs-offset-2" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+              <a class="thumbnail" href="images/large-image.jpg" itemprop="contentUrl" data-size="900x827">
+                <img src="images/imgOverlayWCapThumb.jpg" itemprop="thumbnail" alt="An image overlay with caption" />
               </a>
               <figcaption itemprop="caption description">This is a caption for this image. You can even <em>style</em> text.</figcaption>
             </figure>
           </div>
-          <!-- END naOL overlay modules -->
 
-          <p class="prose">
-            <!-- BEGIN naM2 marginal page reference module, see naM2.html for dependencies. This is the INLINE element variant. -->
-            <!-- <span class="naM2 hidden-xs pull-right"><span class="naelFullD">p. 785</span></span> -->
-            <!-- END naM2 marginal page reference module -->Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare odio arcu, non tincidunt nisl feugiat vel. Quisque cursus sit amet tortor et fringilla. Aenean sed magna et ex fermentum hendrerit in sed elit. Nam cursus eros vel purus rutrum, et dictum erat lacinia. Nunc quis sem a nibh porttitor sollicitudin id id velit. Aenean fermentum nec turpis vitae tempor. Quisque sem purus, fringilla et tempor sit amet, vulputate sed sem. Integer sed nibh vehicula nibh convallis imperdiet a vel sem. Vestibulum feugiat varius lectus. Vivamus feugiat dapibus turpis vel vulputate. Aliquam non nibh euismod, tristique ligula eu, rhoncus libero. Curabitur in nunc eget nisi fermentum volutpat a non nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare odio arcu, non tincidunt nisl feugiat vel. Quisque cursus sit amet tortor et fringilla. Aenean sed magna et ex fermentum hendrerit in sed elit. <a id="naT1-3" class="naT1">Nam cursus eros</a> vel purus rutrum, et dictum erat lacinia. Nunc quis sem a nibh porttitor sollicitudin id id velit. Aenean fermentum nec turpis vitae tempor. Quisque sem purus, fringilla et tempor sit amet, vulputate sed sem. Integer sed nibh vehicula nibh convallis imperdiet a vel sem. Vestibulum feugiat varius lectus. Vivamus feugiat dapibus turpis vel vulputate. Aliquam non nibh euismod, tristique ligula eu, rhoncus libero. Curabitur in nunc eget nisi fermentum volutpat a non nisi.
-          </p>
-
-          <div class="spA spB center">
-            <!-- Again, these classes applied just for example! -->
-            <!-- BEGIN naTv overflow textbox module for VERSE passages, see naTv.html for dependencies -->
-            <!-- <div class="naTv vst-draggable">
-              <p class="linVerse">
-                <span class="linNum">5</span><span class="linVerseChar">rosalind</span> So was I when your highness banished him.<br/>
-                Treason is not inherited, my lord;<br/>
-                Or if we did derive it from our friends,<br/>
-                What's that to me? My father was no traitor.<br/>
-                Then, good my liege, mistake me not so much<br />
-                <span class="linNum">10</span>To think my poverty is treacherous.
+          <article class="verse">
+            <h3 class="verse-title">As You Like It <small>Excerpt</small></h3>
+            <h4 class="scene-number">1.3</h4>
+            <em class="stage-direction">Enter <span class="verse-character">Celia</span> and <span class="verse-character">Rosalind</span>.</em>
+            <section>
+              <h5 class="verse-character">Celia</h5>
+              <p>
+                <span class="verse-line">Why cousin, why Rosalind—Cupid have mercy! Not a </span>
+                <span class="verse-line">word?</span>
               </p>
-              <p class="linVerse">
-                <span class="linVerseChar">duke frederick</span> So was I when your highness banished him.<br/>
-                Treason is not inherited, my lord;<br/>
-                Or if we did derive it from our friends,<br/>
-                What's that to me? My father was no traitor.<br/>
-                <span class="linNum">15</span>Then, good my liege, mistake me not so much<br/>
-                To think my poverty is treacherous.
+            </section>
+            <section>
+              <h5 class="verse-character">Rosalind</h5>
+              <p class="verse-line">Not one to throw at a dog.</p>
+            </section>
+            <section>
+              <h5 class="verse-character">Celia</h5>
+              <p>
+                <span class="verse-line">No, thy words are too precious to be cast away upon </span>
+                <span class="verse-line" data-lineNum="5" aria-label="line 5">curs. Throw some of them at me; come, lame me with </span>
+                <span class="verse-line">reasons.</span>
               </p>
-              <p class="linVerse">
-                <span class="linVerseChar">celia</span> So was I when your highness banished him.<br/>
-                Treason is not inherited, my lord;<br/>
-                Or if we did derive it from our friends,<br/>
-                <span class="linNum">20</span>What's that to me? My father was no traitor.<br/>
-                Then, good my liege, mistake me not so much<br />
-                To think my poverty is treacherous.
+            </section>
+            <section>
+              <h5 class="verse-character">Rosalind</h5>
+              <p>
+                <span class="verse-line">Then there were two cousins laid up, when the </span>
+                <span class="verse-line">one should be lamed with reasons and the other mad with-</span>
+                <span class="verse-line">out any.</span>
               </p>
-            </div> -->
-
-            <article class="verse">
-              <h3 class="verse-title">As You Like It <small>Excerpt</small></h3>
-              <h4 class="scene-number">1.3</h4>
-              <em class="stage-direction">Enter <span class="verse-character">Celia</span> and <span class="verse-character">Rosalind</span>.</em>
-              <section>
-                <h5 class="verse-character">Celia</h5>
-                <p>
-                  <span class="verse-line">Why cousin, why Rosalind—Cupid have mercy! Not a </span>
-                  <span class="verse-line">word?</span>
-                </p>
-              </section>
-              <section>
-                <h5 class="verse-character">Rosalind</h5>
-                <p class="verse-line">Not one to throw at a dog.</p>
-              </section>
-              <section>
-                <h5 class="verse-character">Celia</h5>
-                <p>
-                  <span class="verse-line">No, thy words are too precious to be cast away upon </span>
-                  <span class="verse-line" data-lineNum="5" aria-label="line 5">curs. Throw some of them at me; come, lame me with </span>
-                  <span class="verse-line">reasons.</span>
-                </p>
-              </section>
-              <section>
-                <h5 class="verse-character">Rosalind</h5>
-                <p>
-                  <span class="verse-line">Then there were two cousins laid up, when the </span>
-                  <span class="verse-line">one should be lamed with reasons and the other mad with-</span>
-                  <span class="verse-line">out any.</span>
-                </p>
-              </section>
-              <section>
-                <h5 class="verse-character">Celia</h5>
-                <p class="verse-line" data-lineNum="10" aria-label="line 10">
-                  But is all this for your father?
-                </p>
-              </section>
-              <section>
-                <h5 class="verse-character">Rosalind</h5>
-                <p>
-                  <span class="verse-line">No, some of it is for my child’s father. Oh, how </span>
-                  <span class="verse-line">full of briars is this working-day world!</span>
-                </p>
-              </section>
-              <section>
-                <h5 class="verse-character">Celia</h5>
-                <p>
-                  <span class="verse-line">They are but burrs, cousin, thrown upon thee in holi-</span>
-                  <span class="verse-line">day foolery; if we walk not in the trodden paths our very </span>
-                  <span class="verse-line" data-lineNum="15" aria-label="line 15">petticoats will catch them.</span>
-                </p>
-              </section>
-            </article>
-            <!-- END naTv overflow textbox module -->
-          </div>
+            </section>
+            <section>
+              <h5 class="verse-character">Celia</h5>
+              <p class="verse-line" data-lineNum="10" aria-label="line 10">
+                But is all this for your father?
+              </p>
+            </section>
+            <section>
+              <h5 class="verse-character">Rosalind</h5>
+              <p>
+                <span class="verse-line">No, some of it is for my child’s father. Oh, how </span>
+                <span class="verse-line">full of briars is this working-day world!</span>
+              </p>
+            </section>
+            <section>
+              <h5 class="verse-character">Celia</h5>
+              <p>
+                <span class="verse-line">They are but burrs, cousin, thrown upon thee in holi-</span>
+                <span class="verse-line">day foolery; if we walk not in the trodden paths our very </span>
+                <span class="verse-line" data-lineNum="15" aria-label="line 15">petticoats will catch them.</span>
+              </p>
+            </section>
+          </article>
 
           <div class="naM2 hidden-xs pull-right"><span class="naalShorter">p. 32</span><span class="naelMAuth1">p. 324</span></div>
           <p class="prose">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare odio arcu, non tincidunt nisl feugiat vel. Quisque cursus sit amet tortor et fringilla. Aenean sed magna et ex fermentum hendrerit in sed elit. Nam cursus eros vel purus rutrum, et dictum erat lacinia. Nunc quis sem a nibh porttitor sollicitudin id id velit. Aenean fermentum nec turpis vitae tempor. Quisque sem purus, fringilla et tempor sit amet, vulputate sed sem. Integer sed nibh vehicula nibh convallis imperdiet a vel sem. Vestibulum feugiat varius lectus. Vivamus feugiat dapibus turpis vel vulputate. Aliquam non nibh euismod, tristique ligula eu, rhoncus libero. Curabitur in nunc eget nisi fermentum volutpat a non nisi.
           </p>
-
-          <!-- Photoswipe gallery -->
-          <div class="psGallery row" data-toggle="photoswipe" itemscope itemtype="http://schema.org/ImageGallery">
-            <div class="col-xs-6">
-              <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                <a class="thumbnail" href="https://c2.staticflickr.com/4/3275/2703516207_b91af0da0e_o.jpg" itemprop="contentUrl" data-size="2591x2592">
-                  <img src="https://c2.staticflickr.com/4/3275/2703516207_59a71fc66e_n.jpg" itemprop="thumbnail" alt="A closeup shot of the edge of the Norton Anthology of English Literature">
-                </a>
-                <figcaption itemprop="caption">The Norton Anthology of English Literature provides an overview of poetry, drama, prose fiction, essays, and letters from <em>Beowulf</em> to the beginning of the 21st century.</figcaption>
-              </figure>
-            </div>
-
-            <div class="col-xs-6 col-sm-3">
-              <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                <a class="thumbnail" href="https://c1.staticflickr.com/7/6214/6391863817_b88082af5a_o.jpg" itemprop="contentUrl" data-size="3264x2448">
-                  <img src="https://c1.staticflickr.com/7/6214/6391863817_a4f8031933_q.jpg" itemprop="thumbnail" alt="A flying seagull">
-                </a>
-              </figure>
-            </div>
-
-            <div class="col-xs-6 col-sm-3">
-              <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                <a class="thumbnail" href="https://c1.staticflickr.com/9/8063/8258545686_38dadf3430_k.jpg" itemprop="contentUrl" data-size="2038x1365">
-                  <img src="https://c1.staticflickr.com/9/8063/8258545686_b0f674279f_q.jpg" itemprop="thumbnail" alt="The view of 500 5th Ave from Bryant Park">
-                </a>
-                <figcaption itemprop="caption">500 5th: Where the dream of the ebook is becoming reality</figcaption>
-              </figure>
-            </div>
-
-            <div class="col-xs-6 col-sm-3">
-              <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                <a class="thumbnail" href="https://c1.staticflickr.com/9/8423/7704884744_a01898eee1_k.jpg" itemprop="contentUrl" data-size="1600x1067">
-                  <img src="https://c1.staticflickr.com/9/8423/7704884744_85f3c7f314_q.jpg" itemprop="thumbnail" alt="A bed of daisies">
-                </a>
-              </figure>
-            </div>
-
-            <div class="col-xs-6 col-sm-3">
-              <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                <a class="thumbnail" href="https://c2.staticflickr.com/8/7329/12484570105_0824ff126b_o.jpg" itemprop="contentUrl" data-size="3000x2000">
-                  <img src="https://c2.staticflickr.com/8/7329/12484570105_edc0f23381_q.jpg" itemprop="thumbnail" alt="A kingfisher perched on a branch">
-                </a>
-              </figure>
-            </div>
-          </div>
 
           <!-- BEGIN naOL overlay modules for TEXT and ZOOM OVERLAY functionality, see naOL.html for dependencies -->
           <!-- <div class="col-xs-12 center">
