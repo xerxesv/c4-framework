@@ -4,7 +4,8 @@
   "dependencies": {
     "bootstrap-sass": "~3.3.5",
     "modernizr": "~2.8.1",
-    "photoswipe": "^4.1.1"
+    "photoswipe": "^4.1.1",
+    "MathJax": "^2.6.1"
   },
   "devDependencies": {
     "chai": "^3.5.0",
