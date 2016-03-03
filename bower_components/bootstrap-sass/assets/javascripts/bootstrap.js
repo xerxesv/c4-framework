@@ -301,7 +301,7 @@ if (typeof jQuery === 'undefined') {
  * ======================================================================== */
 
 
-+function ($) {
+/*+function ($) {
   'use strict';
 
   // CAROUSEL CLASS DEFINITION
@@ -528,7 +528,7 @@ if (typeof jQuery === 'undefined') {
     })
   })
 
-}(jQuery);
+}(jQuery);*/
 
 /* ========================================================================
  * Bootstrap: collapse.js v3.3.6
@@ -751,7 +751,7 @@ if (typeof jQuery === 'undefined') {
  * ======================================================================== */
 
 
-+function ($) {
+/*+function ($) {
   'use strict';
 
   // DROPDOWN CLASS DEFINITION
@@ -906,7 +906,7 @@ if (typeof jQuery === 'undefined') {
     .on('keydown.bs.dropdown.data-api', toggle, Dropdown.prototype.keydown)
     .on('keydown.bs.dropdown.data-api', '.dropdown-menu', Dropdown.prototype.keydown)
 
-}(jQuery);
+}(jQuery);*/
 
 /* ========================================================================
  * Bootstrap: modal.js v3.3.6
