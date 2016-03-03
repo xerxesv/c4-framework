@@ -7,9 +7,28 @@ $(function () {
   $('[data-toggle="tooltip"]').tooltip();
   $('a[data-toggle="popover"]').popover();
 
-  // popover tooltips as definition lists
+  /* popover tooltips as definition lists */
+  // get terms from the external glossary
+  var $terms = $(document.createElement('div')).load( "glossary.html #glossary" );
   $('dfn[data-toggle="popover"]').popover({
-    template: '<dl class="popover" role="tooltip"><div class="arrow"></div><dt class="popover-title"></dt><dd class="popover-content"></dd></dl>'
+
+    // use a more semantic template for definition terms
+    template: '<dl class="popover" role="tooltip"><div class="arrow"></div><dt class="popover-title"></dt><dd class="popover-content"></dd></dl>',
+
+    // set html true so we can have rich text in the tooltip
+    html: true,
+
+    // pull the content from our definition list pairs
+    content: function () {
+      // the title attribute must match the dt text (case insensitive)
+      var title = $(this).attr('data-original-title').toLowerCase();
+      // find the exact term
+      var $dt = $terms.find('dt').filter(function () {
+        return $(this).text().toLowerCase() === title;
+      });
+      // return the following dd (description element)
+      return $dt.next('dd').html();
+    }
   });
 
   $('[data-toggle="photoswipe"]').photoswipe({
