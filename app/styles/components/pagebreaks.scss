@@ -1,0 +1,21 @@
+/******************
+* PAGEBREAKS
+*******************/
+
+.pagebreak {
+  float: right;
+  margin-right: -7em;
+  text-align: right;
+  text-indent: 0;
+  width: 4.75em;
+  a {
+    display: block;
+    font-size: 0.8em;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 0 14px 0 5px;
+    margin-top: 3px;
+    color: $gray-dark;
+    background-color: $gray-lighter;
+  }
+}

@@ -1,0 +1,9 @@
+/******************
+* PHOTOSWIPE CUSTOM
+*******************/
+
+.psGallery {
+  figcaption {
+    @include sr-only;
+  }
+}

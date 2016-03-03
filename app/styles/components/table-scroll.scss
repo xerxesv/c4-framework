@@ -1,0 +1,32 @@
+/******************
+ * TABLE SCROLL
+ ******************/
+
+.table-scroll {
+  table-layout: fixed;
+  width: 100%;
+  border-spacing: 0;
+  tbody,
+  thead,
+  thead tr {
+    display: block;
+  }
+  thead tr {
+    background-color: $gray-lighter;
+    th {
+      display: inline-block;
+      border: none;
+      text-align: center;
+      text-transform: uppercase;
+      width: calc(50% - 10px);
+    }
+  }
+  tr td {
+    width: 50%;
+  }
+  tbody {
+    height: 300px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+}

@@ -1,0 +1,26 @@
+/******************
+* TOOLTIP TERMS
+*******************/
+
+dfn.term {
+  border-bottom: 1px dotted rgb(0, 0, 0);
+  padding: 0 1px;
+  cursor: pointer;
+  &.term-context:hover {
+    background-color: $brand-primary;
+    color: $body-bg;
+    border-bottom: none;
+  }
+}
+
+// definitions are displayed as dl popovers
+dl.popover {
+  .popover-title {
+    background-color: inherit;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+  .popover-content {
+    padding-top: 0;
+  }
+}

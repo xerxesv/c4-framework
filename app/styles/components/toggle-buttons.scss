@@ -1,0 +1,40 @@
+/******************
+* TOGGLE BUTTONS
+*******************/
+
+.naRH-ButtonsContainer>* {
+  display: inline-block;
+}
+
+.btn-icon,
+.btn-icon:hover,
+.btn-icon:focus,
+.btn-icon:active {
+  border-color: transparent;
+}
+
+.btn-icon,
+.btn-icon:active,
+.btn-icon.active,
+.btn-icon[disabled],
+fieldset[disabled] .btn-icon {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.btn-icon {
+  color: $gray-dark;
+  font-weight: normal;
+  border-radius: 0;
+}
+
+.btn-icon:focus path {
+  fill: $brand-primary;
+}
+
+.inactive {
+  opacity: 0.5;
+  path {
+    stroke-opacity: 0.5;
+  }
+}

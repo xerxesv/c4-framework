@@ -1,0 +1,33 @@
+/******************
+* ICONS W/TEXT
+*******************/
+
+.icon {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0.5em;
+  min-width: 75px;
+  &.icon-top {
+    flex-direction: column;
+  }
+  &.icon-left {
+    flex-direction: row;
+  }
+  &.icon-right {
+    flex-direction: row-reverse;
+  }
+  * {
+    margin-top: 0.2em;
+  }
+  *:first-child {
+    margin-top: -0.2em;
+  }
+  .icon-img {
+    font-size: 1em;
+  }
+  .icon-text {
+    font-size: 0.8em;
+  }
+}
