@@ -6,12 +6,12 @@
 $(function () {
   $('[data-toggle="tooltip"]').tooltip();
   $('a[data-toggle="popover"]').popover();
-  
+
   // popover tooltips as definition lists
   $('dfn[data-toggle="popover"]').popover({
     template: '<dl class="popover" role="tooltip"><div class="arrow"></div><dt class="popover-title"></dt><dd class="popover-content"></dd></dl>'
   });
-  
+
   $('[data-toggle="photoswipe"]').photoswipe({
     bgOpacity: 0.7
   });
