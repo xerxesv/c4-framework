@@ -31,7 +31,7 @@
               $cap = $(this).find('figcaption');
 
             // get the link properties
-            var $href = $a.attr('href'),
+            var $href = $a.data('href'),
               $size = $a.data('size').split('x'),
               $width = $size[0],
               $height = $size[1];

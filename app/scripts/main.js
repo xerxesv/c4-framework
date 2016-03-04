@@ -41,6 +41,14 @@ $(function () {
 });
 
 /******************
+ * FIX HREFS FOR EPUB
+ ******************/
+$('a.thumbnail').each(function() {
+  var link = $(this).attr('href');
+  $(this).data('href', link).attr('href', '#');
+});
+
+/******************
  * IMAGE EXPANDER
  ******************/
 $('.expander-click').click(function () {
