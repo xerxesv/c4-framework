@@ -11,6 +11,14 @@ dfn.term {
     color: $body-bg;
     border-bottom: none;
   }
+  &.reset {
+    border-bottom: 0;
+    cursor: auto;
+    &:hover {
+      background-color: transparent;
+      color: inherit;
+    }
+  }
 }
 
 // definitions are displayed as dl popovers
@@ -22,5 +30,8 @@ dl.popover {
   }
   .popover-content {
     padding-top: 0;
+  }
+  cite {
+    padding-bottom: 14px;
   }
 }

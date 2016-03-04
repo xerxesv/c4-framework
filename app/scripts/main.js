@@ -4,12 +4,16 @@
  * INITIALIZE!
  ******************/
 $(function () {
+  // glossary path
+  var glossaryPath = "glossary.html#glossary";
+  // load the glossary into a div
+  var $terms = $(document.createElement('div')).load(glossaryPath);
+
+  // load tooltips and anchor popovers
   $('[data-toggle="tooltip"]').tooltip();
   $('a[data-toggle="popover"]').popover();
 
-  /* popover tooltips as definition lists */
-  // get terms from the external glossary
-  var $terms = $(document.createElement('div')).load( "glossary.html #glossary" );
+  /* load popover tooltips as definition lists */
   $('dfn[data-toggle="popover"]').popover({
 
     // use a more semantic template for definition terms
@@ -61,13 +65,30 @@ $('#pageNumbers').click(function () {
 });
 
 $('#annotations').click(function () {
-  $(this).toggleClass('inactive');
-  $('[data-toggle="tooltip"]').toggleClass('tipped');
-  if ($(this).hasClass('inactive')) {
-    $('[data-toggle="tooltip"]').tooltip('disable').removeAttr('tabindex');
-  } else {
-    $('[data-toggle="tooltip"]').tooltip('enable').attr('tabindex', 0);
-  }
+  var $btn = $(this);
+  var $annos = $('[data-toggle="tooltip"], dfn[data-toggle="popover"]')
+  $btn.toggleClass('inactive');
+  $annos.each(function () {
+    $(this).toggleClass('reset');
+    var type = $(this).data('toggle');
+    if ($btn.hasClass('inactive')) {
+      $(this).removeAttr('tabindex');
+      switch (type) {
+        case 'tooltip':
+          $(this).tooltip('disable');
+        case 'popover':
+        $(this).popover('disable');     
+      }
+    } else {
+      $(this).attr('tabindex', 0);
+      switch (type) {
+        case 'tooltip':
+          $(this).tooltip('enable');
+        case 'popover':
+        $(this).popover('enable');
+      }
+    }
+  });
 });
 
 /******************
