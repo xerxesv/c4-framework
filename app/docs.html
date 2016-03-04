@@ -1,0 +1,183 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Documentation</title>
+
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <!-- build:css styles/vendor.css -->
+  <link rel="stylesheet" href="/bower_components/photoswipe/dist/photoswipe.css">
+  <link rel="stylesheet" href="/bower_components/photoswipe/dist/default-skin/default-skin.css">
+  <!-- bower:css -->
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="styles/docs.css">
+  <!-- endbuild -->
+
+  <!--[if lt IE 9]>
+    <script src="bower_components/html5shiv/dist/html5shiv.js"></script>
+  <![endif]-->
+
+  <!-- build:js scripts/vendor/modernizr.js -->
+  <script src="/bower_components/modernizr/modernizr.js"></script>
+  <!-- endbuild -->
+</head>
+
+<body>
+
+  <div class="container">
+    <header class="page-header">
+      <h1>C4 Framework Documentation</h1>
+    </header>
+    <main>
+      <section>
+        <h2>Bootstrap Widgets</h2>
+        <p>The C4 framework uses <a href="http://getbootstrap.com/javascript/">Bootstrap JavaScript components</a> to handle many interactive features. In the following section, we will cover various ways that these components should be used in ebooks.</p>
+        <section>
+          <h3>Popovers</h3>
+          <section>
+            <h4>As Key Term Tooltips</h4>
+            <p>In the following example, <a href="http://getbootstrap.com/javascript/#popovers">popover.js</a> is used to create custom tooltips. The definitions are pulled from an external <code>#glossary</code> document that houses semantic <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dt"><code>dt</code></a>/<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dd"><code>dd</code></a> pairs inside a definition list (<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dl"><code>dl</code></a>).</p>
+            <div class="example">
+              <p>
+                Academic writing can serve a number of different purposes — to <dfn tabindex="0" role="button" class="term term-genre" data-toggle="popover" data-placement="top" data-trigger="focus" title="Arguing">argue</dfn> for what you think about a topic and why, to <dfn tabindex="0" role="button" class="term term-genre" data-toggle="popover" data-placement="top" data-trigger="focus" title="Reporting">report</dfn> on what’s known about an issue, to <span>propose a solution</span> for some problem, and so on.
+              </p>
+              <p>
+                When you write in an academic context, you’re expected to state your main point explicitly, often in a <dfn tabindex="0" role="button" class="term term-strategies" data-toggle="popover" data-placement="top" data-trigger="focus" title="Thesis">thesis</dfn> statement.
+              </p>
+            </div>
+            <div class="code">
+              <pre>
+&lt;<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dfn">dfn</a> <button class="btn anno accessibility" data-toggle="popover" data-placement="top" data-trigger="focus" title="Accessibility" data-content="<code>tabindex</code> ensures that the activation of the tooltip isn't tied solely to the mouse.">tabindex="0"</button> <button class="btn label label-warning anno" data-toggle="popover" data-placement="top" data-trigger="focus" title="Accessibility" data-content="The ARIA role helps screen reader users by clarifying interaction.">role="button"</button> <a tabindex="0" role="button" class="anno" data-toggle="popover" data-placement="top" data-trigger="focus" title="Bootstrap" data-content="top | bottom | left | right | auto">data-placement="top"</a> <a tabindex="0" role="button" class="anno" data-toggle="popover" data-placement="top" data-trigger="focus" title="Bootstrap" data-content="click | hover | focus | manual.<div><code>focus</code> required for accessibility.</div>">data-trigger="focus"</a> <a tabindex="0" role="button" class="anno" data-toggle="popover" data-placement="top" data-trigger="focus" title="Framework" data-content="The title must match the glossary entry exactly (case-insensitive).">title="Arguing"</a>&gt;argue&lt;/dfn&gt;</pre>
+            </div>
+          </section>
+        </section>
+      </section>
+    </main>
+    <aside>
+    </aside>
+  </div>
+
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+           It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+      <!-- Container that holds slides. 
+              PhotoSwipe keeps only 3 of them in the DOM to save memory.
+              Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+
+        <div class="pswp__top-bar">
+
+          <!--  Controls are self-explanatory. Order can be changed. -->
+
+          <div class="pswp__counter"></div>
+
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"><span class="sr-only">Close (Esc)</span></button>
+
+          <!--<button class="pswp__button pswp__button--share" title="Share"><span class="sr-only">Share</span></button>-->
+
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"><span class="sr-only">Toggle fullscreen</span></button>
+
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"><span class="sr-only">Zoom in/out</span></button>
+
+          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"><span class="sr-only">Previous</span></button>
+
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"><span class="sr-only">Next</span></button>
+
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+  <script>
+    (function (b, o, i, l, e, r) {
+      b.GoogleAnalyticsObject = l;
+      b[l] || (b[l] =
+        function () {
+          (b[l].q = b[l].q || []).push(arguments)
+        });
+      b[l].l = +new Date;
+      e = o.createElement(i);
+      r = o.getElementsByTagName(i)[0];
+      e.src = 'https://www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e, r)
+    }(window, document, 'script', 'ga'));
+    ga('create', 'UA-XXXXX-X');
+    ga('send', 'pageview');
+  </script>
+
+  <!-- build:js scripts/vendor.js -->
+  <!-- bower:js -->
+  <script src="/bower_components/jquery/dist/jquery.js"></script>
+  <script src="/bower_components/photoswipe/dist/photoswipe.js"></script>
+  <script src="/bower_components/photoswipe/dist/photoswipe-ui-default.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:js scripts/plugins.js -->
+  <script src="scripts/tabTrap.js"></script>
+  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>
+  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js"></script>
+  <!--  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js"></script>-->
+  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js"></script>
+  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/modal.js"></script>
+  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js"></script>
+  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/button.js"></script>
+  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/popover.js"></script>
+  <!--  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/carousel.js"></script>-->
+  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js"></script>
+  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
+  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
+
+  <!-- endbuild -->
+
+  <!-- build:js scripts/main.js -->
+  <script src="scripts/docs.js"></script>
+  <script src="scripts/ps-init.js"></script>
+  <!-- endbuild -->
+</body>
+
+</html>
