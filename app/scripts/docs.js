@@ -5,7 +5,7 @@
  ******************/
 $(function () {
   // glossary path
-  var glossaryPath = "glossary.html#glossary";
+  var glossaryPath = 'glossary.html#glossary';
   // load the glossary into a div
   var $terms = $(document.createElement('div')).load(glossaryPath);
 
@@ -82,7 +82,7 @@ $('#pageNumbers').click(function () {
 
 $('#annotations').click(function () {
   var $btn = $(this);
-  var $annos = $('[data-toggle="tooltip"], dfn[data-toggle="popover"]')
+  var $annos = $('[data-toggle="tooltip"], dfn[data-toggle="popover"]');
   $btn.toggleClass('inactive');
   $annos.each(function () {
     $(this).toggleClass('reset');
@@ -92,6 +92,7 @@ $('#annotations').click(function () {
       switch (type) {
       case 'tooltip':
         $(this).tooltip('disable');
+        break;
       case 'popover':
         $(this).popover('disable');
       }
@@ -100,6 +101,7 @@ $('#annotations').click(function () {
       switch (type) {
       case 'tooltip':
         $(this).tooltip('enable');
+        break;
       case 'popover':
         $(this).popover('enable');
       }

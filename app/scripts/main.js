@@ -5,7 +5,7 @@
  ******************/
 $(function () {
   // glossary path
-  var glossaryPath = "glossary.html#glossary";
+  var glossaryPath = 'glossary.html#glossary';
   // load the glossary into a div
   var $terms = $(document.createElement('div')).load(glossaryPath);
 
@@ -43,7 +43,7 @@ $(function () {
 /******************
  * FIX HREFS FOR EPUB
  ******************/
-$('a.thumbnail').each(function() {
+$('a.thumbnail').each(function () {
   var link = $(this).attr('href');
   $(this).data('href', link).attr('href', '#');
 });
@@ -74,7 +74,7 @@ $('#pageNumbers').click(function () {
 
 $('#annotations').click(function () {
   var $btn = $(this);
-  var $annos = $('[data-toggle="tooltip"], dfn[data-toggle="popover"]')
+  var $annos = $('[data-toggle="tooltip"], dfn[data-toggle="popover"]');
   $btn.toggleClass('inactive');
   $annos.each(function () {
     $(this).toggleClass('reset');
@@ -82,17 +82,19 @@ $('#annotations').click(function () {
     if ($btn.hasClass('inactive')) {
       $(this).removeAttr('tabindex');
       switch (type) {
-        case 'tooltip':
-          $(this).tooltip('disable');
-        case 'popover':
-        $(this).popover('disable');     
+      case 'tooltip':
+        $(this).tooltip('disable');
+        break;
+      case 'popover':
+        $(this).popover('disable');
       }
     } else {
       $(this).attr('tabindex', 0);
       switch (type) {
-        case 'tooltip':
-          $(this).tooltip('enable');
-        case 'popover':
+      case 'tooltip':
+        $(this).tooltip('enable');
+        break;
+      case 'popover':
         $(this).popover('enable');
       }
     }
