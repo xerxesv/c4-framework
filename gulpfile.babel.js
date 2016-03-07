@@ -86,7 +86,9 @@ gulp.task('fonts', () => {
 gulp.task('extras', () => {
   return gulp.src([
     'app/*.*',
-    '!app/*.html'
+    '!app/*.html',
+    'app/docs/*.*',
+    '!app/docs/*.html'
   ], {
     dot: true
   }).pipe(gulp.dest('dist'));
@@ -108,6 +110,7 @@ gulp.task('serve', ['styles', 'scripts', 'fonts'], () => {
 
   gulp.watch([
     'app/*.html',
+    'app/docs/*.html',
     '.tmp/scripts/**/*.js',
     'app/images/**/*',
     '.tmp/fonts/**/*'
@@ -156,7 +159,7 @@ gulp.task('wiredep', () => {
     }))
     .pipe(gulp.dest('app/styles'));
 
-  gulp.src('app/*.html')
+  gulp.src(['app/*.html', 'app/docs/*.html'])
     .pipe(wiredep({
       exclude: ['bootstrap-sass'],
       ignorePath: /^(\.\.\/)*\.\./
