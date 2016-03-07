@@ -1,0 +1,43 @@
+[data-toggle=popover][data-category] {
+  padding: 0 2px;
+  font-size: inherit;
+  @include focusHover {
+    color: white;
+  }
+  &[data-category=a11y] {
+    @include focusHover {
+      background-color: $brand-accessibility;
+    }
+  }
+  &[data-category=bs] {
+    @include focusHover {
+      background-color: $brand-bootstrap;
+    }
+  }
+  &[data-category=framework] {
+    @include focusHover {
+      background-color: $brand-primary;
+    }
+  }
+}
+
+.popover {
+  &.anno {
+    border-left-width: 5px;
+    border-left-style: solid;
+    .popover-title {
+      text-transform: uppercase;
+      color: $gray-light;
+      font-weight: 600;
+    }
+  }
+  &.anno-a11y {
+    border-left-color: $brand-accessibility;
+  }
+  &.anno-bs {
+    border-left-color: $brand-bootstrap;
+  }
+  &.anno-framework {
+    border-left-color: $brand-primary;
+  }
+}

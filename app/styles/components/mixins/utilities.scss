@@ -1,0 +1,6 @@
+// focus & hover for accessibility
+@mixin focusHover {
+  &:focus, &:hover {
+    @content;
+  }
+}

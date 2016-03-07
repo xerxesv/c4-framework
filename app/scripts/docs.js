@@ -5,7 +5,7 @@
  ******************/
 $(function () {
   // glossary path
-  var glossaryPath = 'glossary.html#glossary';
+  var glossaryPath = '/glossary.html#glossary';
   // load the glossary into a div
   var $terms = $(document.createElement('div')).load(glossaryPath);
 
@@ -34,14 +34,16 @@ $(function () {
     }
   });
 
-  /* load popover tooltips as annotations */
-  $('.anno[data-toggle="popover"]').popover({
+  /* annotation tooltips require a little extra work */
+  $('[data-toggle="popover"][data-category]').each(function () {
+    var type = $(this).attr('data-category');
+    var annoTemplate = '<dl class="popover anno anno-' + type + '" role="tooltip"><div class="arrow"></div><dt class="popover-title"></dt><dd class="popover-content"></dd></dl>';
+
+    $(this).popover({
+      template: annoTemplate,
       html: true
-    })
-    .click(function () {
-      var type = $(this).attr('data-original-title').toLowerCase();
-      $(this).next('.popover').addClass('anno ' + type);
     });
+  });
 
   $('[data-toggle="photoswipe"]').photoswipe({
     bgOpacity: 0.7
