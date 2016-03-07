@@ -13,7 +13,7 @@ $(function () {
   $('[data-toggle="tooltip"]').tooltip();
 
   /* load popover tooltips as definition lists */
-  $('dfn[data-toggle="popover"]').popover({
+  $('.term[data-toggle="popover"]').popover({
 
     // use a more semantic template for definition terms
     template: '<dl class="popover" role="tooltip"><div class="arrow"></div><dt class="popover-title"></dt><dd class="popover-content"></dd></dl>',
@@ -35,9 +35,9 @@ $(function () {
   });
 
   /* annotation tooltips require a little extra work */
-  $('[data-toggle="popover"][data-category]').each(function () {
-    var type = $(this).attr('data-category');
-    var annoTemplate = '<dl class="popover anno anno-' + type + '" role="tooltip"><div class="arrow"></div><dt class="popover-title"></dt><dd class="popover-content"></dd></dl>';
+  $('.anno[data-toggle=popover]').each(function () {
+    var classes = $(this).attr('class');
+    var annoTemplate = '<dl class="popover ' + classes + '" role="tooltip" aria-labelledby=""><div class="arrow"></div><dt class="popover-title"></dt><dd class="popover-content"></dd></dl>';
 
     $(this).popover({
       template: annoTemplate,
@@ -45,10 +45,30 @@ $(function () {
     });
   });
 
+  // activate popover on enter since data-toggle="click" doesn't work for keyboard
+  $('[data-toggle=popover]').keyup(function (e) {
+    if (e.which === 13) {
+      $(this).popover('toggle');
+    }
+  });
+
+  // hide after tabbing to something new
+  $('[data-toggle=popover]').blur(function () {
+    $(this).popover('hide');
+  });
+
+  // hide all popovers on ESC
+  $(document).keyup(function (e) {
+    if (e.which == 27) {
+      $('[data-toggle=popover]').popover('hide');
+    }
+  });
+
   $('[data-toggle="photoswipe"]').photoswipe({
     bgOpacity: 0.7
   });
 });
+
 
 /******************
  * FIX HREFS FOR EPUB

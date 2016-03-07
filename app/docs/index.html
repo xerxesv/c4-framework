@@ -48,24 +48,73 @@
           <p>The C4 framework uses <a href="http://getbootstrap.com/javascript/">Bootstrap JavaScript components</a> to handle many interactive features. In the following section, we will cover various ways that these components should be used in ebooks.</p>
           <section>
             <h3>Popovers</h3>
-            <p>Bootstrap's <a href="http://getbootstrap.com/javascript/#popovers">popover.js</a> plugin is an extension of the tooltip.js plugin that allows for full markup in the tooltip.</p>
+            <p>Bootstrap's <a href="http://getbootstrap.com/javascript/#popovers">popover.js</a> plugin is an extension of the tooltip.js plugin that allows for full aup in the tooltip.</p>
             <section>
               <h4>As Key Term Tooltips</h4>
-              <p>In the following example, <a href="http://getbootstrap.com/javascript/#popovers">popover.js</a> is used to create custom tooltips. The definitions are pulled from an external <code>#glossary</code> document that houses semantic <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dt"><code>dt</code></a>/<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dd"><code>dd</code></a> pairs inside a definition list (<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dl"><code>dl</code></a>).</p>
+              <p>In the following example, <a href="http://getbootstrap.com/javascript/#popovers">popover.js</a> is used to create custom tooltips. The definitions are pulled from an external <code>#glossary</code> document (<a href="../glossary.html">glossary.html</a> in this case) that houses semantic <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dt"><code>dt</code></a>/<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dd"><code>dd</code></a> pairs inside a definition list (<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dl"><code>dl</code></a>).</p>
               <div class="example">
                 <p>
-                  Academic writing can serve a number of different purposes — to <dfn tabindex="0" role="button" class="term term-genre" data-toggle="popover" data-placement="top" data-trigger="focus" title="Arguing">argue</dfn> for what you think about a topic and why, to <dfn tabindex="0" role="button" class="term term-genre" data-toggle="popover" data-placement="top" data-trigger="focus" title="Reporting">report</dfn> on what’s known about an issue, to <span>propose a solution</span> for some problem, and so on.
+                  Academic writing can serve a number of different purposes — to <a tabindex="0" role="button" class="term term-genre" data-toggle="popover" data-placement="top" title="Arguing"><dfn>argue</dfn></a> for what you think about a topic and why, to <a tabindex="0" role="button" class="term term-genre" data-toggle="popover" data-placement="top" title="Reporting"><dfn>report</dfn></a> on what’s known about an issue, to <span>propose a solution</span> for some problem, and so on.
                 </p>
                 <p>
-                  When you write in an academic context, you’re expected to state your main point explicitly, often in a <dfn tabindex="0" role="button" class="term term-strategies" data-toggle="popover" data-placement="top" data-trigger="focus" title="Thesis">thesis</dfn> statement.
+                  When you write in an academic context, you’re expected to state your main point explicitly, often in a <a tabindex="0" role="button" class="term term-strategies" data-toggle="popover" data-placement="top" title="Thesis"><dfn>thesis</dfn></a> statement.
                 </p>
               </div>
               <div class="code">
                 <pre>
-&lt;<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dfn">dfn</a> <button class="btn" data-toggle="popover" data-placement="top" data-trigger="focus" data-category="a11y" title="Accessibility" data-content="<code>tabindex</code> ensures that keyboard users can activate the tooltip via tab.">tabindex="0"</button> <button class="btn" data-toggle="popover" data-placement="top" data-trigger="focus" data-category="a11y" title="Accessibility" data-content="The ARIA role helps screen reader users by clarifying interaction.">role="button"</button> <button class="btn" data-toggle="popover" data-placement="top" data-trigger="focus" data-category="bs" title="Bootstrap" data-content="top | bottom | left | right | auto">data-placement="top"</button> <button class="btn" data-toggle="popover" data-placement="top" data-trigger="focus" data-category="bs" title="Bootstrap" data-content="click | hover | focus | manual.<div><code>focus</code> required for accessibility.</div>">data-trigger="focus"</button> <button class="btn" data-toggle="popover" data-placement="top" data-trigger="focus" data-category="framework" title="Framework" data-content="The title must match the glossary entry exactly (case-insensitive).">title="Arguing"</button>&gt;argue&lt;/dfn&gt;</pre>
+&lt;a <a tabindex="0" role="button" class="anno anno-a11y" data-toggle="popover" data-placement="top" title="Accessibility" data-content="<code>tabindex</code> ensures that keyboard users can set focus on the element.">tabindex="0"</a> <a tabindex="0" role="button" class="anno anno-a11y" data-toggle="popover" data-placement="top" title="Accessibility" data-content="The ARIA button role tells screen reader users that something will happen when they click the element.">role="button"</a> <a tabindex="0" role="button" class="anno anno-bs" data-toggle="popover" data-placement="top" title="Bootstrap" data-content="top | bottom | left | right | auto">data-placement="top"</a> <a tabindex="0" role="button" class="anno anno-framework" data-toggle="popover" data-placement="top" title="Framework" data-content="The title is used to match the glossary <code>dt</code> entry (case-insensitive).">title="Arguing"</a>&gt;
+  &lt;<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dfn">dfn</a>&gt;argue&lt;/dfn&gt;
+&lt;/a&gt;
+             
+&lt;dl id="glossary"&gt;
+  &lt;dt&gt;Arguing&lt;/dt&gt;
+  &lt;dd&gt;A STRATEGY that can be used in any kind of writing to support a claim with REASONS and EVIDENCE.&lt;/dd&gt;
+&lt;/dl&gt;</pre>
               </div>
             </section>
           </section>
+          <section>
+            <h3></h3>
+          </section>
+        </section>
+        <section>
+          <h2>Photoswipe</h2>
+          <p>The <a href="http://photoswipe.com/">Photoswipe library</a> is a highly customizable lightbox gallery.</p>
+          <div class="example">
+            <div class="psGallery row" data-toggle="photoswipe" itemscope itemtype="http://schema.org/ImageGallery">
+              <figure class="col-xs-6" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                <a href="https://c2.staticflickr.com/4/3275/2703516207_b91af0da0e_o.jpg" itemprop="contentUrl" data-size="2591x2592">
+                  <img src="https://c2.staticflickr.com/4/3275/2703516207_59a71fc66e_n.jpg" itemprop="thumbnail" alt="A closeup shot of the edge of the Norton Anthology of English Literature">
+                </a>
+                <figcaption itemprop="caption">The Norton Anthology of English Literature provides an overview of poetry, drama, prose fiction, essays, and letters from <em>Beowulf</em> to the beginning of the 21st century.</figcaption>
+              </figure>
+
+              <figure class="col-xs-6 col-sm-3" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                <a href="https://c1.staticflickr.com/7/6214/6391863817_b88082af5a_o.jpg" itemprop="contentUrl" data-size="3264x2448">
+                  <img src="https://c1.staticflickr.com/7/6214/6391863817_a4f8031933_q.jpg" itemprop="thumbnail" alt="A flying seagull">
+                </a>
+              </figure>
+
+              <figure class="col-xs-6 col-sm-3" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                <a href="https://c1.staticflickr.com/9/8063/8258545686_38dadf3430_k.jpg" itemprop="contentUrl" data-size="2038x1365">
+                  <img src="https://c1.staticflickr.com/9/8063/8258545686_b0f674279f_q.jpg" itemprop="thumbnail" alt="The view of 500 5th Ave from Bryant Park">
+                </a>
+                <figcaption itemprop="caption">The dream of the ebook lives at 500 5th Ave.</figcaption>
+              </figure>
+
+              <figure class="col-xs-6 col-sm-3" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                <a href="https://c1.staticflickr.com/9/8423/7704884744_a01898eee1_k.jpg" itemprop="contentUrl" data-size="1600x1067">
+                  <img src="https://c1.staticflickr.com/9/8423/7704884744_85f3c7f314_q.jpg" itemprop="thumbnail" alt="A bed of daisies">
+                </a>
+              </figure>
+
+              <figure class="col-xs-6 col-sm-3" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                <a href="https://c2.staticflickr.com/8/7329/12484570105_0824ff126b_o.jpg" itemprop="contentUrl" data-size="3000x2000">
+                  <img src="https://c2.staticflickr.com/8/7329/12484570105_edc0f23381_q.jpg" itemprop="thumbnail" alt="A kingfisher perched on a branch">
+                </a>
+              </figure>
+            </div>
+          </div>
         </section>
       </main>
       <aside>

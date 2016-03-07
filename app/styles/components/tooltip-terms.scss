@@ -2,7 +2,9 @@
 * TOOLTIP TERMS
 *******************/
 
-dfn.term {
+a.term {
+  @include reset-text();
+  color: inherit;
   border-bottom: 1px dotted rgb(0, 0, 0);
   padding: 0 1px;
   cursor: pointer;

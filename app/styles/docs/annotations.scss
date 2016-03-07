@@ -1,20 +1,26 @@
-[data-toggle=popover][data-category] {
+.anno[data-toggle=popover] {
+  @include reset-text();
+  font-family: $font-family-monospace;
+  color: inherit;
   padding: 0 2px;
-  font-size: inherit;
+  background-color: $gray-lighter;
+  border-radius: $border-radius-base;
+  cursor: pointer;
   @include focusHover {
     color: white;
+    text-decoration: none;
   }
-  &[data-category=a11y] {
+  &.anno-a11y {
     @include focusHover {
       background-color: $brand-accessibility;
     }
   }
-  &[data-category=bs] {
+  &.anno-bs {
     @include focusHover {
       background-color: $brand-bootstrap;
     }
   }
-  &[data-category=framework] {
+  &.anno-framework {
     @include focusHover {
       background-color: $brand-primary;
     }
@@ -28,7 +34,7 @@
     .popover-title {
       text-transform: uppercase;
       color: $gray-light;
-      font-weight: 600;
+      font-weight: bold;
     }
   }
   &.anno-a11y {
