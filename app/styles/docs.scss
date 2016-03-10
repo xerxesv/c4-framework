@@ -10,13 +10,7 @@
 @import "docs/annotations";
 @import "docs/example";
 
-// General
-@import "components/figure";
-@import "components/icons";
-@import "components/pagebreaks";
-@import "components/photoswipe-custom";
-@import "components/table-scroll";
-@import "components/toggle-buttons";
+// Included main components
+@import "components/gallery";
 @import "components/tooltip-terms";
 @import "components/type";
-@import "components/verse";
