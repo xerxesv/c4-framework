@@ -11,9 +11,10 @@
   <!-- Place favicon.ico in the root directory -->
 
   <!-- build:css styles/vendor.css -->
-  <link rel="stylesheet" href="/bower_components/photoswipe/dist/photoswipe.css">
-  <link rel="stylesheet" href="/bower_components/photoswipe/dist/default-skin/default-skin.css">
   <!-- bower:css -->
+  <link rel="stylesheet" href="/bower_components/photoswipe/dist/photoswipe.css" />
+  <link rel="stylesheet" href="styles/photoswipe_variables.css" />
+  <link rel="stylesheet" href="/bower_components/photoswipe/dist/default-skin/default-skin.css" />
   <!-- endbower -->
   <!-- endbuild -->
 
@@ -21,12 +22,10 @@
   <link rel="stylesheet" href="styles/main.css">
   <!-- endbuild -->
 
+  <!-- build:js scripts/vendor/html5shiv.js -->
   <!--[if lt IE 9]>
-    <script src="bower_components/html5shiv/dist/html5shiv.js"></script>
+    <script src="/bower_components/html5shiv/dist/html5shiv.js"></script>
   <![endif]-->
-
-  <!-- build:js scripts/vendor/modernizr.js -->
-  <script src="/bower_components/modernizr/modernizr.js"></script>
   <!-- endbuild -->
 </head>
 
@@ -541,6 +540,7 @@
 
   <!-- build:js scripts/vendor.js -->
   <!-- bower:js -->
+  <script src="/bower_components/modernizr/modernizr.js"></script>
   <script src="/bower_components/jquery/dist/jquery.js"></script>
   <script src="/bower_components/photoswipe/dist/photoswipe.js"></script>
   <script src="/bower_components/photoswipe/dist/photoswipe-ui-default.js"></script>
