@@ -1,22 +1,29 @@
-'use strict';
-
 /******************
  * INITIALIZE!
  ******************/
 $(function () {
+  'use strict';
+
   // glossary path
-  var glossaryPath = '/glossary.html#glossary';
-  // load the glossary into a div
+  var glossaryPath = 'glossary.html#glossary';
+  // save the glossary for later use
   var $terms = $(document.createElement('div')).load(glossaryPath);
 
-  // load tooltips and anchor popovers
+  // define different types of popover tooltips
+  var $termTips = $('.term[data-toggle="popover"]'),
+    $annoTips = $('.anno[data-toggle="popover"]'),
+
+    // all popovers
+    $popovers = $('[data-toggle="popover"]');
+
+  // load basic tooltips
   $('[data-toggle="tooltip"]').tooltip();
 
-  /* load popover tooltips as definition lists */
-  $('.term[data-toggle="popover"]').popover({
+  /* term definition tooltips as popovers */
+  $termTips.popover({
 
     // use a more semantic template for definition terms
-    template: '<dl class="popover" role="tooltip"><div class="arrow"></div><dt class="popover-title"></dt><dd class="popover-content"></dd></dl>',
+    template: '<dl class="popover term" role="tooltip"><div class="arrow"></div><dt class="popover-title"></dt><dd class="popover-content"></dd></dl>',
 
     // set html true so we can have rich text in the tooltip
     html: true,
@@ -34,137 +41,41 @@ $(function () {
     }
   });
 
-  /* annotation tooltips require a little extra work */
-  $('.anno[data-toggle=popover]').each(function () {
-    var classes = $(this).attr('class');
-    var annoTemplate = '<dl class="popover ' + classes + '" role="tooltip" aria-labelledby=""><div class="arrow"></div><dt class="popover-title"></dt><dd class="popover-content"></dd></dl>';
+  /* annotation tooltips */
+  $annoTips.each(function () {
+    var annoType = $(this).data('annotype');
+    $(this).addClass('anno-' + annoType);
+    var annoTemplate = '<dl class="popover anno anno-' + annoType + '" role="tooltip"><div class="arrow"></div><dt class="popover-title"></dt><dd class="popover-content"></dd></dl>';
 
     $(this).popover({
       template: annoTemplate,
-      html: true
+      html: true,
+      title: function() {
+        return $(this).data('annotype');
+      }
     });
   });
 
   // activate popover on enter since data-toggle="click" doesn't work for keyboard
-  $('[data-toggle=popover]').keyup(function (e) {
+  $popovers.keyup(function (e) {
     if (e.which === 13) {
       $(this).popover('toggle');
     }
-  });
+  })
 
   // hide after tabbing to something new
-  $('[data-toggle=popover]').blur(function () {
+  .blur(function () {
     $(this).popover('hide');
-  });
+  })
 
   // hide all popovers on ESC
-  $(document).keyup(function (e) {
-    if (e.which == 27) {
-      $('[data-toggle=popover]').popover('hide');
+  .keyup(function (e) {
+    if (e.which === 27) {
+      $popovers.popover('hide');
     }
   });
 
   $('[data-toggle="photoswipe"]').photoswipe({
     bgOpacity: 0.7
   });
-});
-
-
-/******************
- * FIX HREFS FOR EPUB
- ******************/
-$('a.thumbnail').each(function () {
-  var link = $(this).attr('href');
-  $(this).data('href', link).attr('href', '#');
-});
-
-/******************
- * IMAGE EXPANDER
- ******************/
-$('.expander-click').click(function () {
-  var $expander = $(this).parent('.expander');
-  var $icon = $(this).find('.glyphicon');
-
-  $expander.swapClass('expander-collapsed', 'expander-expanded');
-  $icon.swapClass('glyphicon-menu-down', 'glyphicon-menu-up');
-});
-
-$.fn.swapClass = function (oldClass, newClass) {
-  $(this).toggleClass(oldClass).toggleClass(newClass);
-};
-
-/******************
- * TOGGLE BUTTONS
- ******************/
-$('#pageNumbers').click(function () {
-  $('.pagebreak').toggle();
-  $('.naToggle').swapClass('col-sm-9 col-md-7', 'col-sm-10 col-md-8');
-  $(this).toggleClass('inactive');
-});
-
-$('#annotations').click(function () {
-  var $btn = $(this);
-  var $annos = $('[data-toggle="tooltip"], dfn[data-toggle="popover"]');
-  $btn.toggleClass('inactive');
-  $annos.each(function () {
-    $(this).toggleClass('reset');
-    var type = $(this).data('toggle');
-    if ($btn.hasClass('inactive')) {
-      $(this).removeAttr('tabindex');
-      switch (type) {
-      case 'tooltip':
-        $(this).tooltip('disable');
-        break;
-      case 'popover':
-        $(this).popover('disable');
-      }
-    } else {
-      $(this).attr('tabindex', 0);
-      switch (type) {
-      case 'tooltip':
-        $(this).tooltip('enable');
-        break;
-      case 'popover':
-        $(this).popover('enable');
-      }
-    }
-  });
-});
-
-/******************
- * Replace all SVG images with inline SVG
- * http://stackoverflow.com/questions/24933430/img-src-svg-changing-the-fill-color
- ******************/
-jQuery('img.svg').each(function () {
-  var $img = jQuery(this);
-  var imgID = $img.attr('id');
-  var imgClass = $img.attr('class');
-  var imgURL = $img.attr('src');
-
-  jQuery.get(imgURL, function (data) {
-    // Get the SVG tag, ignore the rest
-    var $svg = jQuery(data).find('svg');
-
-    // Add replaced image's ID to the new SVG
-    if (typeof imgID !== 'undefined') {
-      $svg = $svg.attr('id', imgID);
-    }
-    // Add replaced image's classes to the new SVG
-    if (typeof imgClass !== 'undefined') {
-      $svg = $svg.attr('class', imgClass + ' replaced-svg');
-    }
-
-    // Remove any invalid XML tags as per http://validator.w3.org
-    $svg = $svg.removeAttr('xmlns:a');
-
-    // Check if the viewport is set, if the viewport is not set the SVG wont't scale.
-    if (!$svg.attr('viewBox') && $svg.attr('height') && $svg.attr('width')) {
-      $svg.attr('viewBox', '0 0 ' + $svg.attr('height') + ' ' + $svg.attr('width'));
-    }
-
-    // Replace image with new SVG
-    $img.replaceWith($svg);
-
-  }, 'xml');
-
 });
