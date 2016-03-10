@@ -28,6 +28,9 @@ $(function () {
     // set html true so we can have rich text in the tooltip
     html: true,
 
+    // trigger on focus to ensure keyboard accessibility
+    trigger: 'focus',
+
     // pull the content from our definition list pairs
     content: function () {
       // the title attribute must match the dt text (case insensitive)
@@ -45,27 +48,24 @@ $(function () {
   $annoTips.each(function () {
     var annoType = $(this).data('annotype');
     $(this).addClass('anno-' + annoType);
-    var annoTemplate = '<dl class="popover anno anno-' + annoType + '" role="tooltip"><div class="arrow"></div><dt class="popover-title"></dt><dd class="popover-content"></dd></dl>';
+    var annoTemplate = '<div class="popover anno anno-' + annoType + '" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>';
 
     $(this).popover({
       template: annoTemplate,
       html: true,
+      trigger: 'focus',
       title: function() {
-        return $(this).data('annotype');
+        var type = $(this).data('annotype');
+        return (type === 'block') ? '' : type;
       }
     });
   });
 
-  // activate popover on enter since data-toggle="click" doesn't work for keyboard
+  // activate popover on enter
   $popovers.keyup(function (e) {
     if (e.which === 13) {
       $(this).popover('toggle');
     }
-  })
-
-  // hide after tabbing to something new
-  .blur(function () {
-    $(this).popover('hide');
   })
 
   // hide all popovers on ESC
