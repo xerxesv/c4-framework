@@ -10,19 +10,33 @@
     color: white;
     text-decoration: none;
   }
-  &.anno-a11y {
+  &.anno-accessibility {
     @include focusHover {
       background-color: $brand-accessibility;
     }
   }
-  &.anno-bs {
+  &.anno-bootstrap {
     @include focusHover {
       background-color: $brand-bootstrap;
     }
   }
-  &.anno-framework {
+  &.anno-norton {
     @include focusHover {
       background-color: $brand-primary;
+    }
+  }
+  &.anno-semantics {
+    @include focusHover {
+      background-color: $brand-html5;
+    }
+  }
+}
+
+@mixin annoPopover($type, $color) {
+  &.#{anno- + $type} {
+    border-left-color: $color;
+    .popover-title {
+      color: $color;
     }
   }
 }
@@ -34,16 +48,17 @@
     .popover-title {
       text-transform: uppercase;
       color: $gray-light;
-      font-weight: bold;
+      background-color: inherit;
+      padding-bottom: 0;
+      border-bottom: none;
     }
   }
-  &.anno-a11y {
-    border-left-color: $brand-accessibility;
+  &:after {
+    position: absolute;
+    content: attr('data-annotype');
   }
-  &.anno-bs {
-    border-left-color: $brand-bootstrap;
-  }
-  &.anno-framework {
-    border-left-color: $brand-primary;
-  }
+  @include annoPopover('accessibility', $brand-accessibility);
+  @include annoPopover('bootstrap', $brand-bootstrap);
+  @include annoPopover('norton', $brand-primary);
+  @include annoPopover('semantics', $brand-html5);
 }
