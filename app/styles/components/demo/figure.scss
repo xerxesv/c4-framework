@@ -1,6 +1,9 @@
 figure {
   margin-bottom: 1em;
-  figcaption {
+  figure {
+    margin-bottom: 0;
+  }
+  img + figcaption {
     font-size: 0.8em;
     background-color: $gray-lighter;
     border: 1px solid $table-border-color;
@@ -9,5 +12,11 @@ figure {
   }
   a.thumbnail+figcaption {
     margin-top: -20px;
+  }
+  &>figcaption {
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 12px;
+    margin-bottom: 12px;
   }
 }

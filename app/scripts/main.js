@@ -4,23 +4,34 @@
  * INITIALIZE!
  ******************/
 $(function () {
+  'use strict';
+
   // glossary path
   var glossaryPath = 'glossary.html#glossary';
-  // load the glossary into a div
+  // save the glossary for later use
   var $terms = $(document.createElement('div')).load(glossaryPath);
 
-  // load tooltips and anchor popovers
-  $('[data-toggle="tooltip"]').tooltip();
-  $('a[data-toggle="popover"]').popover();
+  // define different types of popover tooltips
+  var $termTips = $('.term[data-toggle="popover"]'),
+    $annoTips = $('.anno[data-toggle="popover"]'),
 
-  /* load popover tooltips as definition lists */
-  $('dfn[data-toggle="popover"]').popover({
+    // all popovers
+    $popovers = $('[data-toggle="popover"]');  
+
+  // load basic tooltips
+  $('[data-toggle="tooltip"]').tooltip();
+
+  /* term definition tooltips as popovers */
+  $termTips.popover({
 
     // use a more semantic template for definition terms
-    template: '<dl class="popover" role="tooltip"><div class="arrow"></div><dt class="popover-title"></dt><dd class="popover-content"></dd></dl>',
+    template: '<dl class="popover term" role="tooltip"><div class="arrow"></div><dt class="popover-title"></dt><dd class="popover-content"></dd></dl>',
 
     // set html true so we can have rich text in the tooltip
     html: true,
+
+    // trigger on focus to ensure keyboard accessibility
+    trigger: 'focus',
 
     // pull the content from our definition list pairs
     content: function () {
@@ -32,6 +43,33 @@ $(function () {
       });
       // return the following dd (description element)
       return $dt.next('dd').html();
+    }
+  });
+
+  /* annotation tooltips */
+  $annoTips.each(function () {
+    var annoType = $(this).data('annotype');
+    $(this).addClass('anno-' + annoType);
+    var annoTemplate = '<div class="popover anno anno-' + annoType + '" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>';
+
+    $(this).popover({
+      template: annoTemplate,
+      html: true,
+      trigger: 'focus',
+      title: function() {
+        var type = $(this).data('annotype');
+        return (type === 'block') ? '' : type;
+      }
+    });
+  });
+  
+  // initialize all other kinds of popovers
+  $popovers.popover();
+
+  // hide all popovers on ESC
+  $popovers.keyup(function (e) {
+    if (e.which === 27) {
+      $popovers.popover('hide');
     }
   });
 
@@ -48,17 +86,7 @@ $('a.thumbnail').each(function () {
   $(this).data('href', link).attr('href', '#');
 });
 
-/******************
- * IMAGE EXPANDER
- ******************/
-$('.expander-click').click(function () {
-  var $expander = $(this).parent('.expander');
-  var $icon = $(this).find('.glyphicon');
-
-  $expander.swapClass('expander-collapsed', 'expander-expanded');
-  $icon.swapClass('glyphicon-menu-down', 'glyphicon-menu-up');
-});
-
+// swapClass utility
 $.fn.swapClass = function (oldClass, newClass) {
   $(this).toggleClass(oldClass).toggleClass(newClass);
 };
@@ -68,7 +96,7 @@ $.fn.swapClass = function (oldClass, newClass) {
  ******************/
 $('#pageNumbers').click(function () {
   $('.pagebreak').toggle();
-  $('.naToggle').swapClass('col-sm-9 col-md-7', 'col-sm-10 col-md-8');
+  $('main .row div').swapClass('col-sm-9 col-md-7', 'col-sm-10 col-md-8');
   $(this).toggleClass('inactive');
 });
 

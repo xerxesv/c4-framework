@@ -2,8 +2,8 @@
 * PHOTOSWIPE GALLERY
 *******************/
 
-.psGallery {
-  figcaption {
+.image-gallery {
+  a + figcaption {
     @include sr-only;
   }
 }

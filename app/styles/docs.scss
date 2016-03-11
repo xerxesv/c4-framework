@@ -1,16 +1,16 @@
 // Bootstrap
-@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import "components/docs/variables";
+@import "components/bootstrap/bootstrap_default";
 
 // Mixins
 @import "components/mixins/screen-reader";
 @import "components/mixins/utilities";
 
 // Docs custom
-@import "docs/variables";
-@import "docs/annotations";
-@import "docs/example";
+@import "components/docs/annotations";
+@import "components/docs/example";
 
-// Included main components
-@import "components/gallery";
-@import "components/tooltip-terms";
-@import "components/type";
+// Included demo components
+@import "components/demo/gallery";
+@import "components/demo/tooltip-terms";
+@import "components/demo/type";

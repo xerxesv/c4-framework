@@ -1,6 +1,17 @@
 // focus & hover for accessibility
 @mixin focusHover {
-  &:focus, &:hover {
+  &:focus,
+  &:hover {
+    @content;
+  }
+}
+
+@mixin all-pseudo {
+  &,
+  &:hover,
+  &:link,
+  &:active,
+  &:visited {
     @content;
   }
 }

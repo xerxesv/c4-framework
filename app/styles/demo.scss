@@ -6,21 +6,21 @@ $icon-font-path: '../fonts/';
 @import url(https://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700);
 
 // Bootstrap
-@import "bootstrap_overrides";
-@import "bootstrap_default";
+@import "components/demo/variables";
+@import "components/bootstrap/bootstrap_demo";
 
 // Mixins
 @import "components/mixins/screen-reader";
+@import "components/mixins/utilities";
 
-// Components (partials)
-@import "components/naM2";
-@import "components/naRH";
-@import "components/figure";
-@import "components/icons";
-@import "components/pagebreaks";
-@import "components/gallery";
-@import "components/table-scroll";
-@import "components/toggle-buttons";
-@import "components/tooltip-terms";
-@import "components/type";
-@import "components/verse";
+// Components
+@import "components/demo/banner";
+@import "components/demo/figure";
+@import "components/demo/icons";
+@import "components/demo/pagebreaks";
+@import "components/demo/gallery";
+@import "components/demo/table-scroll";
+@import "components/demo/toggle-buttons";
+@import "components/demo/tooltip-terms";
+@import "components/demo/type";
+@import "components/demo/verse";
