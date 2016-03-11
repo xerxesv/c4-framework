@@ -61,15 +61,8 @@ $(function () {
     });
   });
 
-  // activate popover on enter
-  $popovers.keyup(function (e) {
-    if (e.which === 13) {
-      $(this).popover('toggle');
-    }
-  })
-
   // hide all popovers on ESC
-  .keyup(function (e) {
+  $popovers.keyup(function (e) {
     if (e.which === 27) {
       $popovers.popover('hide');
     }
