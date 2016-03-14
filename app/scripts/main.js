@@ -4,7 +4,6 @@
  * INITIALIZE!
  ******************/
 $(function () {
-  'use strict';
 
   // glossary path
   var glossaryPath = 'glossary.html#glossary';
@@ -16,7 +15,7 @@ $(function () {
     $annoTips = $('.anno[data-toggle="popover"]'),
 
     // all popovers
-    $popovers = $('[data-toggle="popover"]');  
+    $popovers = $('[data-toggle="popover"]');
 
   // load basic tooltips
   $('[data-toggle="tooltip"]').tooltip();
@@ -62,7 +61,7 @@ $(function () {
       }
     });
   });
-  
+
   // initialize all other kinds of popovers
   $popovers.popover();
 
