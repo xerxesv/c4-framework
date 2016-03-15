@@ -5,14 +5,21 @@
  ******************/
 $(function () {
 
-  // glossary path
-  var glossaryPath = 'glossary.html#glossary';
-  // save the glossary for later use
-  var $terms = $(document.createElement('div')).load(glossaryPath);
+  // appendix path
+  var apdx = 'appendix.html',
+
+    // glossary and editions in the appendix
+    glossaryPath = apdx + ' #glossary',
+    editionPath = apdx + ' #editions';
+
+  // save the appendices for later use
+  var $terms = $(document.createElement('div')).load(glossaryPath),
+    $editions = $(document.createElement('div')).load(editionPath);
 
   // define different types of popover tooltips
   var $termTips = $('.term[data-toggle="popover"]'),
     $annoTips = $('.anno[data-toggle="popover"]'),
+    $pageTips = $('.pagebreak [data-toggle="popover"]'),
 
     // all popovers
     $popovers = $('[data-toggle="popover"]');
@@ -42,7 +49,8 @@ $(function () {
       });
       // return the following dd (description element)
       return $dt.next('dd').html();
-    }
+    },
+    container: 'main'
   });
 
   /* annotation tooltips */
@@ -55,11 +63,32 @@ $(function () {
       template: annoTemplate,
       html: true,
       trigger: 'focus',
-      title: function() {
+      title: function () {
         var type = $(this).data('annotype');
         return (type === 'block') ? '' : type;
-      }
+      },
+      container: 'main'
     });
+  });
+
+  /* pagebreak tooltips */
+  $pageTips.popover({
+    content: function () {
+      var classes = $(this).attr('class').split(/\s+/);
+      classes = $.grep(classes, function (value) {
+        return value.indexOf('ed-') >= 0;
+      });
+      var $content = '';
+      $.each(classes, function (i, v) {
+        var item = $editions.find('.' + v)[0].outerHTML;
+        $content += item;
+      });
+      return $content;
+    },
+    template: '<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><ul class="popover-content"></ul></div>',
+    html: true,
+    trigger: 'focus',
+    container: 'main'
   });
 
   // initialize all other kinds of popovers
