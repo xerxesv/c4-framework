@@ -1,4 +1,28 @@
-h1.naRH-Title {
-  margin-top: 0;
-  margin-bottom: 0;
+@mixin ordinal {
+  background-color: $brand-primary;
+  color: $body-bg;
+  padding: 0 10px;
+}
+
+// chapter headings
+[epub\:type~=chapter] {
+  &>[epub\:type~=title] {
+    [epub\:type~=ordinal] {
+      @include ordinal;
+    }
+  }
+}
+
+// subchapter headings
+[epub\:type~=subchapter] {
+  &>[epub\:type~=title] {
+    font-size: 2rem;
+    font-weight: 600;
+    font-family: $font-family-sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    [epub\:type~=ordinal] {
+      @include ordinal;
+    }
+  }
 }
