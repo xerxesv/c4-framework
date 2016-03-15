@@ -2,20 +2,34 @@
 * PAGEBREAKS
 *******************/
 
+$pb-width: 6em;
+
 .pagebreak {
   float: right;
-  margin-right: -7em;
+  margin-right: calc(-30px - #{$pb-width});
   text-align: right;
   text-indent: 0;
-  width: 4.75em;
+  width: $pb-width;
   a {
-    display: block;
+    display: inline-block;
+    width: $pb-width;
     font-size: 0.8em;
     text-decoration: none;
     cursor: pointer;
-    padding: 0 14px 0 5px;
+    padding-right: 1em;
     margin-top: 3px;
     color: $gray-dark;
     background-color: $gray-lighter;
+    &:before {
+      content: 'p. ';
+    }
+    &:first-child {
+      margin-top: 0;
+    }
   }
+}
+
+.popover ul {
+  list-style: none;
+  margin-bottom: 0;
 }
