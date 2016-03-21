@@ -1,0 +1,72 @@
+@mixin annoInline($type, $color) {
+  &.#{anno- + $type} {
+    padding: 0 2px;
+    background-color: $gray-lighter;
+    border-radius: $border-radius-base;
+    @include focusHover {
+      background-color: $color;
+      color: white;
+    }
+  }
+}
+
+@mixin annoBlock($type, $color) {
+  &.#{anno- + $type} {
+    display: block;
+    padding-right: 1em;
+    border-right: 5px solid $gray-lighter;
+    @include focusHover {
+      border-right-color: $color;
+    }
+  }
+}
+
+@mixin annoPopover($type, $color) {
+  &.anno {
+    border-left-width: 5px;
+    border-left-style: solid;
+    &.#{anno- + $type} {
+      border-left-color: $color;
+      .popover-title {
+        color: $color;
+      }
+    }
+  }
+}
+
+.anno[data-toggle=popover] {
+  color: inherit;
+  cursor: pointer;
+  @include focusHover {
+    text-decoration: none;
+  }
+  @include annoInline('accessibility', $brand-accessibility);
+  @include annoInline('bootstrap', $brand-bootstrap);
+  @include annoInline('norton', $brand-primary);
+  @include annoInline('semantics', $brand-html5);
+  @include annoBlock('block', $brand-annotation);
+}
+
+pre .anno[data-toggle=popover] {
+  font-family: $font-family-monospace;
+}
+
+.popover {
+  .popover-title {
+    text-transform: uppercase;
+    font-weight: 700;
+    color: $gray-light;
+    background-color: inherit;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+  &:after {
+    position: absolute;
+    content: attr('data-annotype');
+  }
+  @include annoPopover('accessibility', $brand-accessibility);
+  @include annoPopover('bootstrap', $brand-bootstrap);
+  @include annoPopover('norton', $brand-primary);
+  @include annoPopover('semantics', $brand-html5);
+  @include annoPopover('block', $brand-annotation);
+}

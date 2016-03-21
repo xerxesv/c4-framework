@@ -1,26 +1,2 @@
-$icon-font-path: '../fonts/';
-@import url(https://fonts.googleapis.com/css?family=Caudex:400,400italic,700,700italic);
-@import url(https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700,700italic);
-@import url(https://fonts.googleapis.com/css?family=PT+Serif+Caption:400,400italic);
-@import url(https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic);
-@import url(https://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700);
-
 // Bootstrap
-@import "bootstrap_overrides";
-@import "bootstrap_default";
-
-// Mixins
-@import "components/mixins/screen-reader";
-
-// Components (partials)
-@import "components/naM2";
-@import "components/naRH";
-@import "components/figure";
-@import "components/icons";
-@import "components/pagebreaks";
-@import "components/photoswipe-custom";
-@import "components/table-scroll";
-@import "components/toggle-buttons";
-@import "components/tooltip-terms";
-@import "components/type";
-@import "components/verse";
+@import "components/bootstrap/bootstrap_default";

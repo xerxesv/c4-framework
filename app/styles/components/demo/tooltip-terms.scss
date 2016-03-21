@@ -1,0 +1,39 @@
+/******************
+* TOOLTIP TERMS
+*******************/
+
+a.term {
+  @include reset-text();
+  color: inherit;
+  border-bottom: 1px dotted rgb(0, 0, 0);
+  padding: 0 1px;
+  cursor: pointer;
+  &.term-context:hover {
+    background-color: $brand-primary;
+    color: $body-bg;
+    border-bottom: none;
+  }
+  &.reset {
+    border-bottom: 0;
+    cursor: auto;
+    &:hover {
+      background-color: transparent;
+      color: inherit;
+    }
+  }
+}
+
+// definitions are displayed as dl popovers
+dl.popover.term {
+  .popover-title {
+    background-color: inherit;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+  .popover-content {
+    padding-top: 0;
+  }
+  cite {
+    padding-bottom: 14px;
+  }
+}

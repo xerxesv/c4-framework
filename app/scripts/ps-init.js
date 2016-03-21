@@ -18,13 +18,13 @@
     var gid = 0;
 
     $(this).each(function () {
-      var $pic = $(this),
+      var $pics = $(this),
         items = [],
         getItems = function () {
 
           // each image is contained in a figure element
           // photoswipe galleries must use semantic figure>(a>img)+figcaption structure
-          $pic.find('figure').each(function () {
+          $pics.find('figure').each(function () {
             // find all the elements
             var $a = $(this).find('a'),
               $thumb = $(this).find('img'),
@@ -72,8 +72,13 @@
       items = getItems();
 
       // click event for the anchor (tuts+ used figure)
-      $pic.on('click', 'a', function (event) {
+      $pics.on('click', 'a', function (event) {
         event.preventDefault();
+
+        // only trigger on actual image links
+        if ($(this).find('img').length === 0) {
+          return;
+        }
 
         // get the index from the anchor's parent figure, where we previously stored it as a data-attribute
         var $fig = $(this).closest('figure'),
@@ -122,7 +127,7 @@
           // get index of the current image
           var currIndex = lightBox.getCurrentIndex();
           // set focus on it when the lightbox closes
-          $pic.find('[data-index=' + currIndex + '] a').focus();
+          $pics.find('[data-index=' + currIndex + '] a').focus();
         });
       });
     });
