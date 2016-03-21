@@ -5,7 +5,7 @@ $(function () {
   'use strict';
 
   // glossary path
-  var glossaryPath = 'glossary.html#glossary';
+  var glossaryPath = 'appendix.html#glossary';
   // save the glossary for later use
   var $terms = $(document.createElement('div')).load(glossaryPath);
 

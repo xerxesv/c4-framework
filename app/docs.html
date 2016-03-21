@@ -30,36 +30,81 @@
 
 <body>
 
-  <div class="container" id="top">
-    <header class="page-header">
-      <h1>C4 Framework Documentation</h1>
+  <div id="page">
+    <header>
+      <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">
+              <img src="images/NortonLogo.jpg" alt="The Norton Ebook Framework (Current)" height="26" />
+            </a>
+          </div>
+
+          <div class="collapse navbar-collapse" id="navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="demo.html">Demo</a></li>
+              <li class="active"><a href="docs.html">Docs <span class="sr-only">(current)</span></a></li>
+            </ul>
+            <div class="nav navbar-nav navbar-right">
+              <!--<button class="btn btn-toggle navbar-btn" id="pageNumbers" title="Page numbers">
+                <div class="icon icon-left">
+                  <img src="images/menuIconPN.svg" alt="" class="icon-img svg" />
+                  <span class="icon-text">Page numbers</span>
+                </div>
+              </button>
+
+              <button class="btn btn-toggle navbar-btn" id="annotations" title="Annotations">
+                <div class="icon icon-left">
+                  <img src="images/menuIconAnnot.svg" alt="" class="icon-img svg" />
+                  <span class="icon-text">Annotations</span>
+                </div>
+              </button>
+
+              <a class="btn btn-toggle navbar-btn" href="http://books.wwnorton.com/studyspace/" target="_blank" title="StudySpace">
+                <div class="icon icon-left">
+                  <img src="images/studyspace_logo.svg" alt="" class="icon-img svg" />
+                  <span class="icon-text">StudySpace</span>
+                </div>
+              </a>-->
+            </div>
+          </div>
+        </div>
+      </nav>
     </header>
-    <div class="row">
-      <aside class="col-hidden-xs col-sm-3 pull-right">
-        <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix">
-          <a class="back-to-top" href="#top"> Back to top </a>
-        </nav>
-      </aside>
-      <main class="col-xs-12 col-sm-9">
-        <section>
-          <h2>Bootstrap Widgets</h2>
-          <p>The C4 framework uses <a href="http://getbootstrap.com/javascript/">Bootstrap JavaScript components</a> to handle many interactive features. In the following section, we will cover various ways that these components should be used in ebooks.</p>
+
+    <div class="container" id="top">
+      <div class="row">
+        <aside class="col-hidden-xs col-sm-3 pull-right">
+          <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix">
+            <a class="back-to-top" href="#top"> Back to top </a>
+          </nav>
+        </aside>
+        <main class="col-xs-12 col-sm-9">
           <section>
-            <h3>Popovers</h3>
-            <p>Bootstrap's <a href="http://getbootstrap.com/javascript/#popovers">popover.js</a> plugin is an extension of the tooltip.js plugin that allows for full aup in the tooltip.</p>
+            <h2>Bootstrap Widgets</h2>
+            <p>The C4 framework uses <a href="http://getbootstrap.com/javascript/">Bootstrap JavaScript components</a> to handle many interactive features. In the following section, we will cover various ways that these components should be used in ebooks.</p>
             <section>
-              <h4>As Key Term Tooltips</h4>
-              <p>In the following example, <a href="http://getbootstrap.com/javascript/#popovers">popover.js</a> is used to create custom tooltips. The definitions are pulled from an external <code>#glossary</code> document (<a href="glossary.html">glossary.html</a> in this case) that houses semantic <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dt"><code>dt</code></a>/<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dd"><code>dd</code></a> pairs inside a definition list (<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dl"><code>dl</code></a>).</p>
-              <div class="example">
-                <p>
-                  Academic writing can serve a number of different purposes — to <a tabindex="0" role="button" class="term term-genre" data-toggle="popover" data-placement="auto top" title="Arguing"><dfn>argue</dfn></a> for what you think about a topic and why, to <a tabindex="0" role="button" class="term term-genre" data-toggle="popover" data-placement="auto top" title="Reporting"><dfn>report</dfn></a> on what’s known about an issue, to <span>propose a solution</span> for some problem, and so on.
-                </p>
-                <p>
-                  When you write in an academic context, you’re expected to state your main point explicitly, often in a <a tabindex="0" role="button" class="term term-strategies" data-toggle="popover" data-placement="auto top" title="Thesis"><dfn>thesis</dfn></a> statement.
-                </p>
-              </div>
-              <figure class="code">
-                <pre>
+              <h3>Popovers</h3>
+              <p>Bootstrap's <a href="http://getbootstrap.com/javascript/#popovers">popover.js</a> plugin is an extension of the tooltip.js plugin that allows for full aup in the tooltip.</p>
+              <section>
+                <h4>As Key Term Tooltips</h4>
+                <p>In the following example, <a href="http://getbootstrap.com/javascript/#popovers">popover.js</a> is used to create custom tooltips. The definitions are pulled from an external <code>#glossary</code> document (<a href="glossary.html">glossary.html</a> in this case) that houses semantic <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dt"><code>dt</code></a>/<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dd"><code>dd</code></a> pairs inside a definition list (<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dl"><code>dl</code></a>).</p>
+                <div class="example">
+                  <p>
+                    Academic writing can serve a number of different purposes — to <a tabindex="0" role="button" class="term term-genre" data-toggle="popover" data-placement="auto top" title="Arguing"><dfn>argue</dfn></a> for what you think about a topic and why, to <a tabindex="0" role="button" class="term term-genre" data-toggle="popover" data-placement="auto top" title="Reporting"><dfn>report</dfn></a> on what’s known about an issue, to <span>propose a solution</span> for some problem, and so on.
+                  </p>
+                  <p>
+                    When you write in an academic context, you’re expected to state your main point explicitly, often in a <a tabindex="0" role="button" class="term term-strategies" data-toggle="popover" data-placement="auto top" title="Thesis"><dfn>thesis</dfn></a> statement.
+                  </p>
+                </div>
+                <figure class="code">
+                  <pre>
 &sol;&sol; Required key term tooltip markup
 &lt;a <a tabindex="0" role="button" class="anno" data-toggle="popover" data-placement="auto top" data-annotype="accessibility" data-content="<code>tabindex</code> ensures that keyboard users can set focus on the element.">tabindex="0"</a> <a tabindex="0" role="button" class="anno" data-toggle="popover" data-placement="auto top" data-annotype="accessibility" data-content="The ARIA button role tells screen reader users that something will happen when they click the element.">role="button"</a> <a tabindex="0" role="button" class="anno" data-toggle="popover" data-placement="auto top" data-annotype="norton" data-content="The term class differentiates this popover from other types of popovers.">class="term"</a> <a tabindex="0" role="button" class="anno" data-toggle="popover" data-placement="auto top" data-annotype="bootstrap" data-content="This is what makes this a Bootstrap popover.">data-toggle="popover"</a> <a tabindex="0" role="button" class="anno" data-toggle="popover" data-placement="auto top" data-annotype="norton" data-content="The title is used to match the glossary <code>dt</code> entry (not case-sensitive).">title="Reporting"</a>&gt;
   &lt;<a tabindex="0" role="button" class="anno" data-toggle="popover" data-placement="auto top" data-annotype="semantics" data-content="The <code>dfn</code> should be used any time a term is first defined.">dfn</a>&gt;report&lt;/dfn&gt;
@@ -73,19 +118,19 @@
   &lt;dd&gt;A writing GENRE that presents information to readers on a subject.&lt;/dd&gt;
   ...
 &lt;/dl&gt;</pre>
-              </figure>
-              <div class="callout callout-accessibility"></div>
-            </section>
-            <section>
-              <h4>As Annotations</h4>
-              <p>Popovers can also be used to annotate text both inline and as a block. The annotations used in the documentation code examples are an example of this type of popover used inline.</p>
-              <div class="example">
-                <a tabindex="0" role="button" class="anno" data-toggle="popover" data-placement="auto right" data-annotype="block" data-content="Purple Heart given for wounding or death in battle.">
+                </figure>
+                <div class="callout callout-accessibility"></div>
+              </section>
+              <section>
+                <h4>As Annotations</h4>
+                <p>Popovers can also be used to annotate text both inline and as a block. The annotations used in the documentation code examples are an example of this type of popover used inline.</p>
+                <div class="example">
+                  <a tabindex="0" role="button" class="anno" data-toggle="popover" data-placement="auto right" data-container="#top" data-annotype="block" data-content="Purple Heart given for wounding or death in battle.">
                   On some issues, questions of virtue and honor are too obvious to deny. Consider the recent debate over who should qualify for the Purple Heart. Since 1932, the U.S. military has awarded the medal to soldiers wounded or killed in battle by enemy action. In addition to the honor, the medal entitles recipients to special privileges in veterans’ hospitals.
                 </a>
-              </div>
-              <figure class="code">
-                <pre>
+                </div>
+                <figure class="code">
+                  <pre>
 &sol;&sol; Required annotation markup
 &lt;a <a tabindex="0" role="button" class="anno" data-toggle="popover" data-placement="auto top" data-annotype="accessibility" data-content="<code>tabindex</code> ensures that keyboard users can set focus on the element.">tabindex="0"</a> <a tabindex="0" role="button" class="anno" data-toggle="popover" data-placement="auto top" data-annotype="accessibility" data-content="The ARIA button role tells screen reader users that something will happen when they click the element.">role="button"</a> <a tabindex="0" role="button" class="anno" data-toggle="popover" data-placement="auto top" data-annotype="norton" data-content="The anno class differentiates this popover from other types of popovers.">class="anno"</a> <a tabindex="0" role="button" class="anno" data-toggle="popover" data-placement="auto top" data-annotype="bootstrap" data-content="This is what makes this a Bootstrap popover.">data-toggle="popover"</a> <a tabindex="0" role="button" class="anno" data-toggle="popover" data-placement="auto top" data-annotype="norton" data-content="The annotation type should be one of a set of general types of annotations. For block annotations, the data-annotype must be block.">data-annotype="block"</a> <a tabindex="0" role="button" class="anno" data-toggle="popover" data-placement="auto top" data-annotype="bootstrap" data-content="The contents of the annotation should go here.">data-content="..."</a>&gt;
   On some issues, questions of virtue and honor...
@@ -93,55 +138,56 @@
 
 <a tabindex="0" role="button" class="anno" data-toggle="popover" data-placement="auto top" data-annotype="bootstrap" data-content="top | bottom | left | right | auto. <br />
 When &quot;auto&quot; is specified, it will dynamically reorient the popover. For example, if placement is &quot;auto left&quot;, the popover will display to the left when possible, otherwise it will display right.">data-placement="auto top"</a>--></pre>
-              </figure>
+                </figure>
+              </section>
+            </section>
+            <section>
+              <h3>Modals</h3>
             </section>
           </section>
           <section>
-            <h3>Modals</h3>
-          </section>
-        </section>
-        <section>
-          <h2>Photoswipe</h2>
-          <p>The <a href="http://photoswipe.com/">Photoswipe library</a> is a highly customizable lightbox gallery.</p>
-          <div class="example">
-            <div class="psGallery row" data-toggle="photoswipe" itemscope itemtype="http://schema.org/ImageGallery">
-              <figure class="col-xs-6" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                <a href="https://c2.staticflickr.com/4/3275/2703516207_b91af0da0e_o.jpg" itemprop="contentUrl" data-size="2591x2592">
-                  <img src="https://c2.staticflickr.com/4/3275/2703516207_59a71fc66e_n.jpg" itemprop="thumbnail" alt="A closeup shot of the edge of the Norton Anthology of English Literature">
-                </a>
-                <figcaption itemprop="caption">The Norton Anthology of English Literature provides an overview of poetry, drama, prose fiction, essays, and letters from <em>Beowulf</em> to the beginning of the 21st century.</figcaption>
-              </figure>
+            <h2>Photoswipe</h2>
+            <p>The <a href="http://photoswipe.com/">Photoswipe library</a> is a highly customizable lightbox gallery.</p>
+            <div class="example">
+              <div class="psGallery row" data-toggle="photoswipe" itemscope itemtype="http://schema.org/ImageGallery">
+                <figure class="col-xs-6" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                  <a href="https://c2.staticflickr.com/4/3275/2703516207_b91af0da0e_o.jpg" itemprop="contentUrl" data-size="2591x2592">
+                    <img src="https://c2.staticflickr.com/4/3275/2703516207_59a71fc66e_n.jpg" itemprop="thumbnail" alt="A closeup shot of the edge of the Norton Anthology of English Literature">
+                  </a>
+                  <figcaption itemprop="caption">The Norton Anthology of English Literature provides an overview of poetry, drama, prose fiction, essays, and letters from <em>Beowulf</em> to the beginning of the 21st century.</figcaption>
+                </figure>
 
-              <figure class="col-xs-6 col-sm-3" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                <a href="https://c1.staticflickr.com/7/6214/6391863817_b88082af5a_o.jpg" itemprop="contentUrl" data-size="3264x2448">
-                  <img src="https://c1.staticflickr.com/7/6214/6391863817_a4f8031933_q.jpg" itemprop="thumbnail" alt="A flying seagull">
-                </a>
-              </figure>
+                <figure class="col-xs-6 col-sm-3" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                  <a href="https://c1.staticflickr.com/7/6214/6391863817_b88082af5a_o.jpg" itemprop="contentUrl" data-size="3264x2448">
+                    <img src="https://c1.staticflickr.com/7/6214/6391863817_a4f8031933_q.jpg" itemprop="thumbnail" alt="A flying seagull">
+                  </a>
+                </figure>
 
-              <figure class="col-xs-6 col-sm-3" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                <a href="https://c1.staticflickr.com/9/8063/8258545686_38dadf3430_k.jpg" itemprop="contentUrl" data-size="2038x1365">
-                  <img src="https://c1.staticflickr.com/9/8063/8258545686_b0f674279f_q.jpg" itemprop="thumbnail" alt="The view of 500 5th Ave from Bryant Park">
-                </a>
-                <figcaption itemprop="caption">500 5th Ave, home of W. W. Norton &amp; Company</figcaption>
-              </figure>
+                <figure class="col-xs-6 col-sm-3" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                  <a href="https://c1.staticflickr.com/9/8063/8258545686_38dadf3430_k.jpg" itemprop="contentUrl" data-size="2038x1365">
+                    <img src="https://c1.staticflickr.com/9/8063/8258545686_b0f674279f_q.jpg" itemprop="thumbnail" alt="The view of 500 5th Ave from Bryant Park">
+                  </a>
+                  <figcaption itemprop="caption">500 5th Ave, home of W. W. Norton &amp; Company</figcaption>
+                </figure>
 
-              <figure class="col-xs-6 col-sm-3" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                <a href="https://c1.staticflickr.com/9/8423/7704884744_a01898eee1_k.jpg" itemprop="contentUrl" data-size="1600x1067">
-                  <img src="https://c1.staticflickr.com/9/8423/7704884744_85f3c7f314_q.jpg" itemprop="thumbnail" alt="A bed of daisies">
-                </a>
-              </figure>
+                <figure class="col-xs-6 col-sm-3" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                  <a href="https://c1.staticflickr.com/9/8423/7704884744_a01898eee1_k.jpg" itemprop="contentUrl" data-size="1600x1067">
+                    <img src="https://c1.staticflickr.com/9/8423/7704884744_85f3c7f314_q.jpg" itemprop="thumbnail" alt="A bed of daisies">
+                  </a>
+                </figure>
 
-              <figure class="col-xs-6 col-sm-3" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                <a href="https://c2.staticflickr.com/8/7329/12484570105_0824ff126b_o.jpg" itemprop="contentUrl" data-size="3000x2000">
-                  <img src="https://c2.staticflickr.com/8/7329/12484570105_edc0f23381_q.jpg" itemprop="thumbnail" alt="A kingfisher perched on a branch">
-                </a>
-              </figure>
+                <figure class="col-xs-6 col-sm-3" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                  <a href="https://c2.staticflickr.com/8/7329/12484570105_0824ff126b_o.jpg" itemprop="contentUrl" data-size="3000x2000">
+                    <img src="https://c2.staticflickr.com/8/7329/12484570105_edc0f23381_q.jpg" itemprop="thumbnail" alt="A kingfisher perched on a branch">
+                  </a>
+                </figure>
+              </div>
             </div>
-          </div>
-        </section>
-      </main>
-      <aside>
-      </aside>
+          </section>
+        </main>
+        <aside>
+        </aside>
+      </div>
     </div>
   </div>
 
