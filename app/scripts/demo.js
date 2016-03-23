@@ -101,6 +101,10 @@ $(function () {
     }
   });
 
+  $('#myModal').on('shown.bs.modal', function () {
+    $('#myModal .close').focus();
+  });
+
   $('[data-toggle="photoswipe"]').photoswipe({
     bgOpacity: 0.7
   });
@@ -124,13 +128,13 @@ $.fn.swapClass = function (oldClass, newClass) {
  ******************/
 $('#pageNumbers').click(function () {
   $('.pagebreak').toggle();
-  $('main .row div').swapClass('col-sm-9 col-md-7', 'col-sm-10 col-md-8');
+  $('main>.row>div.col-xs-12').swapClass('col-sm-9 col-md-7', 'col-sm-10 col-md-8');
   $(this).toggleClass('inactive');
 });
 
 $('#annotations').click(function () {
   var $btn = $(this);
-  var $annos = $('[data-toggle="tooltip"], dfn[data-toggle="popover"]');
+  var $annos = $('[data-toggle="tooltip"], .term[data-toggle="popover"], .anno[data-toggle="popover"], .pagebreak [data-toggle="popover"]');
   $btn.toggleClass('inactive');
   $annos.each(function () {
     $(this).toggleClass('reset');
