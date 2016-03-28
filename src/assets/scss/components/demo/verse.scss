@@ -1,0 +1,42 @@
+/******************
+* VERSE FORMATTING
+*******************/
+
+.verse {
+  position: relative;
+  font-family: $font-family-serif;
+  border: none;
+  margin: 1em 0 0;
+  padding-left: 3em;
+  overflow-x: scroll;
+  .scene-number {
+    text-align: center;
+  }
+  .stage-direction {}
+  .verse-title {}
+  h3.verse-character,
+  h4.verse-character,
+  h5.verse-character {
+    margin: 0.5em 0 0;
+  }
+  .verse-character {
+    text-transform: lowercase;
+    font-variant: small-caps;
+  }
+  .verse-line {
+    position: relative;
+    margin: 0 0 0 1em;
+    white-space: nowrap;
+    &:before {
+      content: attr(data-lineNum);
+      position: absolute;
+      left: -5em;
+      top: 0.2em;
+      font-size: 0.8em;
+    }
+    &:after {
+      content: '\A';
+      white-space: pre;
+    }
+  }
+}

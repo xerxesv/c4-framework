@@ -1,0 +1,9 @@
+/******************
+* PHOTOSWIPE GALLERY
+*******************/
+
+.image-gallery {
+  a + figcaption {
+    @include sr-only;
+  }
+}

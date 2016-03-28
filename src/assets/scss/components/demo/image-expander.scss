@@ -1,0 +1,45 @@
+/******************
+* IMAGE EXPANDER
+*******************/
+
+.expander {
+  overflow: hidden;
+  &.expander-collapsed {
+    transition: all 350ms ease-out;
+    max-height: 165px;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 165px, 0% 165px);
+    .glyphicon {
+      transition: all 350ms ease-out;
+      top: calc(165px - 1em - 5px);
+    }
+  }
+  &.expander-expanded {
+    transition: all 350ms ease-out;
+    max-height: 1080px;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    .glyphicon {
+      transition: all 350ms ease-out;
+      top: calc(100% - 1em - 7px);
+    }
+  }
+  .expander-click {
+    cursor: pointer;
+    position: relative;
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    margin-bottom: 0.5em;
+  }
+  .glyphicon {
+    position: absolute;
+    left: calc(50% - 0.5em);
+    font-size: 2em;
+    color: $body-bg;
+    background-color: $gray-dark;
+    padding: 5px 10px 0;
+    border: 1px solid $gray-lighter;
+    border-bottom: none;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+  }
+}

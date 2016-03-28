@@ -1,23 +1,25 @@
 {
-  "name": "c4-framework",
+  "name": "c-4-framework",
+  "description": "A framework for Norton ebooks.",
+  "authors": [
+    "Evan Yamanishi"
+  ],
+  "homepage": "https://github.com/sh0ji/c4-framework",
   "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
   "dependencies": {
-    "bootstrap-sass": "~3.3.5",
-    "modernizr": "~2.8.1",
-    "photoswipe": "^4.1.1"
-  },
-  "overrides": {
-    "bootstrap-sass": {
-      "main": [
-        "assets/stylesheets/_bootstrap.scss",
-        "assets/fonts/bootstrap/*",
-        "assets/javascripts/bootstrap.js"
-      ]
-    }
+    "bootstrap": "v4.0.0-alpha.2",
+    "modernizr": "^3.3.1",
+    "photoswipe": "^4.1.1",
+    "font-awesome": "^4.5.0"
   },
   "devDependencies": {
-    "chai": "^3.5.0",
-    "mocha": "^2.4.5",
     "html5shiv": "^3.7.3"
   }
 }

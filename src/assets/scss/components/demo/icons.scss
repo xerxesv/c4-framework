@@ -1,0 +1,49 @@
+/******************
+* ICONS W/TEXT
+*******************/
+
+.icon {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  min-width: 75px;
+  &.icon-top {
+    flex-direction: column;
+    .icon-text {
+      padding-top: 0.2em;
+    }
+  }
+  &.icon-left {
+    flex-direction: row;
+    .icon-text {
+      padding-left: 0.2em;
+    }
+  }
+  &.icon-right {
+    flex-direction: row-reverse;
+    .icon-text {
+      padding-right: 0.2em;
+    }
+  }
+  .icon-img {
+    font-size: 1em;
+  }
+  .icon-text {
+    font-size: 0.8em;
+    @include sr-only;
+  }
+}
+
+@media (min-width: $screen-md-min) {
+  .icon .icon-text {
+    position: inherit;
+    width: auto;
+    height: auto;
+    padding: inherit;
+    margin: inherit;
+    overflow: inherit;
+    clip: inherit;
+    border: inherit;
+  }
+}

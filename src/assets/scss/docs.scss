@@ -1,0 +1,16 @@
+// Bootstrap
+@import "components/docs/variables";
+@import "components/bootstrap/bootstrap_default";
+
+// Mixins
+@import "components/mixins/screen-reader";
+@import "components/mixins/utilities";
+
+// Docs custom
+@import "components/docs/annotations";
+@import "components/docs/example";
+
+// Included demo components
+@import "components/demo/gallery";
+@import "components/demo/tooltip-terms";
+@import "components/demo/type";

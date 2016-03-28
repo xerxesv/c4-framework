@@ -1,0 +1,24 @@
+.banner {
+  border-bottom: 1px solid $gray-lighter;
+  .brand,
+  .controls {
+    margin: 8px 0;    
+  }
+  .brand {
+      height: 100%;
+    * {
+      display: inline-block;
+    }
+    img {
+      padding: 4px;
+      height: 100%;
+    }
+    h1 {
+      font-size: 24px;
+      margin: 0;
+    }
+  }
+  .controls {
+    
+  }
+}

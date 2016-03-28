@@ -1,0 +1,34 @@
+/******************
+* TOGGLE BUTTONS
+*******************/
+
+.btn-toggle {
+  color: $gray-dark;
+  font-weight: normal;
+  border-radius: 0;
+  padding: 2px 4px;
+  border-left: 1px solid $gray-lighter;
+  
+  &:first-child {
+    border-left: none;
+  }
+  
+  @include all-pseudo {
+    background-color: transparent;
+    box-shadow: none;
+  }
+  
+  @include focusHover {
+    color: $brand-primary;
+    path {
+      fill: $brand-primary;
+    }
+  }
+  
+  &.inactive {
+    opacity: 0.5;
+    path {
+      stroke-opacity: 0.5;
+    }
+  }
+}
