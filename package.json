@@ -39,5 +39,13 @@
     "gulp-uncss": "^1.0.0",
     "shelljs": "^0.6.0",
     "yargs": "^3.31.0"
+  },
+  "dependencies": {
+    "bootstrap": "^4.0.0-alpha.2",
+    "font-awesome": "^4.5.0",
+    "jquery": "^2.2.2",
+    "modernizr": "^3.3.1",
+    "photoswipe": "^4.1.1",
+    "tether": "^1.2.0"
   }
 }
