@@ -1,23 +1,23 @@
-$icon-font-path: '../fonts/';
-@import url(https://fonts.googleapis.com/css?family=Caudex:400,400italic,700,700italic);
-@import url(https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700,700italic);
-@import url(https://fonts.googleapis.com/css?family=PT+Serif+Caption:400,400italic);
-@import url(https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic);
-@import url(https://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700);
-
 // Bootstrap
 @import "components/demo/variables";
-@import "components/bootstrap/bootstrap_demo";
+@import "components/bootstrap/bootstrap_default";
 
-// Mixins
-@import "components/mixins/screen-reader";
+// Font Awesome Icons
+$fa-font-path: "../fonts";
+@import "node_modules/font-awesome/scss/font-awesome";
+
+// Custom Mixins
 @import "components/mixins/utilities";
 
-// Components
+// Components for _includes
+@import "components/main/header";
+@import "components/main/chapter";
+
+// Components for demo
 @import "components/demo/banner";
 @import "components/demo/editions";
 @import "components/demo/figure";
-@import "components/demo/icons";
+//@import "components/demo/icons";
 @import "components/demo/pagebreaks";
 @import "components/demo/gallery";
 @import "components/demo/table-scroll";
