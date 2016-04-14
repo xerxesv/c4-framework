@@ -2,7 +2,23 @@
 * PHOTOSWIPE GALLERY
 *******************/
 
-.image-gallery {
+.pswp-gallery {
+  display: flex;
+  flex-flow: row wrap;
+
+  .pswp-gallery__title {
+    width: 100%;
+  }
+
+  .pswp-gallery__image {
+    flex-grow: 1;
+    width: calc(100% / 3);
+
+    @include media-breakpoint-up(lg) {
+      width: calc(100% / 5);
+    }
+  }
+
   a + figcaption {
     @include sr-only;
   }
