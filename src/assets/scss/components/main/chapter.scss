@@ -1,0 +1,12 @@
+.main-aside {
+  @include make-row();
+  .chapter-content {
+    @include make-col();
+    // default to full width (@xs)
+    @include make-col-span(12);
+
+    @include media-breakpoint-up(sm) {
+      @include make-col-span(10);
+    }
+  }
+}
