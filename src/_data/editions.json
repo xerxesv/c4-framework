@@ -1,0 +1,62 @@
+[
+  {
+    "id": "ed-full1",
+    "title": "Full Edition Volume 1"
+  },
+  {
+    "id": "ed-full2",
+    "title": "Full Edition Volume 2"
+  },
+  {
+    "id": "ed-full3",
+    "title": "Full Edition Volume 3"
+  },
+  {
+    "id": "ed-fulla",
+    "title": "Full Edition Volume A"
+  },
+  {
+    "id": "ed-fullb",
+    "title": "Full Edition Volume B"
+  },
+  {
+    "id": "ed-fullc",
+    "title": "Full Edition Volume C"
+  },
+  {
+    "id": "ed-fulld",
+    "title": "Full Edition Volume D"
+  },
+  {
+    "id": "ed-fulle",
+    "title": "Full Edition Volume E"
+  },
+  {
+    "id": "ed-fullf",
+    "title": "Full Edition Volume F"
+  },
+  {
+    "id": "ed-mauth",
+    "title": "Major Authors Edition"
+  },
+  {
+    "id": "ed-mauth1",
+    "title": "Major Authors Edition Volume 1"
+  },
+  {
+    "id": "ed-mauth2",
+    "title": "Major Authors Edition Volume 2"
+  },
+  {
+    "id": "ed-short",
+    "title": "Shorter Edition"
+  },
+  {
+    "id": "ed-short1",
+    "title": "Shorter Edition Volume 1"
+  },
+  {
+    "id": "ed-short2",
+    "title": "Shorter Edition Volumd 2"
+  }
+]

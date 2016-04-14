@@ -1,0 +1,84 @@
+[
+  {
+    "id": "01",
+    "title": "Image Gallery",
+    "images": [
+      {
+        "id": "book",
+        "dimensions": "2591x2592",
+        "alt": "A closeup shot of the edge of the Norton Anthology of English Literature",
+        "caption": "The Norton Anthology of English Literature provides an overview of poetry, drama, prose fiction, essays, and letters from <em>Beowulf</em> to the beginning of the 21st century.",
+        "full": "book_o.jpg",
+        "lg": "book_1080s.jpg",
+        "md": "book_585s.jpg",
+        "sm": "book_340s.jpg",
+        "xs": "book_170s.jpg"
+            },
+      {
+        "id": "seagull",
+        "dimensions": "3264x2448",
+        "alt": "A flying seagull",
+        "caption": null,
+        "full": "seagull_o.jpg",
+        "lg": "seagull_1080s.jpg",
+        "md": "seagull_585s.jpg",
+        "sm": "seagull_340s.jpg",
+        "xs": "seagull_170s.jpg"
+            },
+      {
+        "id": "500fifth",
+        "dimensions": "2038x1365",
+        "alt": "The view of 500 5th Ave from Bryant Park",
+        "caption": "500 5th Ave, home of W. W. Norton &amp; Company",
+        "full": "500fifth_k.jpg",
+        "lg": "500fifth_1080s.jpg",
+        "md": "500fifth_585s.jpg",
+        "sm": "500fifth_340s.jpg",
+        "xs": "500fifth_170s.jpg"
+            },
+      {
+        "id": "daisy",
+        "dimensions": "1600x1067",
+        "alt": "A bed of daisies",
+        "caption": null,
+        "full": "daisy_k.jpg",
+        "lg": "daisy_1080s.jpg",
+        "md": "daisy_585s.jpg",
+        "sm": "daisy_340s.jpg",
+        "xs": "daisy_170s.jpg"
+            },
+      {
+        "id": "kingfisher",
+        "dimensions": "3000x2000",
+        "alt": "A kingfisher perched on a branch",
+        "caption": null,
+        "full": "kingfisher_o.jpg",
+        "lg": "kingfisher_1080s.jpg",
+        "md": "kingfisher_585s.jpg",
+        "sm": "kingfisher_340s.jpg",
+        "xs": "kingfisher_170s.jpg"
+            }
+        ]
+    },
+  {
+    "id": "02",
+    "images": [
+      {
+        "id": "overlay",
+        "dimensions": "900x827",
+        "alt": "An image overlay",
+        "caption": null,
+        "full": "large-image.jpg",
+        "md": "imgOverlayThumb.jpg"
+            },
+      {
+        "id": "overlayCaption",
+        "dimensions": "900x827",
+        "alt": "An image overlay with a caption",
+        "caption": "This is a caption for this image. You can even <em>style</em> text.",
+        "full": "large-image.jpg",
+        "md": "imgOverlayWCapThumb.jpg"
+            }
+        ]
+    }
+]
