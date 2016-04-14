@@ -8,9 +8,11 @@
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 
   <!-- CSS -->
-  <!-- inject:css -->  
-  <link rel="stylesheet" href="/assets/stylesheets/main.css">  
-  <!-- endinject -->
+  {% if page.css %}
+  <link rel="stylesheet" href="/assets/stylesheets/{{ page.css }}.css">
+  {% else %}
+  <link rel="stylesheet" href="/assets/stylesheets/main.css">
+  {% endif %}
 
   <!-- Icons -->
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/touch/apple-touch-icon-144-precomposed.png">
