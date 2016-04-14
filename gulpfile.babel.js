@@ -61,7 +61,7 @@ gulp.task('jekyll:doctor', done => {
 // 'gulp styles --prod' -- creates a CSS file from your SASS, adds prefixes and
 // then minifies, gzips and cache busts it. Does not create a Sourcemap
 gulp.task('styles', () =>
-  gulp.src('src/assets/scss/main.scss')
+  gulp.src('src/assets/scss/*.scss')
     .pipe($.if(!argv.prod, $.sourcemaps.init()))
     .pipe($.sass({
       precision: 10
@@ -92,40 +92,6 @@ gulp.task('styles', () =>
     .pipe($.if(!argv.prod, browserSync.stream()))
 );
 
-// 'gulp scripts' -- creates a _main.js file from your JavaScript files and
-// creates a Sourcemap for it
-// 'gulp scripts --prod' -- creates a _main.js file from your JavaScript files,
-// minifies, gzips and cache busts it. Does not create a Sourcemap
-gulp.task('scripts', () =>
-  // NOTE: The order here is important since it's concatenated in order from
-  // top to bottom, so you want vendor scripts etc on top
-  gulp.src('src/assets/javascript/main.js')
-    .pipe($.newer('.tmp/assets/javascript/_main.js', {dest: '.tmp/assets/javascript', ext: '.js'}))
-    .pipe($.if(!argv.prod, $.sourcemaps.init()))
-    .pipe($.concat('_main.js'))
-    .pipe($.size({
-      title: 'scripts',
-      showFiles: true
-    }))
-    .pipe($.if(argv.prod, $.rename({suffix: '.min'})))
-    .pipe($.if(argv.prod, $.if('*.js', $.uglify({preserveComments: 'some'}))))
-    .pipe($.if(argv.prod, $.size({
-      title: 'minified scripts',
-      showFiles: true
-    })))
-    .pipe($.if(argv.prod, $.rev()))
-    .pipe($.if(!argv.prod, $.sourcemaps.write('.')))
-    .pipe($.if(argv.prod, gulp.dest('.tmp/assets/javascript')))
-    .pipe($.if(argv.prod, $.if('*.js', $.gzip({append: true}))))
-    .pipe($.if(argv.prod, $.size({
-      title: 'gzipped scripts',
-      gzip: true,
-      showFiles: true
-    })))
-    .pipe(gulp.dest('.tmp/assets/javascript'))
-    .pipe($.if(!argv.prod, browserSync.stream()))
-);
-
 // 'gulp scripts:vendor' -- creates a vendor.js file from your JavaScript files and
 // creates a Sourcemap for it
 // 'gulp scripts --prod' -- creates a vendor.js file from your JavaScript files,
@@ -134,9 +100,25 @@ gulp.task('scripts:vendor', () =>
   // NOTE: The order here is important since it's concatenated in order from
   // top to bottom, so you want vendor scripts etc on top
   gulp.src([
-    'bower_components/jquery/dist/jquery.js',
-    'bower_components/photoswipe/dist/photoswipe.js',
-    'bower_components/photoswipe/dist/photoswipe-ui-default.js'
+    'node_modules/jquery/dist/jquery.js',
+    'node_modules/tether/dist/js/tether.js',
+    'node_modules/bootstrap/dist/js/bootstrap.js',
+    //    'node_modules/modernizer/modernizr.js',
+    'node_modules/photoswipe/dist/photoswipe.js',
+    'node_modules/photoswipe/dist/photoswipe-ui-default.js',
+
+    // bootstrap plugins
+    /*'node_modules/bootstrap/dist/js/umd/util.js',
+    'node_modules/bootstrap/dist/js/umd/alert.js',
+    'node_modules/bootstrap/dist/js/umd/dropdown.js',
+    'node_modules/bootstrap/dist/js/umd/tooltip.js',
+    'node_modules/bootstrap/dist/js/umd/modal.js',
+    'node_modules/bootstrap/dist/js/umd/button.js',
+    'node_modules/bootstrap/dist/js/umd/popover.js',
+    'node_modules/bootstrap/dist/js/umd/carousel.js',
+    'node_modules/bootstrap/dist/js/umd/scrollspy.js',
+    'node_modules/bootstrap/dist/js/umd/collapse.js',
+    'node_modules/bootstrap/dist/js/umd/tab.js'*/
   ])
     .pipe($.newer('.tmp/assets/javascript/vendor.js', {dest: '.tmp/assets/javascript', ext: '.js'}))
     .pipe($.if(!argv.prod, $.sourcemaps.init()))
@@ -164,28 +146,21 @@ gulp.task('scripts:vendor', () =>
     .pipe($.if(!argv.prod, browserSync.stream()))
 );
 
-// 'gulp scripts:plugins' -- creates a plugins.js file from your JavaScript files and
+// 'gulp scripts' -- creates a _main.js file from your JavaScript files and
 // creates a Sourcemap for it
-// 'gulp scripts --prod' -- creates a plugins.js file from your JavaScript files,
+// 'gulp scripts --prod' -- creates a _main.js file from your JavaScript files,
 // minifies, gzips and cache busts it. Does not create a Sourcemap
-gulp.task('scripts:plugins', () =>
+gulp.task('scripts', () =>
   // NOTE: The order here is important since it's concatenated in order from
   // top to bottom, so you want vendor scripts etc on top
   gulp.src([
-    'bower_components/bootstrap/js/src/alert.js',
-    'bower_components/bootstrap/js/src/button.js',
-    'bower_components/bootstrap/js/src/collapse.js',
-    'bower_components/bootstrap/js/src/dropdown.js',
-    'bower_components/bootstrap/js/src/modal.js',
-    'bower_components/bootstrap/js/src/popover.js',
-    'bower_components/bootstrap/js/src/scrollspy.js',
-    'bower_components/bootstrap/js/src/tab.js',
-    'bower_components/bootstrap/js/src/tooltip.js',
-    'bower_components/bootstrap/js/src/util.js'
+    'src/assets/javascript/plugins/tabTrap.js',
+    'src/assets/javascript/plugins/pswp_init.js',
+    'src/assets/javascript/main.js'
   ])
-    .pipe($.newer('.tmp/assets/javascript/plugins.js', {dest: '.tmp/assets/javascript', ext: '.js'}))
+    .pipe($.newer('.tmp/assets/javascript/_main.js', {dest: '.tmp/assets/javascript', ext: '.js'}))
     .pipe($.if(!argv.prod, $.sourcemaps.init()))
-    .pipe($.concat('plugins.js'))
+    .pipe($.concat('_main.js'))
     .pipe($.size({
       title: 'scripts',
       showFiles: true
@@ -212,7 +187,7 @@ gulp.task('scripts:plugins', () =>
 // 'gulp inject:head' -- injects our main.css file into the head of our HTML
 gulp.task('inject:head', () =>
   gulp.src('src/_includes/head.html')
-    .pipe($.inject(gulp.src('.tmp/assets/stylesheets/*.css',
+    .pipe($.inject(gulp.src('.tmp/assets/stylesheets/main.css',
                             {read: false}), {ignorePath: '.tmp'}))
     .pipe(gulp.dest('src/_includes'))
 );
@@ -240,11 +215,16 @@ gulp.task('images', () =>
 gulp.task('fonts', () =>
   gulp.src([
   'src/assets/fonts/**/*',
-  'bower_components/font-awesome/fonts/*'
+  'node_modules/font-awesome/fonts/*'
 ])
     .pipe(gulp.dest('.tmp/assets/fonts'))
     .pipe($.size({title: 'fonts'}))
 );
+
+gulp.task('data', function() {
+  return gulp.src('src/assets/data/**/*')
+  .pipe(gulp.dest('.tmp/assets/data'))
+});
 
 // 'gulp html' -- does nothing
 // 'gulp html --prod' -- minifies and gzips our HTML files
@@ -303,7 +283,7 @@ gulp.task('serve', () => {
 // production settings
 gulp.task('assets', gulp.series(
   gulp.series('clean:assets'),
-  gulp.parallel('styles', 'scripts:vendor', 'scripts:plugins', 'scripts', 'fonts', 'images')
+  gulp.parallel('styles', 'scripts:vendor', 'scripts', 'data', 'fonts', 'images')
 ));
 
 // 'gulp assets:copy' -- copies the assets into the dist folder, needs to be
