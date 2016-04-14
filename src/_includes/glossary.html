@@ -1,0 +1,6 @@
+<dl id="glossary" role="doc-glossary">
+{% for item in site.data.glossary %}
+  <dt id="{{ item.term | downcase | prepend: 'term_' | replace: ' ', '-' | handleize }}" role="term">{{ item.term }}</dt>
+  <dd id="{{ item.term | downcase | prepend: 'desc_' | replace: ' ', '-' | handleize }}" role="definition">{{ item.description }}</dd>
+{% endfor %}
+</dl>
