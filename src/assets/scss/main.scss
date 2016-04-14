@@ -3,4 +3,11 @@
 
 // Font Awesome Icons
 $fa-font-path: "../fonts";
-@import "bower_components/font-awesome/scss/font-awesome";
+@import "node_modules/font-awesome/scss/font-awesome";
+
+// Custom Mixins
+@import "components/mixins/utilities";
+
+// Components for _includes
+@import "components/main/header";
+@import "components/main/chapter";
