@@ -1,0 +1,19 @@
+{% for gallery in site.data.[include.chapter].galleries %}
+  {% if gallery.id == include.id %}
+    <figure class="pswp-gallery" data-size="{{ gallery.images.size }}" itemscope itemtype="http://schema.org/ImageGallery">
+    {% if gallery.title != "" and gallery.title != nil %}
+      <figcaption class="pswp-gallery__title">{{ gallery.title }}</figcaption>
+    {% endif %}
+    {% for image in gallery.images %}
+      <figure class="pswp-gallery__image" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+        <a href="/assets/images/{{ image.full }}" class="" itemprop="contentUrl" data-size="{{ image.dimensions }}">
+          <img src="/assets/images/{{ image.md }}" class="img-thumbnail" alt="{{ image.alt }}" itemprop="thumbnail">
+        </a>
+      {% if image.caption != "" and image.caption != nil %}
+        <figcaption class="card-block" itemprop="caption">{{ image.caption }}</figcaption>
+      {% endif %}
+      </figure>
+    {% endfor %}
+    </figure>
+  {% endif %}
+{% endfor %}
